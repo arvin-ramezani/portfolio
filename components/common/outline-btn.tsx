@@ -23,11 +23,12 @@ export const StyledOutlineBtn = styled(motion.button)<{ color: string }>`
   background-color: transparent;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  /* outline: 1px solid ${({ theme }) => theme.colors.secondary}; */
+  font-size: 0.7rem;
+  font-weight: 500;
 
-  color: ${({ color, theme }) => (color ? color : theme.colors.primary)};
-  border: 1px solid
-    ${({ color, theme }) => (color ? color : theme.colors.primary)};
+  color: ${({ color }) => color};
+  border: 1px solid ${({ color }) => color};
+
   &:focus {
     outline: 1px solid ${({ theme }) => theme.colors.secondary};
   }

@@ -1,4 +1,10 @@
-import Document, { DocumentContext } from 'next/document';
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -9,7 +15,7 @@ export default class MyDocument extends Document {
       ctx.renderPage = () =>
         originalRenderPage({
           enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />), //gets the styles from all the components inside <App>
+            sheet.collectStyles(<App {...props} />),
         });
       const initialProps = await Document.getInitialProps(ctx);
       return {
@@ -17,7 +23,7 @@ export default class MyDocument extends Document {
         styles: (
           <>
             {initialProps.styles}
-            {/*👇 insert the collected styles to the html document*/}
+
             {sheet.getStyleElement()}
           </>
         ),
@@ -25,5 +31,26 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render() {
+    return (
+      <Html lang='en'>
+        <Head>
+          <meta charSet='utf-8' />
+
+          <link
+            rel='icon'
+            href='/images/a-plus-logo.svg'
+          />
+        </Head>
+
+        <body>
+          <Main />
+
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }

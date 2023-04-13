@@ -4,7 +4,7 @@ export const theme = {
     secondary: '#ffdada',
     textPrimary: '#CCD6F6',
     textSecondary: '#C2C9DD',
-    dark: '#252525',
+    black: '#252525',
     blue: '#9747FF',
     white: '#f5f5f5',
     darkWhite: '#dbd8d8',
@@ -13,7 +13,7 @@ export const theme = {
   backgroundColors: {
     primary: '#0A192F',
     light: '#f5f5f5',
-    dark: '#252525',
+    black: '#252525',
     blue: '#479bff',
   },
   breakpoints: {

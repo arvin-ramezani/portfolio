@@ -1,12 +1,14 @@
 import React from 'react';
 
 import {
-  Container,
+  // Container,
   Logo,
   StyledHeader,
 } from '@/styles/components/header.styled';
 import OutlineBtn from '../common/outline-btn';
 import { theme } from '@/styles/theme.styled';
+import LangSelectBox from '../lang-select-box/lang-select-box';
+import { Container } from '@/styles/global.styled';
 
 const Header = () => {
   return (
@@ -15,8 +17,9 @@ const Header = () => {
         <Logo
           alt='A Plus Logo'
           src='/images/a-plus-text-logo.svg'
-          width={145}
-          height={50}
+          width={90}
+          height={30}
+          priority
         />
 
         <OutlineBtn
@@ -24,6 +27,7 @@ const Header = () => {
           color={theme.colors.primary}
           text='My Projects'
         />
+        <LangSelectBox />
       </Container>
     </StyledHeader>
   );
