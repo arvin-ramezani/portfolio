@@ -9,10 +9,15 @@ import OutlineBtn from '../common/outline-btn';
 import { theme } from '@/styles/theme.styled';
 import LangSelectBox from '../lang-select-box/lang-select-box';
 import { Container } from '@/styles/global.styled';
+import { HeaderItemsVariants } from './header.variants';
 
 const Header = () => {
   return (
-    <StyledHeader>
+    <StyledHeader
+      variants={HeaderItemsVariants}
+      initial='initial'
+      animate='animate'
+    >
       <Container>
         <Logo
           alt='A Plus Logo'

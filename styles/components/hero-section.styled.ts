@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../theme.styled';
+import { motion } from 'framer-motion';
 
 export const StyledHeroSection = styled.section`
   /* min-height: 80vh; */
@@ -12,11 +13,12 @@ export const StyledHeroSection = styled.section`
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      margin-top: 3rem;
     }
   }
 `;
 
-export const HeroTextContainer = styled.div`
+export const HeroTextContainer = styled(motion.div)`
   /* margin-top: 3rem; */
   height: 60vh;
   display: flex;
@@ -58,7 +60,7 @@ export const HeroTextContainer = styled.div`
   }
 `;
 
-export const HeroImageContainer = styled.div`
+export const HeroImageContainer = styled(motion.div)`
   position: relative;
   width: 300px;
   height: 300px;

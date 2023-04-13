@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-export const StyledHeader = styled.header`
+export const StyledHeader = styled(motion.header)`
   & > div {
     flex-direction: row;
     align-items: center;
