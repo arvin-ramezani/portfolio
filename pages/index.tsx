@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import HeroSection from '@/components/hero-section/hero-section';
 import Header from '@/components/header/header';
+import AboutSection from '@/components/about-section/about-section';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <main>
         <Header />
         <HeroSection />
+        <AboutSection />
       </main>
     </>
   );
