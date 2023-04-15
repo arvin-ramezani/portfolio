@@ -13,7 +13,7 @@ export const StyledHeroSection = styled.section`
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      margin-top: 3rem;
+      /* margin-top: 3rem; */
     }
   }
 `;

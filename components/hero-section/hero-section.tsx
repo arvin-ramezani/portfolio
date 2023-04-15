@@ -8,7 +8,7 @@ import {
   StyledHeroSection,
 } from '@/styles/components/hero-section.styled';
 import { Container } from '@/styles/global.styled';
-import Button from '../common/Button';
+import Button from '../common/button';
 import { theme } from '@/styles/theme.styled';
 import { HeroImageVariants, HeroTextVariants } from './hero-section.variants';
 
@@ -39,7 +39,7 @@ function HeroSection() {
           animate='visible'
         >
           <Image
-            src='/images/free-lancer.svg'
+            src='/images/freelancer.svg'
             alt='FreeLancer'
             fill
           />
