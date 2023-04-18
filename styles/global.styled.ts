@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { theme } from './theme.styled';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -129,7 +130,7 @@ table {
 
 `;
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   width: 90%;
   margin: 0 auto;
   display: flex;

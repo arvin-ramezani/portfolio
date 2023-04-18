@@ -8,10 +8,12 @@ export const StyledAboutSection = styled.section`
   & > div {
     margin-top: 3rem;
     gap: 5rem;
-    margin: auto;
+    margin: 3rem auto 3rem;
 
-    @media (min-width: ${theme.breakpoints.md}) {
+    @media (min-width: ${theme.breakpoints.lg}) {
       flex-direction: row;
+      flex-wrap: wrap;
+      align-items: stretch;
     }
   }
 
@@ -43,10 +45,21 @@ export const AboutImageBlock = styled(motion.div)`
 `;
 
 export const AboutTextBlock = styled(motion.div)`
-  text-align: center;
+  text-align: stretch;
 
   @media (min-width: ${theme.breakpoints.md}) {
     text-align: start;
+    flex: 3;
+  }
+
+  @media (min-width: ${theme.breakpoints.lg}) {
+    flex: none;
+    width: 40%;
+  }
+
+  @media (min-width: ${theme.breakpoints.xxl}) {
+    flex: none;
+    width: auto;
     flex: 3;
   }
 
@@ -66,3 +79,47 @@ export const AboutTitle = styled(motion.h2)`
   font-weight: bold;
   margin: 1rem 0 2rem;
 `;
+
+export const AboutSkillsContainer = styled(motion.div)`
+  flex: 2;
+  font-size: 1.4rem;
+
+  @media (min-width: ${theme.breakpoints.lg}) {
+    flex: none;
+  }
+
+  @media (min-width: ${theme.breakpoints.xxl}) {
+    width: auto;
+    flex: 2;
+  }
+`;
+export const AboutSkillsTitle = styled(motion.h2)`
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0 2rem;
+`;
+
+export const AboutSkillsItemBlock = styled(motion.div)`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    gap: 3rem;
+  }
+`;
+
+export const AboutSkillsItem = styled(motion.div)`
+  display: flex;
+  align-items: flex-end;
+  gap: 0.7rem;
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    & > img {
+      width: 140px;
+      height: auto;
+    }
+  }
+`;
+
+export const AboutSkill = styled(motion.p)``;
