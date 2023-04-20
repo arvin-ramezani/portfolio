@@ -3,23 +3,26 @@ import styled from 'styled-components';
 import { theme } from '../theme.styled';
 
 export const StyledAboutSection = styled.section`
-  height: auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   & > div {
     margin-top: 3rem;
     gap: 5rem;
     margin: 3rem auto 3rem;
 
+    @media (min-width: ${theme.breakpoints.md}) {
+      min-height: 80vh;
+      /* display: grid; */
+    }
+
     @media (min-width: ${theme.breakpoints.lg}) {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: stretch;
     }
-  }
-
-  @media (min-width: ${theme.breakpoints.md}) {
-    height: 80vh;
-    display: grid;
   }
 `;
 
@@ -39,13 +42,23 @@ export const AboutImageBlock = styled(motion.div)`
     height: 280px;
   }
 
-  @media (min-width: ${theme.breakpoints.md}) {
-    /* flex: 2; */
+  @media (min-width: ${theme.breakpoints.xxl}) {
+    margin: 0;
   }
 `;
 
 export const AboutTextBlock = styled(motion.div)`
   text-align: stretch;
+
+  & > p {
+    line-height: 1.4;
+    margin-bottom: 1rem;
+
+    & strong {
+      font-weight: 700;
+      color: ${({ theme }) => theme.colors.primary};
+    }
+  }
 
   @media (min-width: ${theme.breakpoints.md}) {
     text-align: start;
@@ -62,16 +75,6 @@ export const AboutTextBlock = styled(motion.div)`
     width: auto;
     flex: 3;
   }
-
-  & > p {
-    line-height: 1.4;
-    margin-bottom: 1rem;
-
-    & strong {
-      font-weight: 700;
-      color: ${({ theme }) => theme.colors.primary};
-    }
-  }
 `;
 
 export const AboutTitle = styled(motion.h2)`
@@ -81,7 +84,9 @@ export const AboutTitle = styled(motion.h2)`
 `;
 
 export const AboutSkillsContainer = styled(motion.div)`
-  flex: 2;
+  /* flex: 2; */
+  flex: none;
+
   font-size: 1.4rem;
 
   @media (min-width: ${theme.breakpoints.lg}) {
@@ -93,6 +98,7 @@ export const AboutSkillsContainer = styled(motion.div)`
     flex: 2;
   }
 `;
+
 export const AboutSkillsTitle = styled(motion.h2)`
   font-size: 2rem;
   font-weight: 700;
@@ -116,7 +122,7 @@ export const AboutSkillsItem = styled(motion.div)`
 
   @media (min-width: ${theme.breakpoints.md}) {
     & > img {
-      width: 140px;
+      width: 70px;
       height: auto;
     }
   }

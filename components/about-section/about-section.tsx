@@ -16,9 +16,9 @@ import { Container } from '@/styles/global.styled';
 import { Variants, useInView } from 'framer-motion';
 
 const AboutContainerVariants: Variants = {
-  initial: { y: '-100vh', opacity: 0 },
+  initial: { opacity: 0 },
   animate: {
-    y: '0',
+    // y: '0',
     opacity: 1,
     transition: {
       when: 'beforeChildren',
@@ -38,7 +38,10 @@ const AboutItemsVariants: Variants = {
 
 const AboutSection = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
+
+  console.log(isInView);
+
   return (
     <StyledAboutSection ref={ref}>
       {!isInView ? (
@@ -50,11 +53,7 @@ const AboutSection = () => {
           animate="animate"
           transition={{ delay: 0.2 }}
         >
-          <AboutImageBlock
-            variants={AboutItemsVariants}
-            // initial='initial'
-            // animate='animate'
-          >
+          <AboutImageBlock variants={AboutItemsVariants}>
             <Image
               src="/images/profile.svg"
               alt="Arvin Ramezani"
@@ -62,12 +61,7 @@ const AboutSection = () => {
             />
           </AboutImageBlock>
 
-          <AboutTextBlock
-            variants={AboutItemsVariants}
-            // initial='initial'
-            // animate='animate'
-            // transition={{ delay: 0.2 }}
-          >
+          <AboutTextBlock variants={AboutItemsVariants}>
             <AboutTitle>About Me</AboutTitle>
             <p>
               <Image
@@ -112,7 +106,7 @@ const AboutSection = () => {
             <AboutSkillsItemBlock>
               <AboutSkillsItem>
                 <Image
-                  src="./icons/nodejs.svg"
+                  src="./images/icons/nodejs.svg"
                   width={45}
                   height={40}
                   alt="nodejs"
@@ -121,7 +115,7 @@ const AboutSection = () => {
               </AboutSkillsItem>
               <AboutSkillsItem>
                 <Image
-                  src="./icons/nextjs.svg"
+                  src="./images/icons/nextjs.svg"
                   width={45}
                   height={40}
                   alt="nextjs"
