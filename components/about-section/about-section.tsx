@@ -18,21 +18,31 @@ import { Variants, useInView } from 'framer-motion';
 const AboutContainerVariants: Variants = {
   initial: { opacity: 0 },
   animate: {
-    // y: '0',
     opacity: 1,
     transition: {
       when: 'beforeChildren',
-      staggerChildren: 0.4,
     },
   },
 };
 
 const AboutItemsVariants: Variants = {
-  initial: { y: '-100vh', opacity: 0 },
+  initial: (dir) => {
+    if (dir === 'left') {
+      return { x: '100%', opacity: 0 };
+    }
+
+    if (dir === 'right') {
+      return { x: '-100%', opacity: 0 };
+    }
+
+    return { opacity: 0 };
+  },
+
   animate: {
-    y: '0',
+    x: '0',
     opacity: 1,
-    transition: { type: 'spring', damping: 10, stiffness: 400 },
+    // transition: { type: 'spring', damping: 10, stiffness: 400 },
+    transition: { duration: 0.8 },
   },
 };
 
@@ -53,7 +63,10 @@ const AboutSection = () => {
           animate="animate"
           transition={{ delay: 0.2 }}
         >
-          <AboutImageBlock variants={AboutItemsVariants}>
+          <AboutImageBlock
+            variants={AboutItemsVariants}
+            custom={'left'}
+          >
             <Image
               src="/images/profile.svg"
               alt="Arvin Ramezani"
@@ -61,7 +74,10 @@ const AboutSection = () => {
             />
           </AboutImageBlock>
 
-          <AboutTextBlock variants={AboutItemsVariants}>
+          <AboutTextBlock
+            variants={AboutItemsVariants}
+            custom={null}
+          >
             <AboutTitle>About Me</AboutTitle>
             <p>
               <Image
@@ -101,7 +117,10 @@ const AboutSection = () => {
             </p>
           </AboutTextBlock>
 
-          <AboutSkillsContainer variants={AboutItemsVariants}>
+          <AboutSkillsContainer
+            variants={AboutItemsVariants}
+            custom={'right'}
+          >
             <AboutSkillsTitle>Skills</AboutSkillsTitle>
             <AboutSkillsItemBlock>
               <AboutSkillsItem>
