@@ -6,6 +6,7 @@ import AboutSection from '@/components/about-section/about-section';
 import ProjectsSection from '@/components/projects-section/projects-section';
 import Footer from '@/components/footer/footer';
 import StarsCanvas from '@/components/stars-canvas/stars-canvas';
+import styled from 'styled-components';
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
         />
       </Head>
       <main>
-        {/* <StarsCanvas /> */}
+        <StarsCanvas />
         <Header />
         <HeroSection />
         <AboutSection />

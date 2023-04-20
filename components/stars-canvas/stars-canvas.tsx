@@ -1,10 +1,11 @@
 import { Preload, Points, PointMaterial } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
 import React, { useRef, FC } from 'react';
-import * as random from 'maath/random/dist/maath-random.esm';
+import styled from 'styled-components';
+import * as random from 'maath/random/dist/maath-random.cjs';
 
 const Stars: FC = (props) => {
-  const ref = useRef();
+  const ref = useRef(null);
 
   const sphere = random.inSphere(new Float32Array(5000), { radius: 1.2 });
 
@@ -18,11 +19,10 @@ const Stars: FC = (props) => {
   });
 
   return (
-    <group rotaion={[0, 0, Math.PI / 4]}>
-      {/* @ts-ignore */}
+    <group rotation={[0, 0, Math.PI / 4]}>
       <Points
         ref={ref}
-        positions={sphere}
+        positions={sphere as Float32Array}
         stride={3}
         frustumCulled
         {...props}
@@ -41,14 +41,22 @@ const Stars: FC = (props) => {
 
 const StarsCanvas = () => {
   return (
-    <div>
+    <StyledStarsCanvas>
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Stars />
 
         <Preload all />
       </Canvas>
-    </div>
+    </StyledStarsCanvas>
   );
 };
+
+export const StyledStarsCanvas = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`;
 
 export default StarsCanvas;
