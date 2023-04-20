@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 
 export const StyledHeroSection = styled.section`
   min-height: 100vh;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 
   & > div {
     height: 100%;
@@ -16,7 +16,7 @@ export const StyledHeroSection = styled.section`
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      /* margin-top: 3rem; */
+      margin-top: 3rem;
     }
   }
 `;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { theme } from '../theme.styled';
+import { motion } from 'framer-motion';
 
 export const StyledFooter = styled.footer`
   min-height: 70vh;
@@ -38,7 +39,7 @@ export const StyledFooter = styled.footer`
   }
 `;
 
-export const SendEmailBlock = styled.div`
+export const SendEmailBlock = styled(motion.div)`
   /* flex: 1; */
   display: flex;
   flex-direction: column;
@@ -83,7 +84,7 @@ export const StyledTextarea = styled.textarea`
   }
 `;
 
-export const ContactBlock = styled.div`
+export const ContactBlock = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;

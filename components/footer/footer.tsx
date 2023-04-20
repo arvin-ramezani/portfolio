@@ -14,19 +14,63 @@ import {
 import { Container } from '@/styles/global.styled';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { FormEvent } from 'react';
+import React, { FormEvent, useRef } from 'react';
 import Button from '../common/button';
 import { theme } from '@/styles/theme.styled';
+import { Variants, useInView } from 'framer-motion';
+
+const footerContainerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const footerItemsVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1.8,
+      delay: 0.6,
+    },
+  },
+};
 
 const Footer = () => {
+  const sendEmailRef = useRef(null);
+  const contactRef = useRef(null);
+  const isEmailInView = useInView(sendEmailRef);
+  const isContactInView = useInView(contactRef);
+
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
   return (
     <StyledFooter>
-      <Container>
-        <SendEmailBlock>
+      <Container
+        variants={footerContainerVariants}
+        initial="hidden"
+        animate={'visible'}
+        // animate={isInView ? 'visible' : 'hidden'}
+        exit="hidden"
+      >
+        <SendEmailBlock
+          variants={footerItemsVariants}
+          ref={sendEmailRef}
+          initial="hidden"
+          animate={isEmailInView ? 'visible' : 'hidden'}
+          exit="hidden"
+        >
           <SendEmailTitle>Send Email</SendEmailTitle>
 
           <SendEmailForm onSubmit={onSubmit}>
@@ -55,7 +99,13 @@ const Footer = () => {
             {/* <div style={}></div> */}
           </SendEmailForm>
         </SendEmailBlock>
-        <ContactBlock>
+        <ContactBlock
+          variants={footerItemsVariants}
+          ref={contactRef}
+          initial="hidden"
+          animate={isContactInView ? 'visible' : 'hidden'}
+          exit="hidden"
+        >
           <ContactTitle>Contact</ContactTitle>
 
           <EmailBlock>
@@ -151,6 +201,12 @@ const Footer = () => {
               />
             </Link>
           </SocialMediaBlock>
+          <Button
+            text="Call me"
+            color={theme.colors.primary}
+            textColor={theme.colors.black}
+            wrapperStyle={{ marginTop: '1.4rem', width: '100%' }}
+          />
         </ContactBlock>
       </Container>
     </StyledFooter>

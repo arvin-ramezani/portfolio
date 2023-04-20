@@ -105,6 +105,10 @@ table {
     
     background-color: ${theme.backgroundColors.primary};
     color: ${theme.colors.textSecondary};
+
+    & section {
+      overflow-x: hidden !important;
+    }
   }
 
   /* a {
@@ -135,6 +139,7 @@ export const Container = styled(motion.div)`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow: hidden !important;
 
   @media (min-width: ${theme.breakpoints.sm}) {
     /* max-width: 600px; */
