@@ -6,7 +6,7 @@ export const StyledLangSelectBox = styled(motion.select)`
   padding: 0.3rem 0.7rem;
   border-radius: 0.3rem;
   background: transparent;
-  font-family: Roboto;
+  font-family: Roboto, Vazir;
   cursor: pointer;
 
   color: ${({ theme }) => theme.colors.textPrimary};

@@ -31,6 +31,7 @@ export const StyledOutlineBtn = styled(motion.button)<{ color: string }>`
   background-color: transparent;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  font-family: Roboto, Vazir;
   font-size: 0.7rem;
   font-weight: 500;
 

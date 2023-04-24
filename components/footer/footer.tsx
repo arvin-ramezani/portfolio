@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { FormEvent, useRef } from 'react';
+import React, { FormEvent, useRef, useState } from 'react';
 import { Variants, useInView } from 'framer-motion';
 import { CSSProperties } from 'styled-components';
 
@@ -21,41 +21,24 @@ import { Container } from '@/styles/global.styled';
 import Button from '../common/button/button';
 import { theme } from '@/styles/theme.styled';
 import StarsCanvas from '../stars-canvas/stars-canvas';
-
-const footerContainerVariants: Variants = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const footerItemsVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    scale: 0,
-  },
-  visible: {
-    opacity: 1,
-    scale: 1,
-
-    transition: {
-      duration: 1.8,
-      delay: 0.6,
-    },
-  },
-};
+import {
+  footerContainerVariants,
+  footerItemsVariants,
+} from './footer.variants';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 const Footer = () => {
   const sendEmailRef = useRef(null);
   const contactRef = useRef(null);
   const isEmailInView = useInView(sendEmailRef);
   const isContactInView = useInView(contactRef);
+  const { t: translator } = useTranslation('home');
+  const { t: translatorCommon } = useTranslation('common');
+  const router = useRouter();
+  const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
+    router.locale === 'fa' ? 'rtl' : 'ltr'
+  );
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -87,27 +70,29 @@ const Footer = () => {
           animate={isEmailInView ? 'visible' : 'hidden'}
           exit="hidden"
         >
-          <SendEmailTitle>Send Email</SendEmailTitle>
+          <SendEmailTitle>
+            {translator('footer_send_email_title')}
+          </SendEmailTitle>
 
           <SendEmailForm onSubmit={onSubmit}>
             <StyledInput
-              placeholder="* Your Name"
+              placeholder={`* ${translatorCommon('name_input_label')}`}
               required
             />
             <StyledInput
               type="email"
-              placeholder="* Your Email"
+              placeholder={`* ${translatorCommon('email_input_label')}`}
               required
             />
 
             <StyledTextarea
               rows={4}
-              placeholder="* Your Message"
+              placeholder={`* ${translatorCommon('message_input_label')}`}
               required
             />
 
             <Button
-              text="Submit"
+              text={translatorCommon('submit_btn')}
               color={theme.colors.textPrimary}
               textColor={theme.colors.black}
               wrapperStyle={{ marginTop: '1.4rem', width: '100%' }}
@@ -121,10 +106,13 @@ const Footer = () => {
           initial="hidden"
           animate={isContactInView ? 'visible' : 'hidden'}
           exit="hidden"
+          pagedir={pageDir}
         >
-          <ContactTitle>Contact</ContactTitle>
+          <ContactTitle pagedir={pageDir}>
+            {translator('footer_contact')}
+          </ContactTitle>
 
-          <EmailBlock>
+          <EmailBlock pagedir={pageDir}>
             <Image
               src="/images/icons/phone.svg"
               alt="Phone Icon"
@@ -134,7 +122,7 @@ const Footer = () => {
             <p>+98 936 159 9686</p>
           </EmailBlock>
 
-          <EmailBlock>
+          <EmailBlock pagedir={pageDir}>
             <Image
               src="/images/icons/mail-icon.svg"
               alt="Email Icon"
@@ -144,7 +132,7 @@ const Footer = () => {
             <p>a.plus.webb@gmail.com</p>
           </EmailBlock>
 
-          <LocationBlock>
+          <LocationBlock pagedir={pageDir}>
             <Image
               src="/images/icons/location.svg"
               alt="Location Icon"
@@ -152,7 +140,7 @@ const Footer = () => {
               height={46}
             />
 
-            <p>Iran / Mazandaran / Babolsar</p>
+            <p>{translator('footer_location_text')}</p>
           </LocationBlock>
 
           <SocialMediaBlock>
@@ -218,7 +206,7 @@ const Footer = () => {
             </Link>
           </SocialMediaBlock>
           <Button
-            text="Call me"
+            text={translatorCommon('call_me_btn')}
             color={theme.colors.primary}
             textColor={theme.colors.black}
             wrapperStyle={{ marginTop: '1.4rem', width: '100%' }}

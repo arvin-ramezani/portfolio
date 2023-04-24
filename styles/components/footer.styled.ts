@@ -15,7 +15,6 @@ export const StyledFooter = styled.footer`
   & h3 {
     font-size: 2rem;
     font-weight: 700;
-    margin: 3rem 0;
   }
 
   & form {
@@ -43,6 +42,7 @@ export const SendEmailBlock = styled(motion.div)`
 
 export const SendEmailTitle = styled.h3`
   align-self: center;
+  margin: 3rem 0;
 
   @media (min-width: ${theme.breakpoints.md}) {
     align-self: flex-start;
@@ -60,7 +60,7 @@ export const StyledInput = styled.input`
   margin: 0.5rem 0rem;
   padding: 0.6rem;
   border-radius: 0.3rem;
-  font: 1rem Roboto;
+  font: 1rem Roboto, Vazir;
 
   &:focus {
     outline: 1px solid ${({ theme }) => theme.colors.primary};
@@ -72,24 +72,33 @@ export const StyledTextarea = styled.textarea`
   width: 100%;
   padding: 0.6rem;
   border-radius: 0.3rem;
-  font: 1rem Roboto;
+  font: 1rem Roboto, Vazir;
 
   &:focus {
     outline: 1px solid ${({ theme }) => theme.colors.primary};
   }
 `;
 
-export const ContactBlock = styled(motion.div)`
+export const ContactBlock = styled(motion.div)<{ pagedir: 'rtl' | 'ltr' }>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')};
 
   @media (min-width: ${theme.breakpoints.md}) {
     align-items: flex-start;
   }
 `;
 
-export const ContactTitle = styled.h3``;
+export const ContactTitle = styled.h3<{ pagedir: 'rtl' | 'ltr' }>`
+  /* margin: ${({ pagedir }) =>
+    pagedir === 'rtl' ? '3rem 0 3rem auto' : '3rem auto 3rem 0'}; */
+
+  margin-right: ${({ pagedir }) => (pagedir === 'rtl' ? '0' : '0')};
+  margin-left: ${({ pagedir }) => (pagedir === 'rtl' ? 'auto' : '0')};
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+`;
 
 export const SocialMediaBlock = styled.div`
   padding: 1rem 2rem;
@@ -103,20 +112,22 @@ export const SocialMediaBlock = styled.div`
   }
 `;
 
-export const LocationBlock = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 1rem;
-`;
-
-export const EmailBlock = styled.div`
+export const EmailBlock = styled.div<{ pagedir: 'rtl' | 'ltr' }>`
   display: flex;
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 1rem;
+  /* direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')}; */
 
   & p {
     margin-top: 0.3rem;
   }
+`;
+
+export const LocationBlock = styled.div<{ pagedir: 'rtl' | 'ltr' }>`
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  /* direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')}; */
 `;

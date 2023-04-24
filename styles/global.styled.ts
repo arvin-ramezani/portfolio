@@ -149,7 +149,7 @@ table {
   body {
     margin: 0;
     padding: 0;
-    font-family: Roboto;
+    font-family: Roboto, Vazir;
     overflow-x: hidden !important;
     scroll-behavior: smooth;
     

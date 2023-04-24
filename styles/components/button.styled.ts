@@ -10,13 +10,13 @@ export const StyledButton = styled(motion.button)<{
   border-radius: 0.3rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  font-family: Roboto, Vazir;
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: 900;
   width: 100%;
 
   background-color: ${({ color }) => color};
   color: ${({ textcolor }) => textcolor};
-  font-weight: 900;
 
   &:focus {
     outline: 1px solid ${({ theme }) => theme.colors.secondary};

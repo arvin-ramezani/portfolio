@@ -10,10 +10,12 @@ import {
   StyledProjectsTitle,
 } from '@/styles/components/projects-section.styled';
 import { Container } from '@/styles/global.styled';
+import { useTranslation } from 'next-i18next';
 
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
+  const { t: translator } = useTranslation('home');
 
   return (
     <StyledProjectsSection
@@ -48,7 +50,9 @@ const ProjectsSection = () => {
       <StyledDarkLayout />
 
       <Container id="projectsSectionContainer">
-        <StyledProjectsTitle>My Projects</StyledProjectsTitle>
+        <StyledProjectsTitle>
+          {translator('projects_title')}
+        </StyledProjectsTitle>
 
         <StyledComingSoon>
           <TypeWriter text={['Coming Soon...!!']} />
