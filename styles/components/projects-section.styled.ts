@@ -42,6 +42,12 @@ export const StyledProjectsSection = styled.section`
     z-index: -1;
   }
 
+  & #projectsSectionContainer {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+  }
+
   @media (min-width: ${theme.breakpoints.lg}) {
     & #projectsSectionContainer {
       flex-direction: column;
@@ -111,6 +117,7 @@ export const StyledComingSoon = styled(motion.div)`
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
 
   @media (min-width: ${theme.breakpoints.md}) {
     font-size: 2.8rem;

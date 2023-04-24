@@ -51,7 +51,7 @@ const ProjectsSection = () => {
         <StyledProjectsTitle>My Projects</StyledProjectsTitle>
 
         <StyledComingSoon>
-          <TypeWriter text={['Coming Soon...']} />
+          <TypeWriter text={['Coming Soon...!!']} />
         </StyledComingSoon>
       </Container>
 
