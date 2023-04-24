@@ -3,7 +3,7 @@ import { theme } from '../theme.styled';
 import { motion } from 'framer-motion';
 
 export const StyledHeroSection = styled.section`
-  min-height: 100vh;
+  min-height: 80vh;
   /* display: flex;
   align-items: center;
   justify-content: center; */

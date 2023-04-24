@@ -1,12 +1,16 @@
 import React, { useRef } from 'react';
 
 import {
+  StyledComingSoon,
   StyledDarkLayout,
   StyledProjectsSection,
   StyledProjectsTitle,
 } from '@/styles/components/projects-section.styled';
 import Image from 'next/image';
 import { useInView } from 'framer-motion';
+import ProjectsComingSoon from '../projects-coming-soon/projects-coming-soon';
+import TypeWriter from '../common/type-writer';
+import { Container } from '@/styles/global.styled';
 
 const ProjectsSection = () => {
   const ref = useRef(null);
@@ -46,7 +50,13 @@ const ProjectsSection = () => {
       </video>
       <StyledDarkLayout />
 
-      <StyledProjectsTitle>My Projects</StyledProjectsTitle>
+      <Container>
+        <StyledProjectsTitle>My Projects</StyledProjectsTitle>
+
+        <StyledComingSoon>
+          <TypeWriter text={['Coming Soon...']} />
+        </StyledComingSoon>
+      </Container>
 
       <Image
         id="projectsSectionLgBgBottom"

@@ -86,7 +86,6 @@ export const StyledDarkLayout = styled.div`
 `;
 
 export const StyledProjectsTitle = styled(motion.h2)`
-  margin-left: 25%;
   margin-top: 1rem;
   font-size: 2rem;
   font-weight: 700;
@@ -100,4 +99,13 @@ export const StyledProjectsTitle = styled(motion.h2)`
     font-size: 4rem;
     margin-top: 5rem;
   }
+`;
+
+export const StyledComingSoon = styled(motion.div)`
+  font-size: 2rem;
+  width: 90%;
+  margin-top: 2rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
 `;

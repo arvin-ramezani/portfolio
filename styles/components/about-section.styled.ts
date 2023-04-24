@@ -14,7 +14,7 @@ export const StyledAboutSection = styled.section`
     margin: 3rem auto 3rem;
 
     @media (min-width: ${theme.breakpoints.md}) {
-      min-height: 80vh;
+      /* min-height: 80vh; */
       /* display: grid; */
     }
 
@@ -23,6 +23,20 @@ export const StyledAboutSection = styled.section`
       flex-wrap: wrap;
       align-items: stretch;
     }
+  }
+
+  @media (min-width: ${theme.breakpoints.lg}) {
+    align-items: flex-start;
+    min-height: 80vh;
+
+    & > div {
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: ${theme.breakpoints.xxl}) {
+    align-items: center;
+    min-height: 80vh;
   }
 `;
 
