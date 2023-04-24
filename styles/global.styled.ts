@@ -51,7 +51,56 @@ table {
 }
 
 
-   @font-face {
+/* Vazir Fonts */
+
+@font-face {
+  font-family: Vazir;
+  
+  src: url('/fonts/vazir/Vazir-Thin.ttf') format('truetype');
+  font-weight: 100;
+}
+      
+@font-face {
+  font-family: Vazir;
+  
+  src: url('/fonts/vazir/Vazir-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Vazir;
+  
+    src: url('/fonts/vazir/Vazir-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Vazir;
+
+    src: url('/fonts/vazir/Vazir-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Vazir;
+
+    src: url('/fonts/vazir/Vazir-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Vazir;
+
+    src: url('/fonts/vazir/Vazir-Black.ttf') format('truetype');
+  font-weight: 900;
+}
+
+
+
+
+
+/* Roboto Fonts */
+@font-face {
   font-family: Roboto;
   
   src: url('/fonts/Roboto/Roboto-Thin.ttf') format('truetype');

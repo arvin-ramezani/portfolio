@@ -50,7 +50,7 @@ export const AboutImageBlock = styled(motion.div)`
     height: 280px;
   }
 
-  @media (min-width: ${theme.breakpoints.xxl}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     margin: 0;
   }
 `;

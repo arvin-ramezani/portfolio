@@ -17,8 +17,12 @@ export const StyledHeader = styled(motion.header)`
   }
 `;
 
-export const Logo = styled(Image)`
-  margin-right: auto;
+export const Logo = styled(Image)<{ pagedir: 'rtl' | 'ltr' }>`
+  /* margin-right: auto; */
+
+  margin: ${({ pagedir }) => (pagedir === 'rtl' ? '0 0 0 auto' : '0 auto 0 0')};
+  /* margin: ${({ pagedir }) =>
+    pagedir === 'rtl' ? '0 0 0 auto' : '0 auto 0 0'}; */
 
   @media (min-width: ${theme.breakpoints.md}) {
     width: 145px;

@@ -24,8 +24,6 @@ const AboutSection = () => {
   const isTextInView = useInView(textRef);
   const isSkillsInView = useInView(skillsRef);
 
-  // console.log(isInView);
-
   return (
     <StyledAboutSection>
       <Container>
