@@ -1,21 +1,13 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Variants, motion } from 'framer-motion';
+import { buttonVariants } from './outline-btn.variants';
 
 interface OutlineBtnProps {
   text: string;
   onClick: () => void;
   color: string;
 }
-
-const buttonVariants: Variants = {
-  hover: {
-    scale: 1.1,
-  },
-  tap: {
-    scale: 0.9,
-  },
-};
 
 const OutlineBtn: FC<OutlineBtnProps> = ({ text, onClick, color }) => {
   return (

@@ -4,9 +4,6 @@ import { motion } from 'framer-motion';
 
 export const StyledHeroSection = styled.section`
   min-height: 80vh;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 
   & > div {
     height: 100%;
@@ -22,12 +19,10 @@ export const StyledHeroSection = styled.section`
 `;
 
 export const HeroTextContainer = styled(motion.div)`
-  /* margin-top: 3rem; */
   height: 60vh;
   display: flex;
   flex-direction: column;
   text-align: center;
-  /* align-items: center; */
 
   & > p {
     margin-top: 3rem;
@@ -38,7 +33,6 @@ export const HeroTextContainer = styled(motion.div)`
   }
 
   & > h1 {
-    /* font-size: 3rem; */
     font-size: clamp(3rem, 8vw, 5rem);
     line-height: 1.2;
     font-weight: 700;
@@ -58,7 +52,6 @@ export const HeroTextContainer = styled(motion.div)`
   @media (min-width: ${theme.breakpoints.md}) {
     text-align: start;
     height: auto;
-    /* max-width: 380px; */
     flex: 1;
 
     & button {

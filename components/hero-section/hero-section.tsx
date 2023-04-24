@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React, { useRef } from 'react';
-import { useInView } from 'framer-motion';
 
 import {
   HeroImageContainer,
@@ -8,7 +7,7 @@ import {
   StyledHeroSection,
 } from '@/styles/components/hero-section.styled';
 import { Container } from '@/styles/global.styled';
-import Button from '../common/button';
+import Button from '../common/button/button';
 import { theme } from '@/styles/theme.styled';
 import { HeroImageVariants, HeroTextVariants } from './hero-section.variants';
 

@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
+
 import styled from 'styled-components';
 import { theme } from '../theme.styled';
-import { motion } from 'framer-motion';
 
 export const StyledProjectsSection = styled.section`
   position: relative;
@@ -42,6 +43,10 @@ export const StyledProjectsSection = styled.section`
   }
 
   @media (min-width: ${theme.breakpoints.lg}) {
+    & #projectsSectionContainer {
+      flex-direction: column;
+    }
+
     & #projectsSectionSmBgTop,
     & #projectsSectionSmBgBottom {
       display: none;
@@ -63,8 +68,6 @@ export const StyledProjectsSection = styled.section`
 
     & > img {
       margin-top: -0.2rem;
-      /* width: 992;
-      height: 72px; */
     }
   }
 
@@ -102,10 +105,18 @@ export const StyledProjectsTitle = styled(motion.h2)`
 `;
 
 export const StyledComingSoon = styled(motion.div)`
-  font-size: 2rem;
+  font-size: 1.8rem;
   width: 90%;
   margin-top: 2rem;
   flex: 1;
   display: flex;
   align-items: center;
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    font-size: 2.8rem;
+  }
+
+  @media (min-width: ${theme.breakpoints.xl}) {
+    font-size: 3.8rem;
+  }
 `;

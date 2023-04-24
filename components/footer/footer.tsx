@@ -1,3 +1,9 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { FormEvent, useRef } from 'react';
+import { Variants, useInView } from 'framer-motion';
+import { CSSProperties } from 'styled-components';
+
 import {
   ContactBlock,
   ContactTitle,
@@ -12,12 +18,9 @@ import {
   StyledTextarea,
 } from '@/styles/components/footer.styled';
 import { Container } from '@/styles/global.styled';
-import Image from 'next/image';
-import Link from 'next/link';
-import React, { FormEvent, useRef } from 'react';
-import Button from '../common/button';
+import Button from '../common/button/button';
 import { theme } from '@/styles/theme.styled';
-import { Variants, useInView } from 'framer-motion';
+import StarsCanvas from '../stars-canvas/stars-canvas';
 
 const footerContainerVariants: Variants = {
   hidden: {
@@ -58,8 +61,18 @@ const Footer = () => {
     e.preventDefault();
   };
 
+  const starsCanvasStyles: CSSProperties = {
+    position: 'absolute',
+    top: '0px',
+    left: '0px',
+    width: '100%',
+    height: '100%',
+  };
+
   return (
     <StyledFooter>
+      <StarsCanvas styles={starsCanvasStyles} />
+
       <Container
         variants={footerContainerVariants}
         initial="hidden"

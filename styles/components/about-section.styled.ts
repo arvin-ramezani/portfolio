@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
 import { theme } from '../theme.styled';
 
 export const StyledAboutSection = styled.section`
@@ -12,11 +13,6 @@ export const StyledAboutSection = styled.section`
     margin-top: 3rem;
     gap: 5rem;
     margin: 3rem auto 3rem;
-
-    @media (min-width: ${theme.breakpoints.md}) {
-      /* min-height: 80vh; */
-      /* display: grid; */
-    }
 
     @media (min-width: ${theme.breakpoints.lg}) {
       flex-direction: row;
@@ -49,8 +45,6 @@ export const AboutImageBlock = styled(motion.div)`
   margin: auto;
 
   & img {
-    /* width: 100% !important; */
-    /* height: auto !important; */
     border-radius: 50% !important;
     width: 280px;
     height: 280px;
@@ -98,7 +92,6 @@ export const AboutTitle = styled(motion.h2)`
 `;
 
 export const AboutSkillsContainer = styled(motion.div)`
-  /* flex: 2; */
   flex: none;
 
   font-size: 1.4rem;

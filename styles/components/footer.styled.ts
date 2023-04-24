@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-import { theme } from '../theme.styled';
 import { motion } from 'framer-motion';
+
+import { theme } from '../theme.styled';
 
 export const StyledFooter = styled.footer`
   min-height: 70vh;
   padding: 4rem 0;
+  position: relative;
 
   & > div {
     flex-direction: column-reverse;
@@ -28,19 +30,13 @@ export const StyledFooter = styled.footer`
       align-items: flex-start !important;
     }
 
-    /* & > div > div {
-      flex: 1;
-    } */
-
     & form {
-      /* width: 50%; */
       margin: 0;
     }
   }
 `;
 
 export const SendEmailBlock = styled(motion.div)`
-  /* flex: 1; */
   display: flex;
   flex-direction: column;
 `;
@@ -57,7 +53,6 @@ export const SendEmailForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 100%; */
 `;
 
 export const StyledInput = styled.input`

@@ -112,27 +112,6 @@ table {
     }
   }
 
-  /* a {
-    text-underline-offset: 6px;
-    font-size: .8rem;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  ul li {
-    list-style-type: none;
-    
-  } */
-
-
-
 `;
 
 export const Container = styled(motion.div)`
@@ -143,11 +122,9 @@ export const Container = styled(motion.div)`
   overflow: hidden !important;
 
   @media (min-width: ${theme.breakpoints.sm}) {
-    /* max-width: 600px; */
   }
 
   @media (min-width: ${theme.breakpoints.md}) {
-    /* max-width: 900px; */
   }
 
   @media (min-width: ${theme.breakpoints.lg}) {
@@ -158,6 +135,8 @@ export const Container = styled(motion.div)`
   }
 
   @media (min-width: ${theme.breakpoints.xl}) {
-    /* max-width: 1200px; */
+  }
+
+  @media (min-width: ${theme.breakpoints.xxl}) {
   }
 `;

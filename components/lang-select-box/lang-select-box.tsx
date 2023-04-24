@@ -1,16 +1,7 @@
 import React from 'react';
 
 import { StyledLangSelectBox } from '@/styles/components/lang-select-box.styled';
-import { Variants } from 'framer-motion';
-
-const selectBoxVariants: Variants = {
-  hover: {
-    scale: 1.1,
-  },
-  tap: {
-    scale: 1.3,
-  },
-};
+import { selectBoxVariants } from './lang-select-box.variants';
 
 const LangSelectBox = () => {
   return (

@@ -1,8 +1,12 @@
 import { Preload, Points, PointMaterial } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
-import React, { useRef, FC } from 'react';
+import React, { useRef, FC, CSSProperties } from 'react';
 import styled from 'styled-components';
 import * as random from 'maath/random/dist/maath-random.cjs';
+
+interface StarsCanvasProps {
+  styles?: CSSProperties;
+}
 
 const Stars: FC = (props) => {
   const ref = useRef(null);
@@ -39,9 +43,9 @@ const Stars: FC = (props) => {
   );
 };
 
-const StarsCanvas = () => {
+const StarsCanvas: FC<StarsCanvasProps> = ({ styles }) => {
   return (
-    <StyledStarsCanvas>
+    <StyledStarsCanvas style={styles}>
       <Canvas camera={{ position: [0, 0, 1] }}>
         <Stars />
 
@@ -57,6 +61,8 @@ export const StyledStarsCanvas = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -1;
 `;
 

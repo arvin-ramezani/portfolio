@@ -4,6 +4,7 @@ import {
 } from '@/styles/components/button.styled';
 import { Variants, motion } from 'framer-motion';
 import React, { CSSProperties, FC } from 'react';
+import { buttonVariants } from './button.variants';
 
 interface ButtonProps {
   text: string;
@@ -12,15 +13,6 @@ interface ButtonProps {
   textColor: string;
   wrapperStyle?: CSSProperties;
 }
-
-const buttonVariants: Variants = {
-  hover: {
-    scale: 1.1,
-  },
-  tap: {
-    scale: 0.9,
-  },
-};
 
 const Button: FC<ButtonProps> = ({
   text,

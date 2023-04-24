@@ -1,4 +1,7 @@
 import React, { useRef } from 'react';
+import Image from 'next/image';
+import { useInView } from 'framer-motion';
+import TypeWriter from '../common/type-writer/type-writer';
 
 import {
   StyledComingSoon,
@@ -6,17 +9,11 @@ import {
   StyledProjectsSection,
   StyledProjectsTitle,
 } from '@/styles/components/projects-section.styled';
-import Image from 'next/image';
-import { useInView } from 'framer-motion';
-import ProjectsComingSoon from '../projects-coming-soon/projects-coming-soon';
-import TypeWriter from '../common/type-writer';
 import { Container } from '@/styles/global.styled';
 
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
-
-  console.log(isInView, '--');
 
   return (
     <StyledProjectsSection
@@ -50,7 +47,7 @@ const ProjectsSection = () => {
       </video>
       <StyledDarkLayout />
 
-      <Container>
+      <Container id="projectsSectionContainer">
         <StyledProjectsTitle>My Projects</StyledProjectsTitle>
 
         <StyledComingSoon>
