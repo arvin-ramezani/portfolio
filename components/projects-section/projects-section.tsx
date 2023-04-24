@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import {
   StyledDarkLayout,
@@ -6,10 +6,19 @@ import {
   StyledProjectsTitle,
 } from '@/styles/components/projects-section.styled';
 import Image from 'next/image';
+import { useInView } from 'framer-motion';
 
 const ProjectsSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  console.log(isInView, '--');
+
   return (
-    <StyledProjectsSection>
+    <StyledProjectsSection
+      id={'projects'}
+      ref={ref}
+    >
       <Image
         id="projectsSectionSmBgTop"
         src="/images/projects-section-background-top.svg"

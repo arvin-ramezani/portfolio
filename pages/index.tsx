@@ -22,7 +22,7 @@ export default function Home() {
           content="Arvin Ramezani Portfolio"
         />
       </Head>
-      <main>
+      <main style={{ scrollBehavior: 'smooth' }}>
         <StarsCanvas />
         <Header />
         <HeroSection />

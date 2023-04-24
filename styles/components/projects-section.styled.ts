@@ -9,6 +9,7 @@ export const StyledProjectsSection = styled.section`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  scroll-behavior: smooth;
 
   & > #projectsSectionLgBgTop,
   & > #projectsSectionLgBgBottom {

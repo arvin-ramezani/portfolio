@@ -7,7 +7,7 @@ export const StyledHeader = styled(motion.header)`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding: 1rem 0;
+    padding: 1rem;
   }
 `;
 

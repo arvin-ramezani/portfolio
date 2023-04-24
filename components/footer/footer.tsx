@@ -92,7 +92,7 @@ const Footer = () => {
 
             <Button
               text="Submit"
-              color={theme.colors.primary}
+              color={theme.colors.textPrimary}
               textColor={theme.colors.black}
               wrapperStyle={{ marginTop: '1.4rem', width: '100%' }}
             />

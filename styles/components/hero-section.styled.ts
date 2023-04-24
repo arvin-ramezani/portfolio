@@ -60,6 +60,11 @@ export const HeroTextContainer = styled(motion.div)`
     height: auto;
     /* max-width: 380px; */
     flex: 1;
+
+    & button {
+      font-size: 1rem;
+      padding: 0.8rem 0;
+    }
   }
 `;
 

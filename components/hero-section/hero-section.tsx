@@ -18,16 +18,18 @@ function HeroSection() {
       <Container>
         <HeroTextContainer
           variants={HeroTextVariants}
-          initial='hidden'
-          animate='visible'
+          initial="hidden"
+          animate="visible"
         >
           <p>FAST WEB APPLICATIONS WITH REACT.JS AND NODE.JS</p>
 
           <h1>Bring your online dreams to life</h1>
 
           <Button
-            text='Call Me'
-            onClick={() => {}}
+            text="Call Me"
+            onClick={() => {
+              console.log('first');
+            }}
             color={theme.colors.primary}
             textColor={theme.colors.black}
           />
@@ -35,12 +37,12 @@ function HeroSection() {
 
         <HeroImageContainer
           variants={HeroImageVariants}
-          initial='hidden'
-          animate='visible'
+          initial="hidden"
+          animate="visible"
         >
           <Image
-            src='/images/freelancer.svg'
-            alt='FreeLancer'
+            src="/images/freelancer.svg"
+            alt="FreeLancer"
             fill
           />
         </HeroImageContainer>

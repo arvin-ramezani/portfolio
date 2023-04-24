@@ -35,13 +35,16 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang='en'>
+      <Html
+        lang="en"
+        style={{ scrollBehavior: 'smooth' }}
+      >
         <Head>
-          <meta charSet='utf-8' />
+          <meta charSet="utf-8" />
 
           <link
-            rel='icon'
-            href='/images/a-plus-logo.svg'
+            rel="icon"
+            href="/images/a-plus-logo.svg"
           />
         </Head>
 

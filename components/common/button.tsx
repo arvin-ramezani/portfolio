@@ -2,6 +2,7 @@ import {
   StyledButton,
   StyledButtonWrapper,
 } from '@/styles/components/button.styled';
+import { Variants, motion } from 'framer-motion';
 import React, { CSSProperties, FC } from 'react';
 
 interface ButtonProps {
@@ -11,6 +12,15 @@ interface ButtonProps {
   textColor: string;
   wrapperStyle?: CSSProperties;
 }
+
+const buttonVariants: Variants = {
+  hover: {
+    scale: 1.1,
+  },
+  tap: {
+    scale: 0.9,
+  },
+};
 
 const Button: FC<ButtonProps> = ({
   text,
@@ -26,8 +36,12 @@ const Button: FC<ButtonProps> = ({
       style={wrapperStyle}
     >
       <StyledButton
+        as={motion.button}
+        variants={buttonVariants}
+        whileHover={'hover'}
+        whileTap={'tap'}
         color={color}
-        textColor={textColor}
+        textcolor={textColor}
       >
         {text}
       </StyledButton>

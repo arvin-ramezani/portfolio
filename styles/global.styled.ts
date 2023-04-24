@@ -102,6 +102,7 @@ table {
     padding: 0;
     font-family: Roboto;
     overflow-x: hidden !important;
+    scroll-behavior: smooth;
     
     background-color: ${theme.backgroundColors.primary};
     color: ${theme.colors.textSecondary};

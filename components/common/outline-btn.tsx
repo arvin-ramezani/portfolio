@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { Variants, motion } from 'framer-motion';
 
 interface OutlineBtnProps {
   text: string;
@@ -8,10 +8,26 @@ interface OutlineBtnProps {
   color: string;
 }
 
+const buttonVariants: Variants = {
+  hover: {
+    scale: 1.1,
+  },
+  tap: {
+    scale: 0.9,
+  },
+};
+
 const OutlineBtn: FC<OutlineBtnProps> = ({ text, onClick, color }) => {
   return (
     <StyledOutlineBtnContainer onClick={onClick}>
-      <StyledOutlineBtn color={color}>{text}</StyledOutlineBtn>
+      <StyledOutlineBtn
+        variants={buttonVariants}
+        whileHover={'hover'}
+        whileTap={'tap'}
+        color={color}
+      >
+        {text}
+      </StyledOutlineBtn>
     </StyledOutlineBtnContainer>
   );
 };
