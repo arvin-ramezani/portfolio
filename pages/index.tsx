@@ -9,6 +9,7 @@ import ProjectsSection from '@/components/projects-section/projects-section';
 import Footer from '@/components/footer/footer';
 import StarsCanvas from '@/components/stars-canvas/stars-canvas';
 import { GetStaticProps } from 'next';
+import GoToUp from '@/components/ui/go-to-up/go-to-up';
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -44,14 +45,20 @@ export default function Home() {
           content="Arvin Ramezani Portfolio"
         />
       </Head>
+
+      <StarsCanvas />
+
+      <GoToUp />
+
+      <Header />
+
       <main style={{ scrollBehavior: 'smooth' }}>
-        <StarsCanvas />
-        <Header />
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
-        <Footer />
       </main>
+
+      <Footer />
     </>
   );
 }

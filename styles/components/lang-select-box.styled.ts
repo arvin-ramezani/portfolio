@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const StyledLangSelectBox = styled(motion.select)`
-  margin-left: 0.5rem;
   padding: 0.3rem 0.7rem;
   border-radius: 0.3rem;
   background: transparent;

@@ -83,7 +83,8 @@ export const ContactBlock = styled(motion.div)<{ pagedir: 'rtl' | 'ltr' }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')};
+  direction: ltr;
+  /* direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')}; */
 
   @media (min-width: ${theme.breakpoints.md}) {
     align-items: flex-start;

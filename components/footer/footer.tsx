@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { FormEvent, useRef, useState } from 'react';
+import React, { FormEvent, useEffect, useRef, useState } from 'react';
 import { Variants, useInView } from 'framer-motion';
 import { CSSProperties } from 'styled-components';
 
@@ -18,7 +18,7 @@ import {
   StyledTextarea,
 } from '@/styles/components/footer.styled';
 import { Container } from '@/styles/global.styled';
-import Button from '../common/button/button';
+import Button from '../ui/button/button';
 import { theme } from '@/styles/theme.styled';
 import StarsCanvas from '../stars-canvas/stars-canvas';
 import {
@@ -44,6 +44,10 @@ const Footer = () => {
     e.preventDefault();
   };
 
+  useEffect(() => {
+    setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
+  }, [router.locale]);
+
   const starsCanvasStyles: CSSProperties = {
     position: 'absolute',
     top: '0px',
@@ -60,7 +64,6 @@ const Footer = () => {
         variants={footerContainerVariants}
         initial="hidden"
         animate={'visible'}
-        // animate={isInView ? 'visible' : 'hidden'}
         exit="hidden"
       >
         <SendEmailBlock

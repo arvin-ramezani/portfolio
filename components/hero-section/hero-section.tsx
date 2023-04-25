@@ -7,7 +7,7 @@ import {
   StyledHeroSection,
 } from '@/styles/components/hero-section.styled';
 import { Container } from '@/styles/global.styled';
-import Button from '../common/button/button';
+import Button from '../ui/button/button';
 import { theme } from '@/styles/theme.styled';
 import { HeroImageVariants, HeroTextVariants } from './hero-section.variants';
 import { useTranslation } from 'next-i18next';

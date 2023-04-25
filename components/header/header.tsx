@@ -2,12 +2,14 @@ import { useRouter } from 'next/router';
 import React, { useState, useEffect } from 'react';
 
 import { Logo, StyledHeader } from '@/styles/components/header.styled';
-import OutlineBtn from '../common/outline-btn/outline-btn';
+import OutlineBtn from '../ui/outline-btn/outline-btn';
 import { theme } from '@/styles/theme.styled';
 import LangSelectBox from '../lang-select-box/lang-select-box';
 import { Container } from '@/styles/global.styled';
 import { HeaderItemsVariants } from './header.variants';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
   const router = useRouter();
@@ -41,10 +43,11 @@ const Header = () => {
         />
 
         <OutlineBtn
-          onClick={() => router.push('/#projects')}
+          onClick={() => router.push('/', '/#projects', { scroll: false })}
           color={theme.colors.primary}
           text={translatorCommon('my_projects_btn')}
         />
+
         <LangSelectBox />
       </Container>
     </StyledHeader>

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Image from 'next/image';
 import { useInView } from 'framer-motion';
-import TypeWriter from '../common/type-writer/type-writer';
+import TypeWriter from '../ui/type-writer/type-writer';
 
 import {
   StyledComingSoon,

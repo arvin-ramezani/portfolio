@@ -15,6 +15,19 @@ export const StyledHeader = styled(motion.header)`
       width: 90%;
     }
   }
+
+  & button {
+    margin: 0 0.4rem;
+  }
+`;
+
+export const StyledArrowUp = styled(motion.div)`
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 64px;
+  height: 64px;
+  z-index: 5;
 `;
 
 export const Logo = styled(Image)<{ pagedir: 'rtl' | 'ltr' }>`

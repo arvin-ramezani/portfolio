@@ -24,7 +24,7 @@ export const footerItemsVariants: Variants = {
 
     transition: {
       duration: 1.8,
-      delay: 0.6,
+      // delay: 0.2,
     },
   },
 };

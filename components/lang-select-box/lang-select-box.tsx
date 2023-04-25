@@ -1,10 +1,9 @@
+import { useRouter } from 'next/router';
 import React, { ChangeEvent, useEffect, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
 import { StyledLangSelectBox } from '@/styles/components/lang-select-box.styled';
 import { selectBoxVariants } from './lang-select-box.variants';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
-import { Url } from 'url';
 
 const LangSelectBox = () => {
   const router = useRouter();

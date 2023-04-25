@@ -5,7 +5,7 @@ import { theme } from '../theme.styled';
 
 export const StyledProjectsSection = styled.section`
   position: relative;
-  min-height: 100vh;
+  min-height: 95vh;
   width: 100vw;
   display: flex;
   flex-direction: column;

@@ -10,9 +10,9 @@ export const StyledAboutSection = styled.section`
   justify-content: center;
 
   & > div {
-    margin-top: 3rem;
-    gap: 5rem;
-    margin: 3rem auto 3rem;
+    /* margin-top: 3rem; */
+    gap: 3rem;
+    margin: 5rem auto;
 
     @media (min-width: ${theme.breakpoints.lg}) {
       flex-direction: row;
@@ -22,7 +22,7 @@ export const StyledAboutSection = styled.section`
   }
 
   @media (min-width: ${theme.breakpoints.lg}) {
-    align-items: flex-start;
+    align-items: center;
     min-height: 80vh;
 
     & > div {
@@ -31,8 +31,8 @@ export const StyledAboutSection = styled.section`
   }
 
   @media (min-width: ${theme.breakpoints.xxl}) {
-    align-items: center;
-    min-height: 80vh;
+    align-items: flex-start;
+    min-height: 50vh;
   }
 `;
 

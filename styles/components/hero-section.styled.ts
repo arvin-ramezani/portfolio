@@ -3,7 +3,7 @@ import { theme } from '../theme.styled';
 import { motion } from 'framer-motion';
 
 export const StyledHeroSection = styled.section`
-  min-height: 80vh;
+  min-height: 100vh;
 
   & > div {
     height: 100%;
@@ -13,8 +13,12 @@ export const StyledHeroSection = styled.section`
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      margin-top: 3rem;
+      margin-top: 5rem;
     }
+  }
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    min-height: 80vh;
   }
 `;
 
@@ -33,8 +37,8 @@ export const HeroTextContainer = styled(motion.div)`
   }
 
   & > h1 {
-    font-size: clamp(3rem, 8vw, 5rem);
-    line-height: 1.2;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.4;
     font-weight: 700;
   }
 
@@ -66,7 +70,7 @@ export const HeroImageContainer = styled(motion.div)`
   width: 300px;
   height: 300px;
 
-  @media (min-width: ${theme.breakpoints.xl}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     width: 500px;
     height: 500px;
     flex: 1;
