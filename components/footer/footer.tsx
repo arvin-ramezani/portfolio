@@ -3,6 +3,8 @@ import Link from 'next/link';
 import React, { FormEvent, useEffect, useRef, useState } from 'react';
 import { Variants, useInView } from 'framer-motion';
 import { CSSProperties } from 'styled-components';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 import {
   ContactBlock,
@@ -25,8 +27,6 @@ import {
   footerContainerVariants,
   footerItemsVariants,
 } from './footer.variants';
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
 
 const Footer = () => {
   const sendEmailRef = useRef(null);

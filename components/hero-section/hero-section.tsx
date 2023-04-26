@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React, { useRef } from 'react';
+import { useTranslation } from 'next-i18next';
 
 import {
   HeroImageContainer,
@@ -10,7 +11,6 @@ import { Container } from '@/styles/global.styled';
 import Button from '../ui/button/button';
 import { theme } from '@/styles/theme.styled';
 import { HeroImageVariants, HeroTextVariants } from './hero-section.variants';
-import { useTranslation } from 'next-i18next';
 
 function HeroSection() {
   const { t: translator } = useTranslation('home');

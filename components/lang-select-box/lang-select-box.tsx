@@ -13,17 +13,9 @@ const LangSelectBox = () => {
   const { t: translatorCommon } = useTranslation('common');
 
   const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    router.push('/', '/', { locale: e.target.value });
+    if (router.locale === e.target.value) return;
 
-    // if (e.target.value === 'fa') {
-    //   typeof document !== 'undefined' &&
-    //     document.body.style.direction === 'rtl';
-    //   return;
-    // } else {
-    //   typeof document !== 'undefined' &&
-    //     document.body.style.direction === 'ltr';
-    //   return;
-    // }
+    router.push('/', '/', { locale: e.target.value });
   };
 
   useEffect(() => {

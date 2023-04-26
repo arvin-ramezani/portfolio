@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useRef } from 'react';
 import { Variants, useInView } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
 
 import {
   AboutImageBlock,
@@ -15,7 +16,6 @@ import {
 } from '@/styles/components/about-section.styled';
 import { Container } from '@/styles/global.styled';
 import { AboutItemsVariants } from './about-section.variants';
-import { useTranslation } from 'next-i18next';
 
 const AboutSection = () => {
   const imageRef = useRef(null);

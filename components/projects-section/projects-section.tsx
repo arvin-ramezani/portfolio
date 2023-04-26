@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { useInView } from 'framer-motion';
 import TypeWriter from '../ui/type-writer/type-writer';
+import { useTranslation } from 'next-i18next';
 
 import {
   StyledComingSoon,
@@ -10,7 +11,6 @@ import {
   StyledProjectsTitle,
 } from '@/styles/components/projects-section.styled';
 import { Container } from '@/styles/global.styled';
-import { useTranslation } from 'next-i18next';
 
 const ProjectsSection = () => {
   const ref = useRef(null);
