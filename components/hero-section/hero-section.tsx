@@ -33,7 +33,7 @@ function HeroSection() {
           <Button
             text={translatorCommon('call_me_btn')}
             onClick={() => {
-              console.log('first');
+              // console.log('first');
             }}
             color={theme.colors.primary}
             textColor={theme.colors.black}

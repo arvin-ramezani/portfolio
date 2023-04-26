@@ -20,10 +20,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 };
 
 export default function Home() {
-  const { t: translator } = useTranslation();
-
-  console.log('translator', translator('home:hero_section_heading'));
-
   return (
     <>
       <Head>
@@ -34,7 +30,7 @@ export default function Home() {
         />
         <meta
           name="description"
-          content="Arvin Ramezani Portfolio"
+          content="A Plus Web Solutions"
         />
       </Head>
 
