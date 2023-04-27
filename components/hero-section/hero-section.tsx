@@ -24,14 +24,15 @@ function HeroSection() {
           initial="hidden"
           animate="visible"
         >
-          <p>{translator('hero_section_sub_heading')}</p>
-          {/* <p>FAST WEB APPLICATIONS WITH REACT.JS AND NODE.JS</p> */}
+          {/* <p>{translator('hero_section_sub_heading')}</p> */}
+          <p>برنامه های کاربردی وب سریع با REACT.JS و NODE.JS</p>
 
-          <h1>{translator('hero_section_heading')}</h1>
-          {/* <h1>Bring your online dreams to life</h1> */}
+          {/* <h1>{translator('hero_section_heading')}</h1> */}
+          <h1>رویاهای آنلاین خود را به واقعیت تبدیل کنید</h1>
 
           <Button
-            text={translatorCommon('call_me_btn')}
+            // text={translatorCommon('call_me_btn')}
+            text={'تماس بگیرید'}
             onClick={() => {
               // console.log('first');
             }}

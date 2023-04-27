@@ -11,13 +11,13 @@ import StarsCanvas from '@/components/stars-canvas/stars-canvas';
 import { GetStaticProps } from 'next';
 import GoToUp from '@/components/ui/go-to-up/go-to-up';
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale as string, ['home', 'common'])),
-    },
-  };
-};
+// export const getStaticProps: GetStaticProps = async ({ locale }) => {
+//   return {
+//     props: {
+//       ...(await serverSideTranslations(locale as string, ['home', 'common'])),
+//     },
+//   };
+// };
 
 export default function Home() {
   return (

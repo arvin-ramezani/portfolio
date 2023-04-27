@@ -51,7 +51,8 @@ const ProjectsSection = () => {
 
       <Container id="projectsSectionContainer">
         <StyledProjectsTitle>
-          {translator('projects_title')}
+          {/* {translator('projects_title')} */}
+          پروژه های من
         </StyledProjectsTitle>
 
         <StyledComingSoon>

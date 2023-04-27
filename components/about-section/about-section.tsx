@@ -52,7 +52,8 @@ const AboutSection = () => {
           animate={isTextInView ? 'animate' : 'exit'}
           exit={'exit'}
         >
-          <AboutTitle>{translator('about_title')}</AboutTitle>
+          <AboutTitle>{'درباره ی من'}</AboutTitle>
+          {/* <AboutTitle>{translator('about_title')}</AboutTitle> */}
           <p>
             <Image
               src="/images/Bullet.svg"
@@ -61,9 +62,9 @@ const AboutSection = () => {
               height={14}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
-            {/* Hello! My name is <strong>Arvin Ramezani</strong>. I’m 30 years old
-            living in Iran / Mazandaran / Babolsar. */}
-            {translator('about_text_1')}
+            {/* {translator('about_text_1')} */}
+            سلام! من آروین رمضانی هستم. 30 سالمه و ساکن ایران / مازندران /
+            بابلسر هستم.
           </p>
 
           <p>
@@ -77,7 +78,10 @@ const AboutSection = () => {
             {/* I started learning Web Development in August 2020 with Persian
             online tutorials and YouTube, after which I expanded my knowledge
             through Udemy online courses and especially Academind courses. */}
-            {translator('about_text_2')}
+            {/* {translator('about_text_2')} */}
+            یادگیری توسعه وب را در شهریور 1399 با آموزش های آنلاین فارسی و
+            یوتیوب شروع کردم و پس از آن دانش خود را از طریق دوره های آنلاین
+            Udemy و به خصوص دوره های Academind گسترش دادم.
           </p>
 
           <p>
@@ -90,7 +94,8 @@ const AboutSection = () => {
             />
             {/* I’m trying to become a{' '}
             <strong>JavaScript & TypeScript Full-Stack Developer.</strong> */}
-            {translator('about_text_3')}
+            {/* {translator('about_text_3')} */}
+            در تلاش برای JavaScript FullStack Developer شدن !!
           </p>
         </AboutTextBlock>
 
@@ -102,7 +107,10 @@ const AboutSection = () => {
           animate={isSkillsInView ? 'animate' : 'exit'}
           exit={'exit'}
         >
-          <AboutSkillsTitle>{translator('skills_title')}</AboutSkillsTitle>
+          <AboutSkillsTitle>
+            {/* {translator('skills_title')} */}
+            مهارت ها
+          </AboutSkillsTitle>
           <AboutSkillsItemBlock>
             <AboutSkillsItem>
               <Image
