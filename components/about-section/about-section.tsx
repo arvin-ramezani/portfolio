@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import React, { useRef } from 'react';
-import { Variants, useInView } from 'framer-motion';
-import { useTranslation } from 'next-i18next';
+import { useInView } from 'framer-motion';
 
 import {
   AboutImageBlock,
@@ -24,7 +23,6 @@ const AboutSection = () => {
   const isImageInView = useInView(imageRef);
   const isTextInView = useInView(textRef);
   const isSkillsInView = useInView(skillsRef);
-  const { t: translator } = useTranslation('home');
 
   return (
     <StyledAboutSection>
@@ -53,7 +51,6 @@ const AboutSection = () => {
           exit={'exit'}
         >
           <AboutTitle>{'درباره ی من'}</AboutTitle>
-          {/* <AboutTitle>{translator('about_title')}</AboutTitle> */}
           <p>
             <Image
               src="/images/Bullet.svg"
@@ -75,10 +72,6 @@ const AboutSection = () => {
               height={14}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
-            {/* I started learning Web Development in August 2020 with Persian
-            online tutorials and YouTube, after which I expanded my knowledge
-            through Udemy online courses and especially Academind courses. */}
-            {/* {translator('about_text_2')} */}
             یادگیری توسعه وب را در شهریور 1399 با آموزش های آنلاین فارسی و
             یوتیوب شروع کردم و پس از آن دانش خود را از طریق دوره های آنلاین
             Udemy و به خصوص دوره های Academind گسترش دادم.
@@ -92,9 +85,6 @@ const AboutSection = () => {
               height={14}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
-            {/* I’m trying to become a{' '}
-            <strong>JavaScript & TypeScript Full-Stack Developer.</strong> */}
-            {/* {translator('about_text_3')} */}
             در تلاش برای JavaScript FullStack Developer شدن !!
           </p>
         </AboutTextBlock>
@@ -107,10 +97,7 @@ const AboutSection = () => {
           animate={isSkillsInView ? 'animate' : 'exit'}
           exit={'exit'}
         >
-          <AboutSkillsTitle>
-            {/* {translator('skills_title')} */}
-            مهارت ها
-          </AboutSkillsTitle>
+          <AboutSkillsTitle>مهارت ها</AboutSkillsTitle>
           <AboutSkillsItemBlock>
             <AboutSkillsItem>
               <Image

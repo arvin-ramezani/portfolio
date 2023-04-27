@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
 
 import HeroSection from '@/components/hero-section/hero-section';
 import Header from '@/components/header/header';
@@ -8,7 +6,6 @@ import AboutSection from '@/components/about-section/about-section';
 import ProjectsSection from '@/components/projects-section/projects-section';
 import Footer from '@/components/footer/footer';
 import StarsCanvas from '@/components/stars-canvas/stars-canvas';
-import { GetStaticProps } from 'next';
 import GoToUp from '@/components/ui/go-to-up/go-to-up';
 
 // export const getStaticProps: GetStaticProps = async ({ locale }) => {
@@ -42,7 +39,9 @@ export default function Home() {
 
       <main style={{ scrollBehavior: 'smooth' }}>
         <HeroSection />
+
         <AboutSection />
+
         <ProjectsSection />
       </main>
 

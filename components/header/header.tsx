@@ -1,6 +1,5 @@
-// import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { Logo, StyledHeader } from '@/styles/components/header.styled';
 import OutlineBtn from '../ui/outline-btn/outline-btn';
@@ -11,18 +10,6 @@ import { HeaderItemsVariants } from './header.variants';
 
 const Header = () => {
   const router = useRouter();
-  // const [pageDir, setPageDir] = useState(
-  //   router.locale === 'fa' ? 'rtl' : 'ltr'
-  // );
-  // const { t: translatorCommon } = useTranslation('common');
-
-  // useEffect(() => {
-  //   if (router.locale === 'fa') {
-  //     setPageDir('rtl');
-  //   } else {
-  //     setPageDir('ltr');
-  //   }
-  // }, [router.locale]);
 
   return (
     <StyledHeader
@@ -37,14 +24,12 @@ const Header = () => {
           width={90}
           height={30}
           priority
-          // pagedir={pageDir as 'rtl' | 'ltr'}
           pagedir={'rtl'}
         />
 
         <OutlineBtn
           onClick={() => router.push('/', '/#projects', { scroll: false })}
           color={theme.colors.primary}
-          // text={translatorCommon('my_projects_btn')}
           text={'پروژه ها'}
         />
 

@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { ChangeEvent, useEffect, useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import React, { ChangeEvent } from 'react';
 
 import { StyledLangSelectBox } from '@/styles/components/lang-select-box.styled';
 import { selectBoxVariants } from './lang-select-box.variants';
