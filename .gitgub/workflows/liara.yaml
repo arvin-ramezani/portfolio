@@ -16,4 +16,4 @@ jobs:
           LIARA_TOKEN: ${{ secrets.LIARA_API_TOKEN }}
         run: |
           npm i -g @liara/cli@3
-          liara deploy --app="a-plus-web" --api-token="$LIARA_TOKEN" --detach
+          liara deploy --app="a-plus-web" --api-token="$LIARA_TOKEN" --detach --port=3000
