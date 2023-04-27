@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { FormEvent, useEffect, useRef, useState } from 'react';
-import { Variants, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { CSSProperties } from 'styled-components';
-import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 
 import {
@@ -33,20 +32,11 @@ const Footer = () => {
   const contactRef = useRef(null);
   const isEmailInView = useInView(sendEmailRef);
   const isContactInView = useInView(contactRef);
-  const { t: translator } = useTranslation('home');
-  const { t: translatorCommon } = useTranslation('common');
   const router = useRouter();
-  const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
-    router.locale === 'fa' ? 'rtl' : 'ltr'
-  );
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
-
-  useEffect(() => {
-    setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
-  }, [router.locale]);
 
   const starsCanvasStyles: CSSProperties = {
     position: 'absolute',
@@ -73,34 +63,31 @@ const Footer = () => {
           animate={isEmailInView ? 'visible' : 'hidden'}
           exit="hidden"
         >
-          <SendEmailTitle>
-            {translator('footer_send_email_title')}
-          </SendEmailTitle>
+          <SendEmailTitle>ارسال ایمیل</SendEmailTitle>
 
           <SendEmailForm onSubmit={onSubmit}>
             <StyledInput
-              placeholder={`* ${translatorCommon('name_input_label')}`}
+              placeholder={`*نام شما `}
               required
             />
             <StyledInput
               type="email"
-              placeholder={`* ${translatorCommon('email_input_label')}`}
+              placeholder={`* ایمیل شما`}
               required
             />
 
             <StyledTextarea
               rows={4}
-              placeholder={`* ${translatorCommon('message_input_label')}`}
+              placeholder={`* پیام شما`}
               required
             />
 
             <Button
-              text={translatorCommon('submit_btn')}
+              text={'ارسال'}
               color={theme.colors.textPrimary}
               textColor={theme.colors.black}
               wrapperStyle={{ marginTop: '1.4rem', width: '100%' }}
             />
-            {/* <div style={}></div> */}
           </SendEmailForm>
         </SendEmailBlock>
         <ContactBlock
@@ -109,13 +96,11 @@ const Footer = () => {
           initial="hidden"
           animate={isContactInView ? 'visible' : 'hidden'}
           exit="hidden"
-          pagedir={pageDir}
+          pagedir={'rtl'}
         >
-          <ContactTitle pagedir={pageDir}>
-            {translator('footer_contact')}
-          </ContactTitle>
+          <ContactTitle pagedir={'rtl'}>تماس با من</ContactTitle>
 
-          <EmailBlock pagedir={pageDir}>
+          <EmailBlock pagedir={'rtl'}>
             <Image
               src="/images/icons/phone.svg"
               alt="Phone Icon"
@@ -125,7 +110,7 @@ const Footer = () => {
             <p>+98 936 159 9686</p>
           </EmailBlock>
 
-          <EmailBlock pagedir={pageDir}>
+          <EmailBlock pagedir={'rtl'}>
             <Image
               src="/images/icons/mail-icon.svg"
               alt="Email Icon"
@@ -135,7 +120,7 @@ const Footer = () => {
             <p>a.plus.webb@gmail.com</p>
           </EmailBlock>
 
-          <LocationBlock pagedir={pageDir}>
+          <LocationBlock pagedir={'rtl'}>
             <Image
               src="/images/icons/location.svg"
               alt="Location Icon"
@@ -143,7 +128,7 @@ const Footer = () => {
               height={46}
             />
 
-            <p>{translator('footer_location_text')}</p>
+            <p>ایران / مازندران / بابلسر</p>
           </LocationBlock>
 
           <SocialMediaBlock>
@@ -209,7 +194,8 @@ const Footer = () => {
             </Link>
           </SocialMediaBlock>
           <Button
-            text={translatorCommon('call_me_btn')}
+            // text={translatorCommon('call_me_btn')}
+            text={'تماس'}
             color={theme.colors.primary}
             textColor={theme.colors.black}
             wrapperStyle={{ marginTop: '1.4rem', width: '100%' }}

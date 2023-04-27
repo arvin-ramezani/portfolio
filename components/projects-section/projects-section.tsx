@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { useInView } from 'framer-motion';
 import TypeWriter from '../ui/type-writer/type-writer';
-import { useTranslation } from 'next-i18next';
 
 import {
   StyledComingSoon,
@@ -15,7 +14,6 @@ import { Container } from '@/styles/global.styled';
 const ProjectsSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const { t: translator } = useTranslation('home');
 
   return (
     <StyledProjectsSection
@@ -50,9 +48,7 @@ const ProjectsSection = () => {
       <StyledDarkLayout />
 
       <Container id="projectsSectionContainer">
-        <StyledProjectsTitle>
-          {translator('projects_title')}
-        </StyledProjectsTitle>
+        <StyledProjectsTitle>پروژه های من</StyledProjectsTitle>
 
         <StyledComingSoon>
           <TypeWriter text={['Coming Soon...!!']} />

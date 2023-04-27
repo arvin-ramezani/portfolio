@@ -1,8 +1,9 @@
-import { theme } from '@/styles/theme.styled';
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
 import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
+import { theme } from '@/styles/theme.styled';
 
 const GoToUp = () => {
   const { scrollY } = useScroll();

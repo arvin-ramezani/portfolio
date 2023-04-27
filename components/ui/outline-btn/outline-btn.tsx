@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
-import { Variants, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
+
 import { buttonVariants } from './outline-btn.variants';
 
 interface OutlineBtnProps {
