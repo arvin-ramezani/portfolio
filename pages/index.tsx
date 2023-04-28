@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import HeroSection from '@/components/hero-section/hero-section';
 import Header from '@/components/header/header';
@@ -8,13 +10,13 @@ import Footer from '@/components/footer/footer';
 import StarsCanvas from '@/components/stars-canvas/stars-canvas';
 import GoToUp from '@/components/ui/go-to-up/go-to-up';
 
-// export const getStaticProps: GetStaticProps = async ({ locale }) => {
-//   return {
-//     props: {
-//       ...(await serverSideTranslations(locale as string, ['home', 'common'])),
-//     },
-//   };
-// };
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale as string, ['home', 'common'])),
+    },
+  };
+};
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useEffect } from 'react';
 
 import { StyledLangSelectBox } from '@/styles/components/lang-select-box.styled';
 import { selectBoxVariants } from './lang-select-box.variants';
@@ -12,26 +12,26 @@ const LangSelectBox = () => {
   // const { t: translatorCommon } = useTranslation('common');
 
   const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    return;
+    // return;
 
     if (router.locale === e.target.value) return;
 
     router.push('/', '/', { locale: e.target.value });
   };
 
-  // useEffect(() => {
-  //   if (router.locale === 'fa') {
-  //     if (typeof document !== 'undefined') {
-  //       document.body.style.direction = 'rtl';
-  //       document.body.style.fontFamily = 'Vazir';
-  //     }
-  //   } else {
-  //     if (typeof document !== 'undefined') {
-  //       document.body.style.direction = 'ltr';
-  //       document.body.style.fontFamily = 'Roboto';
-  //     }
-  //   }
-  // }, [router.locale]);
+  useEffect(() => {
+    if (router.locale === 'fa') {
+      if (typeof document !== 'undefined') {
+        document.body.style.direction = 'rtl';
+        document.body.style.fontFamily = 'Vazir';
+      }
+    } else {
+      if (typeof document !== 'undefined') {
+        document.body.style.direction = 'ltr';
+        document.body.style.fontFamily = 'Roboto';
+      }
+    }
+  }, [router.locale]);
 
   return (
     <StyledLangSelectBox
