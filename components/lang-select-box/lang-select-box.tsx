@@ -6,6 +6,7 @@ import { selectBoxVariants } from './lang-select-box.variants';
 
 const LangSelectBox = () => {
   const router = useRouter();
+
   // const [pageDir, setPageDir] = useState(
   //   router.locale === 'fa' ? 'rtl' : 'ltr'
   // );
