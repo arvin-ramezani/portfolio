@@ -33,9 +33,29 @@ const Footer = () => {
   const isEmailInView = useInView(sendEmailRef);
   const isContactInView = useInView(contactRef);
   const router = useRouter();
+  // const emailFormValuesRef = useRef<HTMLInputElement>(null);
+  const userNameRef = useRef<HTMLInputElement>(null);
+  const userEmailRef = useRef<HTMLInputElement>(null);
+  const userMessageRef = useRef<HTMLTextAreaElement>(null);
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (
+      userNameRef.current?.value.trim().length === 0 ||
+      userEmailRef.current?.value.trim().length === 0 ||
+      userMessageRef.current?.value.trim().length === 0
+    )
+      return;
+
+    const form = e.currentTarget;
+    form.method = 'POST';
+    form.action = `mailto:a.plus.rmz@gmail.com?
+    subject=Message from ${userEmailRef.current?.value}
+    (${userNameRef.current?.value})
+    &body=${userMessageRef.current?.value}`;
+
+    form.submit();
   };
 
   const starsCanvasStyles: CSSProperties = {
@@ -67,16 +87,19 @@ const Footer = () => {
 
           <SendEmailForm onSubmit={onSubmit}>
             <StyledInput
+              ref={userNameRef}
               placeholder={`*نام شما `}
               required
             />
             <StyledInput
+              ref={userEmailRef}
               type="email"
               placeholder={`* ایمیل شما`}
               required
             />
 
             <StyledTextarea
+              ref={userMessageRef}
               rows={4}
               placeholder={`* پیام شما`}
               required
@@ -86,7 +109,10 @@ const Footer = () => {
               text={'ارسال'}
               color={theme.colors.textPrimary}
               textColor={theme.colors.black}
-              wrapperStyle={{ marginTop: '1.4rem', width: '100%' }}
+              wrapperStyle={{
+                marginTop: '1.4rem',
+                width: '100%',
+              }}
             />
           </SendEmailForm>
         </SendEmailBlock>
@@ -198,7 +224,10 @@ const Footer = () => {
             text={'تماس'}
             color={theme.colors.primary}
             textColor={theme.colors.black}
-            wrapperStyle={{ marginTop: '1.4rem', width: '100%' }}
+            wrapperStyle={{
+              marginTop: '1.4rem',
+              width: '100%',
+            }}
           />
         </ContactBlock>
       </Container>
