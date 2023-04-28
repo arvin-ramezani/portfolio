@@ -49,11 +49,9 @@ const Footer = () => {
       return;
 
     const form = e.currentTarget;
+    form.enctype = 'text/plain';
     form.method = 'POST';
-    form.action = `mailto:a.plus.rmz@gmail.com?
-    subject=Message from ${userEmailRef.current?.value}
-    (${userNameRef.current?.value})
-    &body=${userMessageRef.current?.value}`;
+    form.action = `mailto:a.plus.rmz@gmail.com?subject=Message from ${userEmailRef.current?.value} (${userNameRef.current?.value})&body=${userMessageRef.current?.value}`;
 
     form.submit();
   };
@@ -85,10 +83,13 @@ const Footer = () => {
         >
           <SendEmailTitle>ارسال ایمیل</SendEmailTitle>
 
-          <SendEmailForm onSubmit={onSubmit}>
+          <SendEmailForm
+            onSubmit={onSubmit}
+            encType="multipart/form-data "
+          >
             <StyledInput
               ref={userNameRef}
-              placeholder={`*نام شما `}
+              placeholder={`* نام شما `}
               required
             />
             <StyledInput
