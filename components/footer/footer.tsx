@@ -50,6 +50,7 @@ const Footer = () => {
 
     const form = e.currentTarget;
     form.enctype = 'text/plain';
+    form.target = '_blank';
     form.method = 'POST';
     form.action = `mailto:a.plus.rmz@gmail.com?subject=Message from ${userEmailRef.current?.value} (${userNameRef.current?.value})&body=${userMessageRef.current?.value}`;
 
