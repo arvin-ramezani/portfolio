@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 export const StyledHeroSection = styled.section`
   min-height: 100vh;
+  display: block;
 
   & > div {
     height: 100%;
@@ -15,6 +16,13 @@ export const StyledHeroSection = styled.section`
       justify-content: space-between;
       margin-top: 5rem;
     }
+  }
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -4rem;
   }
 `;
 
@@ -65,7 +73,11 @@ export const HeroImageContainer = styled(motion.div)`
   position: relative;
   width: 300px;
   height: 300px;
+  margin-top: 5rem;
 
+  @media (min-width: ${theme.breakpoints.md}) {
+    margin-top: 0;
+  }
   @media (min-width: ${theme.breakpoints.lg}) {
     width: 500px;
     height: 500px;

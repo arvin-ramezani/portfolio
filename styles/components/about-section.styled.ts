@@ -10,7 +10,6 @@ export const StyledAboutSection = styled.section`
   justify-content: center;
 
   & > div {
-    /* margin-top: 3rem; */
     gap: 3rem;
     margin: 5rem auto;
 
@@ -48,6 +47,11 @@ export const AboutImageBlock = styled(motion.div)`
     border-radius: 50% !important;
     width: 280px;
     height: 280px;
+  }
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    width: 200px !important;
+    height: 200px !important;
   }
 
   @media (min-width: ${theme.breakpoints.lg}) {
@@ -89,6 +93,12 @@ export const AboutTitle = styled(motion.h2)`
   font-size: 2rem;
   font-weight: bold;
   margin: 1rem 0 2rem;
+  text-align: center;
+
+  @media (min-width: ${theme.breakpoints.sm}) {
+    text-align: start;
+    margin-top: 0;
+  }
 `;
 
 export const AboutSkillsContainer = styled(motion.div)`

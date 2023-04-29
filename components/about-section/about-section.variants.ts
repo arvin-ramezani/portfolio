@@ -16,8 +16,15 @@ export const AboutItemsVariants: Variants = {
   animate: {
     x: '0',
     opacity: 1,
-    transition: { duration: 0.8, delay: 0.6 },
+    transition: { duration: 0.8, delay: 0.2 },
   },
 
   exit: { opacity: 0 },
+};
+
+export const AboutTextItemsVariants: Variants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: { opacity: 1, transition: { duration: 0.8, delay: 0.8 } },
 };

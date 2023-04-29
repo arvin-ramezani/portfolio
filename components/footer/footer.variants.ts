@@ -6,10 +6,10 @@ export const footerContainerVariants: Variants = {
   },
   visible: {
     opacity: 1,
-    transition: {
-      when: 'beforeChildren',
-      staggerChildren: 0.2,
-    },
+    // transition: {
+    //   when: 'beforeChildren',
+    //   staggerChildren: 0.2,
+    // },
   },
 };
 
@@ -23,8 +23,9 @@ export const footerItemsVariants: Variants = {
     scale: 1,
 
     transition: {
-      duration: 1.8,
-      // delay: 0.2,
+      type: 'spring',
+      stiffness: 250,
+      damping: 10,
     },
   },
 };

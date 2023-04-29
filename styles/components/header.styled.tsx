@@ -12,7 +12,15 @@ export const StyledHeader = styled(motion.header)`
     width: 100%;
 
     @media (min-width: ${theme.breakpoints.sm}) {
+      padding: 1.6rem 0;
       width: 90%;
+    }
+
+    @media (min-width: ${theme.breakpoints.md}) {
+      width: 80%;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 
@@ -31,7 +39,7 @@ export const StyledArrowUp = styled(motion.div)`
 `;
 
 export const Logo = styled(Image)<{ pagedir: 'rtl' | 'ltr' }>`
-  /* margin-right: auto; */
+  margin-right: -1rem;
 
   margin: ${({ pagedir }) => (pagedir === 'rtl' ? '0 0 0 auto' : '0 auto 0 0')};
   /* margin: ${({ pagedir }) =>

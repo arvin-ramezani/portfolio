@@ -14,7 +14,10 @@ import {
   StyledAboutSection,
 } from '@/styles/components/about-section.styled';
 import { Container } from '@/styles/global.styled';
-import { AboutItemsVariants } from './about-section.variants';
+import {
+  AboutItemsVariants,
+  AboutTextItemsVariants,
+} from './about-section.variants';
 
 const AboutSection = () => {
   const imageRef = useRef(null);
@@ -43,12 +46,13 @@ const AboutSection = () => {
         </AboutImageBlock>
 
         <AboutTextBlock
-          variants={AboutItemsVariants}
+          variants={AboutTextItemsVariants}
           ref={textRef}
           custom={null}
           initial="initial"
           animate={isTextInView ? 'animate' : 'exit'}
           exit={'exit'}
+          // transition={{ delay: 2 }}
         >
           <AboutTitle>{'درباره ی من'}</AboutTitle>
           <p>

@@ -70,10 +70,10 @@ const Footer = () => {
       <StarsCanvas styles={starsCanvasStyles} />
 
       <Container
-        variants={footerContainerVariants}
-        initial="hidden"
-        animate={'visible'}
-        exit="hidden"
+      // variants={footerContainerVariants}
+      // initial="hidden"
+      // animate={'visible'}
+      // exit="hidden"
       >
         <SendEmailBlock
           variants={footerItemsVariants}

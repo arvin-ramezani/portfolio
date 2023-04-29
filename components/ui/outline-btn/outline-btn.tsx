@@ -30,7 +30,7 @@ export const StyledOutlineBtnContainer = styled.div``;
 export const StyledOutlineBtn = styled(motion.button)<{ color: string }>`
   border-radius: 0.3rem;
   background-color: transparent;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 1rem;
   cursor: pointer;
   font-family: Roboto, Vazir;
   font-size: 0.7rem;
