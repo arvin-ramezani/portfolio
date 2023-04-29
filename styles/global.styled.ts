@@ -53,7 +53,7 @@ table {
 
 /* Vazir Fonts */
 
-@font-face {
+/* @font-face {
   font-family: Vazir;
   
   src: url('/fonts/vazir/Vazir-Thin.ttf') format('truetype');
@@ -93,7 +93,7 @@ table {
 
     src: url('/fonts/vazir/Vazir-Black.ttf') format('truetype');
   font-weight: 900;
-}
+} */
 
 
 
