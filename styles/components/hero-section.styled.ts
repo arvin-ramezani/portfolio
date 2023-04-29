@@ -16,10 +16,6 @@ export const StyledHeroSection = styled.section`
       margin-top: 5rem;
     }
   }
-
-  @media (min-width: ${theme.breakpoints.md}) {
-    min-height: 80vh;
-  }
 `;
 
 export const HeroTextContainer = styled(motion.div)`
