@@ -38,6 +38,7 @@ export const StyledFooter = styled.footer`
 export const SendEmailBlock = styled(motion.div)`
   display: flex;
   flex-direction: column;
+  padding-bottom: 2rem;
 `;
 
 export const SendEmailTitle = styled.h3`
@@ -106,7 +107,7 @@ export const ContactTitle = styled.h3<{ pagedir: 'rtl' | 'ltr' }>`
 `;
 
 export const SocialMediaBlock = styled.div`
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

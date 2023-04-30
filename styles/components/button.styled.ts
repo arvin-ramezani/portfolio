@@ -15,6 +15,9 @@ export const StyledButton = styled(motion.button)<{
   font-size: 0.7rem;
   font-weight: 900;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-color: ${({ color }) => color};
   color: ${({ textcolor }) => textcolor};
