@@ -1,5 +1,6 @@
+import { NextFont } from 'next/dist/compiled/@next/font';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { FC } from 'react';
 
 import { Logo, StyledHeader } from '@/styles/components/header.styled';
 import OutlineBtn from '../ui/outline-btn/outline-btn';
@@ -8,7 +9,11 @@ import LangSelectBox from '../lang-select-box/lang-select-box';
 import { Container } from '@/styles/global.styled';
 import { HeaderItemsVariants } from './header.variants';
 
-const Header = () => {
+interface HeaderProps {
+  myVazirFont?: NextFont;
+}
+
+const Header: FC<HeaderProps> = ({ myVazirFont }) => {
   const router = useRouter();
 
   return (
@@ -16,6 +21,7 @@ const Header = () => {
       variants={HeaderItemsVariants}
       initial="initial"
       animate="animate"
+      // className={myVazirFont.className}
     >
       <Container>
         <Logo
@@ -31,6 +37,7 @@ const Header = () => {
           onClick={() => router.push('/', '/#projects', { scroll: false })}
           color={theme.colors.primary}
           text={'پروژه ها'}
+          // myVazirFont={myVazirFont}
         />
 
         <LangSelectBox />

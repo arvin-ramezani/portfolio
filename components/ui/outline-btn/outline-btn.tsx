@@ -1,8 +1,10 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { NextFont } from 'next/dist/compiled/@next/font';
 
 import { buttonVariants } from './outline-btn.variants';
+import { theme } from '@/styles/theme.styled';
 
 interface OutlineBtnProps {
   text: string;
@@ -30,9 +32,8 @@ export const StyledOutlineBtnContainer = styled.div``;
 export const StyledOutlineBtn = styled(motion.button)<{ color: string }>`
   border-radius: 0.3rem;
   background-color: transparent;
-  padding: 0.3rem 1rem;
+  padding: 0.1rem 1rem;
   cursor: pointer;
-  font-family: Roboto, Vazir;
   font-size: 0.7rem;
   font-weight: 500;
 
@@ -41,6 +42,10 @@ export const StyledOutlineBtn = styled(motion.button)<{ color: string }>`
 
   &:focus {
     outline: 1px solid ${({ theme }) => theme.colors.secondary};
+  }
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    font-size: 1rem;
   }
 `;
 

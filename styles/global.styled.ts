@@ -2,8 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import { theme } from './theme.styled';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { NextFont } from 'next/dist/compiled/@next/font';
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{ localFont: NextFont }>`
 
 /* CSS Reset */
 html, body, div, span, applet, object, iframe,
@@ -53,7 +54,7 @@ table {
 
 /* Vazir Fonts */
 
-@font-face {
+/* @font-face {
   font-family: Vazir;
   
   src: url('/fonts/vazir/Vazir-Thin.ttf') format('truetype');
@@ -93,7 +94,7 @@ table {
 
     src: url('/fonts/vazir/Vazir-Black.ttf') format('truetype');
   font-weight: 900;
-}
+} */
 
 
 
@@ -144,6 +145,19 @@ table {
 
 * {
   box-sizing: border-box;
+}
+
+* button {
+  font-family: ${({ localFont }) => localFont.style.fontFamily} !important;
+}
+
+& input , textarea {
+  font-family: ${({ localFont }) => localFont.style.fontFamily} !important;
+
+}
+
+html {
+  scroll-behavior: smooth !important;
 }
 
   body {

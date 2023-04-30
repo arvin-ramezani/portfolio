@@ -1,6 +1,7 @@
+import { NextFont } from 'next/dist/compiled/@next/font';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { FormEvent, useEffect, useRef, useState } from 'react';
+import React, { FormEvent, useEffect, useRef, useState, FC } from 'react';
 import { useInView } from 'framer-motion';
 import { CSSProperties } from 'styled-components';
 import { useRouter } from 'next/router';
@@ -22,21 +23,21 @@ import { Container } from '@/styles/global.styled';
 import Button from '../ui/button/button';
 import { theme } from '@/styles/theme.styled';
 import StarsCanvas from '../stars-canvas/stars-canvas';
-import {
-  footerContainerVariants,
-  footerItemsVariants,
-} from './footer.variants';
+import { footerItemsVariants } from './footer.variants';
 
-const Footer = () => {
+interface FooterProps {
+  myVazirFont?: NextFont;
+}
+
+const Footer: FC<FooterProps> = ({ myVazirFont }) => {
   const sendEmailRef = useRef(null);
   const contactRef = useRef(null);
   const isEmailInView = useInView(sendEmailRef);
   const isContactInView = useInView(contactRef);
-  const router = useRouter();
-  // const emailFormValuesRef = useRef<HTMLInputElement>(null);
   const userNameRef = useRef<HTMLInputElement>(null);
   const userEmailRef = useRef<HTMLInputElement>(null);
   const userMessageRef = useRef<HTMLTextAreaElement>(null);
+  const router = useRouter();
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -66,7 +67,9 @@ const Footer = () => {
   };
 
   return (
-    <StyledFooter>
+    <StyledFooter
+    // className={myVazirFont.className}
+    >
       <StarsCanvas styles={starsCanvasStyles} />
 
       <Container
@@ -75,50 +78,8 @@ const Footer = () => {
       // animate={'visible'}
       // exit="hidden"
       >
-        <SendEmailBlock
-          variants={footerItemsVariants}
-          ref={sendEmailRef}
-          initial="hidden"
-          animate={isEmailInView ? 'visible' : 'hidden'}
-          exit="hidden"
-        >
-          <SendEmailTitle>ارسال ایمیل</SendEmailTitle>
-
-          <SendEmailForm
-            onSubmit={onSubmit}
-            encType="multipart/form-data "
-          >
-            <StyledInput
-              ref={userNameRef}
-              placeholder={`* نام شما `}
-              required
-            />
-            <StyledInput
-              ref={userEmailRef}
-              type="email"
-              placeholder={`* ایمیل شما`}
-              required
-            />
-
-            <StyledTextarea
-              ref={userMessageRef}
-              rows={4}
-              placeholder={`* پیام شما`}
-              required
-            />
-
-            <Button
-              text={'ارسال'}
-              color={theme.colors.textPrimary}
-              textColor={theme.colors.black}
-              wrapperStyle={{
-                marginTop: '1.4rem',
-                width: '100%',
-              }}
-            />
-          </SendEmailForm>
-        </SendEmailBlock>
         <ContactBlock
+          id={'contact'}
           variants={footerItemsVariants}
           ref={contactRef}
           initial="hidden"
@@ -128,7 +89,14 @@ const Footer = () => {
         >
           <ContactTitle pagedir={'rtl'}>تماس با من</ContactTitle>
 
-          <EmailBlock pagedir={'rtl'}>
+          <EmailBlock
+            id="phoneBlock"
+            pagedir={'rtl'}
+            onClick={() => {
+              if (typeof window !== 'undefined')
+                window.open('tel:+989361599686');
+            }}
+          >
             <Image
               src="/images/icons/phone.svg"
               alt="Phone Icon"
@@ -221,17 +189,62 @@ const Footer = () => {
               />
             </Link>
           </SocialMediaBlock>
-          <Button
-            // text={translatorCommon('call_me_btn')}
-            text={'تماس'}
-            color={theme.colors.primary}
-            textColor={theme.colors.black}
-            wrapperStyle={{
-              marginTop: '1.4rem',
-              width: '100%',
-            }}
-          />
         </ContactBlock>
+
+        <SendEmailBlock
+          variants={footerItemsVariants}
+          ref={sendEmailRef}
+          initial="hidden"
+          animate={isEmailInView ? 'visible' : 'hidden'}
+          exit="hidden"
+        >
+          <SendEmailTitle>ارسال ایمیل</SendEmailTitle>
+
+          <SendEmailForm
+            onSubmit={onSubmit}
+            encType="multipart/form-data "
+          >
+            <StyledInput
+              ref={userNameRef}
+              placeholder={`* نام شما `}
+              required
+            />
+            <StyledInput
+              ref={userEmailRef}
+              type="email"
+              placeholder={`* ایمیل شما`}
+              required
+            />
+
+            <StyledTextarea
+              ref={userMessageRef}
+              rows={4}
+              placeholder={`* پیام شما`}
+              required
+            />
+
+            {/* <Button
+              text={'ارسال'}
+              color={theme.colors.textPrimary}
+              textColor={theme.colors.black}
+              wrapperStyle={{
+                marginTop: '1.4rem',
+                width: '100%',
+              }}
+            /> */}
+            <Button
+              // text={translatorCommon('call_me_btn')}
+              text={'ارسال'}
+              color={theme.colors.primary}
+              textColor={theme.colors.black}
+              wrapperStyle={{
+                marginTop: '1.4rem',
+                width: '100%',
+              }}
+              // myVazirFont={myVazirFont}
+            />
+          </SendEmailForm>
+        </SendEmailBlock>
       </Container>
     </StyledFooter>
   );

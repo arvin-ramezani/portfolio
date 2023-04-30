@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
+import { isMobile } from 'react-device-detect';
 
 import {
   HeroImageContainer,
@@ -10,8 +11,21 @@ import { Container } from '@/styles/global.styled';
 import Button from '../ui/button/button';
 import { theme } from '@/styles/theme.styled';
 import { HeroImageVariants, HeroTextVariants } from './hero-section.variants';
+import { useRouter } from 'next/router';
 
 function HeroSection() {
+  const router = useRouter();
+
+  const onCall = () => {
+    if (isMobile) {
+      window.open('tel:+989361599686');
+
+      return;
+    }
+
+    router.push('/#contact');
+  };
+
   return (
     <StyledHeroSection>
       <Container>
@@ -26,7 +40,7 @@ function HeroSection() {
 
           <Button
             text={'تماس بگیرید'}
-            onClick={() => {}}
+            onClick={onCall}
             color={theme.colors.primary}
             textColor={theme.colors.black}
           />
