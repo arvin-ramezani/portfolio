@@ -1,4 +1,3 @@
-import emailjs from '@emailjs/browser';
 import { NextFont } from 'next/dist/compiled/@next/font';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -42,31 +41,19 @@ const Footer = () => {
     e.preventDefault();
 
     if (
-      !formRef.current ||
       userNameRef.current?.value.trim().length === 0 ||
       userEmailRef.current?.value.trim().length === 0 ||
       userMessageRef.current?.value.trim().length === 0
     )
       return;
 
-    try {
-      setEmailLoading(true);
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
-        formRef.current,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY!
-      );
+    const form = e.currentTarget;
+    form.enctype = 'text/plain';
+    form.target = '_blank';
+    form.method = 'POST';
+    form.action = `mailto:a.plus.rmz@gmail.com?subject=Message from ${userEmailRef.current?.value} (${userNameRef.current?.value})&body=${userMessageRef.current?.value}`;
 
-      setEmailLoading(false);
-    } catch (error) {
-      setEmailLoading(false);
-      console.log('Error Sending Message');
-    }
-
-    userNameRef.current!.value = '';
-    userEmailRef.current!.value = '';
-    userMessageRef.current!.value = '';
+    form.submit();
   };
 
   const starsCanvasStyles: CSSProperties = {
