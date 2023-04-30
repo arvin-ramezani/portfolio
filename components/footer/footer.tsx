@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import { NextFont } from 'next/dist/compiled/@next/font';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,11 +26,7 @@ import { theme } from '@/styles/theme.styled';
 import StarsCanvas from '../stars-canvas/stars-canvas';
 import { footerItemsVariants } from './footer.variants';
 
-interface FooterProps {
-  myVazirFont?: NextFont;
-}
-
-const Footer: FC<FooterProps> = ({ myVazirFont }) => {
+const Footer = () => {
   const sendEmailRef = useRef(null);
   const contactRef = useRef(null);
   const isEmailInView = useInView(sendEmailRef);
@@ -37,25 +34,39 @@ const Footer: FC<FooterProps> = ({ myVazirFont }) => {
   const userNameRef = useRef<HTMLInputElement>(null);
   const userEmailRef = useRef<HTMLInputElement>(null);
   const userMessageRef = useRef<HTMLTextAreaElement>(null);
+  const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter();
+  const [emailLoading, setEmailLoading] = useState(false);
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (
+      !formRef.current ||
       userNameRef.current?.value.trim().length === 0 ||
       userEmailRef.current?.value.trim().length === 0 ||
       userMessageRef.current?.value.trim().length === 0
     )
       return;
 
-    const form = e.currentTarget;
-    form.enctype = 'text/plain';
-    form.target = '_blank';
-    form.method = 'POST';
-    form.action = `mailto:a.plus.rmz@gmail.com?subject=Message from ${userEmailRef.current?.value} (${userNameRef.current?.value})&body=${userMessageRef.current?.value}`;
+    try {
+      setEmailLoading(true);
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY!
+      );
 
-    form.submit();
+      setEmailLoading(false);
+    } catch (error) {
+      setEmailLoading(false);
+      console.log('Error Sending Message');
+    }
+
+    userNameRef.current!.value = '';
+    userEmailRef.current!.value = '';
+    userMessageRef.current!.value = '';
   };
 
   const starsCanvasStyles: CSSProperties = {
@@ -203,17 +214,20 @@ const Footer: FC<FooterProps> = ({ myVazirFont }) => {
           <SendEmailForm
             onSubmit={onSubmit}
             encType="multipart/form-data "
+            ref={formRef}
           >
             <StyledInput
               ref={userNameRef}
               placeholder={`* نام شما `}
               required
+              name="name"
             />
             <StyledInput
               ref={userEmailRef}
               type="email"
               placeholder={`* ایمیل شما`}
               required
+              name="email"
             />
 
             <StyledTextarea
@@ -221,6 +235,7 @@ const Footer: FC<FooterProps> = ({ myVazirFont }) => {
               rows={4}
               placeholder={`* پیام شما`}
               required
+              name="message"
             />
 
             {/* <Button
@@ -241,7 +256,7 @@ const Footer: FC<FooterProps> = ({ myVazirFont }) => {
                 marginTop: '1.4rem',
                 width: '100%',
               }}
-              // myVazirFont={myVazirFont}
+              loading={emailLoading}
             />
           </SendEmailForm>
         </SendEmailBlock>

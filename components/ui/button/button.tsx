@@ -7,6 +7,7 @@ import {
 import { Variants, motion } from 'framer-motion';
 import React, { CSSProperties, FC } from 'react';
 import { buttonVariants } from './button.variants';
+import Image from 'next/image';
 
 interface ButtonProps {
   text: string;
@@ -14,6 +15,7 @@ interface ButtonProps {
   color: string;
   textColor: string;
   wrapperStyle?: CSSProperties;
+  loading?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -22,6 +24,7 @@ const Button: FC<ButtonProps> = ({
   color,
   textColor,
   wrapperStyle,
+  loading,
 }) => {
   return (
     <StyledButtonWrapper
@@ -36,8 +39,25 @@ const Button: FC<ButtonProps> = ({
         whileTap={'tap'}
         color={color}
         textcolor={textColor}
+        layout
       >
-        {text}
+        {/* <Image
+          src="images/loading.svg"
+          alt="Loading"
+          width={16}
+          height={16}
+        /> */}
+
+        {loading ? (
+          <Image
+            src="/images/icons/spinner-lg.svg"
+            alt="Loading"
+            width={30}
+            height={30}
+          />
+        ) : (
+          text
+        )}
       </StyledButton>
     </StyledButtonWrapper>
   );
