@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { theme } from '../theme.styled';
 
 export const StyledHeader = styled(motion.header)`
+  font-family: Vazir;
+
   & > div {
     flex-direction: row;
     align-items: center;

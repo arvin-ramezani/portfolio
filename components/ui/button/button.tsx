@@ -1,3 +1,5 @@
+import { NextFont } from 'next/dist/compiled/@next/font';
+
 import {
   StyledButton,
   StyledButtonWrapper,

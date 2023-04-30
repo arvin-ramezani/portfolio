@@ -86,6 +86,10 @@ export const ContactBlock = styled(motion.div)<{ pagedir: 'rtl' | 'ltr' }>`
   direction: ltr;
   /* direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')}; */
 
+  & > div#phoneBlock {
+    cursor: pointer;
+  }
+
   @media (min-width: ${theme.breakpoints.md}) {
     align-items: flex-start;
   }
@@ -118,6 +122,7 @@ export const EmailBlock = styled.div<{ pagedir: 'rtl' | 'ltr' }>`
   align-items: center;
   gap: 0.8rem;
   margin-bottom: 1rem;
+
   /* direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')}; */
 
   & p {

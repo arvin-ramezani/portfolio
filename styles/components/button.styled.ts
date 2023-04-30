@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { theme } from '../theme.styled';
 
 export const StyledButtonWrapper = styled(motion.div)``;
 
@@ -20,5 +21,9 @@ export const StyledButton = styled(motion.button)<{
 
   &:focus {
     outline: 1px solid ${({ theme }) => theme.colors.secondary};
+  }
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    font-size: 1rem;
   }
 `;

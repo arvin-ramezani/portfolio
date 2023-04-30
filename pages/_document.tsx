@@ -6,6 +6,7 @@ import Document, {
   NextScript,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
+import localFont from 'next/font/local';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
