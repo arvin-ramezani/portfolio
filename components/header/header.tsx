@@ -9,11 +9,7 @@ import LangSelectBox from '../lang-select-box/lang-select-box';
 import { Container } from '@/styles/global.styled';
 import { HeaderItemsVariants } from './header.variants';
 
-interface HeaderProps {
-  myVazirFont?: NextFont;
-}
-
-const Header: FC<HeaderProps> = ({ myVazirFont }) => {
+const Header = () => {
   const router = useRouter();
 
   return (
@@ -21,7 +17,6 @@ const Header: FC<HeaderProps> = ({ myVazirFont }) => {
       variants={HeaderItemsVariants}
       initial="initial"
       animate="animate"
-      // className={myVazirFont.className}
     >
       <Container>
         <Logo

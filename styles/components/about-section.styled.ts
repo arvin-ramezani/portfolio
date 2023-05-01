@@ -61,10 +61,12 @@ export const AboutImageBlock = styled(motion.div)`
 
 export const AboutTextBlock = styled(motion.div)`
   text-align: stretch;
+  font-size: 1rem;
 
   & > p {
     line-height: 1.4;
     margin-bottom: 1rem;
+    color: ${({ theme }) => theme.colors.textSecondary};
 
     & strong {
       font-weight: 700;
@@ -75,6 +77,7 @@ export const AboutTextBlock = styled(motion.div)`
   @media (min-width: ${theme.breakpoints.md}) {
     text-align: start;
     flex: 3;
+    font-size: 1.2rem;
   }
 
   @media (min-width: ${theme.breakpoints.lg}) {
@@ -120,6 +123,8 @@ export const AboutSkillsTitle = styled(motion.h2)`
   font-size: 2rem;
   font-weight: 700;
   margin: 1rem 0 2rem;
+
+  color: ${({ theme }) => theme.colors.textPrimary};
 `;
 
 export const AboutSkillsItemBlock = styled(motion.div)`
@@ -136,6 +141,7 @@ export const AboutSkillsItem = styled(motion.div)`
   display: flex;
   align-items: flex-end;
   gap: 0.7rem;
+  color: ${({ theme }) => theme.colors.textPrimary};
 
   @media (min-width: ${theme.breakpoints.md}) {
     & > img {

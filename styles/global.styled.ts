@@ -168,7 +168,7 @@ html {
     scroll-behavior: smooth;
     
     background-color: ${theme.backgroundColors.primary};
-    color: ${theme.colors.textSecondary};
+    color: ${theme.colors.textPrimary};
 
     & section {
       overflow-x: hidden !important;

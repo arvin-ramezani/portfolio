@@ -38,6 +38,15 @@ export const HeroTextContainer = styled(motion.div)`
     font-weight: 700;
     letter-spacing: 1px;
     line-height: 1.5;
+    color: ${({ theme }) => theme.colors.textSecondary};
+
+    @media (min-width: ${theme.breakpoints.sm}) {
+      font-size: 0.8rem;
+    }
+
+    @media (min-width: ${theme.breakpoints.xl}) {
+      font-size: 1rem;
+    }
   }
 
   & > h1 {

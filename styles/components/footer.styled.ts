@@ -85,6 +85,8 @@ export const ContactBlock = styled(motion.div)<{ pagedir: 'rtl' | 'ltr' }>`
   flex-direction: column;
   align-items: center;
   direction: ltr;
+  color: ${({ theme }) => theme.colors.textSecondary};
+
   /* direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')}; */
 
   & > div#phoneBlock {
@@ -93,6 +95,7 @@ export const ContactBlock = styled(motion.div)<{ pagedir: 'rtl' | 'ltr' }>`
 
   @media (min-width: ${theme.breakpoints.md}) {
     align-items: flex-start;
+    font-size: 1.2rem;
   }
 `;
 
@@ -100,6 +103,7 @@ export const ContactTitle = styled.h3<{ pagedir: 'rtl' | 'ltr' }>`
   /* margin: ${({ pagedir }) =>
     pagedir === 'rtl' ? '3rem 0 3rem auto' : '3rem auto 3rem 0'}; */
 
+  color: ${({ theme }) => theme.colors.textPrimary};
   margin-right: ${({ pagedir }) => (pagedir === 'rtl' ? '0' : '0')};
   margin-left: ${({ pagedir }) => (pagedir === 'rtl' ? 'auto' : '0')};
   margin-top: 3rem;

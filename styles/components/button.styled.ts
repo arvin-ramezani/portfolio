@@ -12,7 +12,7 @@ export const StyledButton = styled(motion.button)<{
   padding: 0.5rem 1rem;
   cursor: pointer;
   font-family: Roboto, Vazir;
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: 900;
   width: 100%;
   display: flex;
@@ -27,6 +27,6 @@ export const StyledButton = styled(motion.button)<{
   }
 
   @media (min-width: ${theme.breakpoints.md}) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 `;

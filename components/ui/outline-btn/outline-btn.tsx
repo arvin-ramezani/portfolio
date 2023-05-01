@@ -32,10 +32,11 @@ export const StyledOutlineBtnContainer = styled.div``;
 export const StyledOutlineBtn = styled(motion.button)<{ color: string }>`
   border-radius: 0.3rem;
   background-color: transparent;
-  padding: 0.1rem 1rem;
+  padding: 0.2rem 1rem;
   cursor: pointer;
-  font-size: 0.7rem;
+  font-size: 0.98rem;
   font-weight: 500;
+  letter-spacing: 0.1rem;
 
   color: ${({ color }) => color};
   border: 1px solid ${({ color }) => color};
@@ -45,7 +46,7 @@ export const StyledOutlineBtn = styled(motion.button)<{ color: string }>`
   }
 
   @media (min-width: ${theme.breakpoints.md}) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 `;
 
