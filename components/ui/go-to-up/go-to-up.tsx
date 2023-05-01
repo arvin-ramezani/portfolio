@@ -1,9 +1,26 @@
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import {
+  AnimatePresence,
+  Variants,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+} from 'framer-motion';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { theme } from '@/styles/theme.styled';
+
+const goToUpVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+  },
+};
 
 const GoToUp = () => {
   const { scrollY } = useScroll();
@@ -22,21 +39,30 @@ const GoToUp = () => {
   };
 
   return (
-    <GoToUpWrapper onClick={onGoToUp}>
-      <StyledGoToUp
-        initial={{ opacity: 0, scale: 0 }}
-        animate={showIcon ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-        whileTap={{ opacity: 1, scale: [0, 1] }}
-        whileHover={{ opacity: 1, scale: [1, 1.2] }}
+    <AnimatePresence>
+      <GoToUpWrapper
+        onClick={onGoToUp}
+        variants={goToUpVariants}
+        initial="hidden"
+        animate={showIcon ? 'visible' : 'hidden'}
+        exit="hidden"
       >
-        <Image
-          src={'/images/icons/arrow-up.svg'}
-          alt="Arrow Up Icon"
-          width={40}
-          height={40}
-        />
-      </StyledGoToUp>
-    </GoToUpWrapper>
+        <StyledGoToUp
+          initial="hidden"
+          animate={showIcon ? 'visible' : 'hidden'}
+          whileTap={{ opacity: 1, scale: [0, 1] }}
+          whileHover={{ opacity: 1, scale: [1, 1.2] }}
+          exit="hidden"
+        >
+          <Image
+            src={'/images/icons/arrow-up.svg'}
+            alt="Arrow Up Icon"
+            width={40}
+            height={40}
+          />
+        </StyledGoToUp>
+      </GoToUpWrapper>
+    </AnimatePresence>
   );
 };
 

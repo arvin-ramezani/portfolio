@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { NextFont } from 'next/dist/compiled/@next/font';
 
-export const GlobalStyle = createGlobalStyle<{ localFont: NextFont }>`
+export const GlobalStyle = createGlobalStyle<{
+  localVazirFont: NextFont;
+  // localRobotoFont: NextFont;
+}>`
 
 /* CSS Reset */
 html, body, div, span, applet, object, iframe,
@@ -101,7 +104,7 @@ table {
 
 
 /* Roboto Fonts */
-@font-face {
+/* @font-face {
   font-family: Roboto;
   
   src: url('/fonts/roboto/Roboto-Thin.ttf') format('truetype');
@@ -141,18 +144,20 @@ table {
 
     src: url('/fonts/roboto/Roboto-Black.ttf') format('truetype');
   font-weight: 900;
-}
+} */
 
 * {
   box-sizing: border-box;
 }
 
 * button {
-  font-family: ${({ localFont }) => localFont.style.fontFamily} !important;
+  font-family: ${({ localVazirFont }) =>
+    localVazirFont.style.fontFamily} !important;
 }
 
 & input , textarea {
-  font-family: ${({ localFont }) => localFont.style.fontFamily} !important;
+  font-family: ${({ localVazirFont }) =>
+    localVazirFont.style.fontFamily} !important;
 
 }
 
@@ -163,7 +168,9 @@ html {
   body {
     margin: 0;
     padding: 0;
-    font-family: Roboto, Vazir;
+
+    font-family: ${({ localVazirFont }) =>
+      localVazirFont.style.fontFamily} !important;
     overflow-x: hidden !important;
     scroll-behavior: smooth;
     

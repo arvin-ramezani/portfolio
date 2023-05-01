@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
+import { useTranslation } from 'next-i18next';
 
 import {
   HeroImageContainer,
@@ -15,6 +16,7 @@ import { useRouter } from 'next/router';
 
 function HeroSection() {
   const router = useRouter();
+  const { t: translator } = useTranslation('home');
 
   const onCall = () => {
     if (isMobile) {
@@ -34,9 +36,11 @@ function HeroSection() {
           initial="hidden"
           animate="visible"
         >
-          <p>برنامه های کاربردی وب سریع با REACT.JS و NODE.JS</p>
+          <p>{translator('hero_section_sub_heading')}</p>
+          {/* <p>برنامه های کاربردی وب سریع با REACT.JS و NODE.JS</p> */}
 
-          <h1>رویاهای آنلاین خود را به واقعیت تبدیل کنید</h1>
+          <h1>{translator('hero_section_heading')}</h1>
+          {/* <h1>رویاهای آنلاین خود را به واقعیت تبدیل کنید</h1> */}
 
           <Button
             text={'تماس بگیرید'}
