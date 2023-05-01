@@ -183,11 +183,13 @@ export const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   overflow: hidden !important;
+  padding: 1rem;
 
   @media (min-width: ${theme.breakpoints.sm}) {
   }
 
   @media (min-width: ${theme.breakpoints.md}) {
+    padding: 2rem;
   }
 
   @media (min-width: ${theme.breakpoints.lg}) {

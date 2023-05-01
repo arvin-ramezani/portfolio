@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import { theme } from '../theme.styled';
 
 export const StyledLangSelectBox = styled(motion.select)`
-  padding: 0.4rem 0.7rem;
+  padding: 0.4rem 0.2rem;
   border-radius: 0.3rem;
   background: transparent;
   font-family: Roboto, Vazir;
+  font-size: 0.7rem;
   cursor: pointer;
 
   color: ${({ theme }) => theme.colors.textPrimary};

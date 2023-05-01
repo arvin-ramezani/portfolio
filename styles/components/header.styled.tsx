@@ -14,7 +14,7 @@ export const StyledHeader = styled(motion.header)`
     width: 100%;
 
     @media (min-width: ${theme.breakpoints.sm}) {
-      padding: 1.6rem 0;
+      padding: 1.6rem 1rem;
       width: 90%;
     }
 
