@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { isMobile } from 'react-device-detect';
 import { useTranslation } from 'next-i18next';
 
@@ -11,12 +11,20 @@ import {
 import { Container } from '@/styles/global.styled';
 import Button from '../ui/button/button';
 import { theme } from '@/styles/theme.styled';
-import { HeroImageVariants, HeroTextVariants } from './hero-section.variants';
+import {
+  HeroImageVariants,
+  HeroTextVariants,
+  heroImageVariants,
+  heroTextVariants,
+} from './hero-section.variants';
 import { useRouter } from 'next/router';
 
 function HeroSection() {
   const router = useRouter();
-  const { t: translator } = useTranslation('home');
+  const { t: translator } = useTranslation();
+  const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
+    router.locale === 'fa' ? 'rtl' : 'ltr'
+  );
 
   const onCall = () => {
     if (isMobile) {
@@ -28,22 +36,27 @@ function HeroSection() {
     router.push('/#contact');
   };
 
+  useEffect(() => {
+    setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
+  }, [router.locale]);
+
   return (
     <StyledHeroSection>
       <Container>
         <HeroTextContainer
-          variants={HeroTextVariants}
+          variants={heroTextVariants}
           initial="hidden"
           animate="visible"
+          custom={pageDir}
         >
-          <p>{translator('hero_section_sub_heading')}</p>
+          <p>{translator('home:hero_section_sub_heading')}</p>
           {/* <p>برنامه های کاربردی وب سریع با REACT.JS و NODE.JS</p> */}
 
-          <h1>{translator('hero_section_heading')}</h1>
+          <h1>{translator('home:hero_section_heading')}</h1>
           {/* <h1>رویاهای آنلاین خود را به واقعیت تبدیل کنید</h1> */}
 
           <Button
-            text={'تماس بگیرید'}
+            text={translator('common:call_me_btn')}
             onClick={onCall}
             color={theme.colors.primary}
             textColor={theme.colors.black}
@@ -51,9 +64,11 @@ function HeroSection() {
         </HeroTextContainer>
 
         <HeroImageContainer
-          variants={HeroImageVariants}
+          variants={heroImageVariants}
           initial="hidden"
           animate="visible"
+          custom={pageDir}
+          pagedir={pageDir}
         >
           <Image
             src="/images/freelancer.svg"

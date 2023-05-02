@@ -6,7 +6,7 @@ export const StyledLangSelectBox = styled(motion.select)`
   padding: 0.4rem 0.2rem;
   border-radius: 0.3rem;
   background: transparent;
-  font-family: Roboto, Vazir;
+  /* font-family: Vazir; */
   font-size: 0.7rem;
   cursor: pointer;
 
@@ -18,6 +18,7 @@ export const StyledLangSelectBox = styled(motion.select)`
   }
 
   @media (min-width: ${theme.breakpoints.md}) {
-    padding: 0.6rem 0.7rem;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.9rem;
   }
 `;

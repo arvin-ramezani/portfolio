@@ -78,7 +78,9 @@ export const HeroTextContainer = styled(motion.div)`
   }
 `;
 
-export const HeroImageContainer = styled(motion.div)`
+export const HeroImageContainer = styled(motion.div)<{
+  pagedir: 'rtl' | 'ltr';
+}>`
   position: relative;
   width: 300px;
   height: 300px;
@@ -87,9 +89,17 @@ export const HeroImageContainer = styled(motion.div)`
   @media (min-width: ${theme.breakpoints.md}) {
     margin-top: 0;
   }
+
   @media (min-width: ${theme.breakpoints.lg}) {
     width: 500px;
     height: 500px;
     flex: 1;
+  }
+
+  @media (min-width: ${theme.breakpoints.xxl}) {
+    & img {
+      margin-right: ${({ pagedir }) => (pagedir === 'rtl' ? '10%' : '0')};
+      margin-left: ${({ pagedir }) => (pagedir === 'ltr' ? '10%' : '0')};
+    }
   }
 `;

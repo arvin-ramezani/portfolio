@@ -18,8 +18,10 @@ import {
   AboutItemsVariants,
   AboutTextItemsVariants,
 } from './about-section.variants';
+import { useTranslation } from 'next-i18next';
 
 const AboutSection = () => {
+  const { t: translator } = useTranslation();
   const imageRef = useRef(null);
   const textRef = useRef(null);
   const skillsRef = useRef(null);
@@ -54,7 +56,8 @@ const AboutSection = () => {
           exit={'exit'}
           // transition={{ delay: 2 }}
         >
-          <AboutTitle>{'درباره ی من'}</AboutTitle>
+          {/* <AboutTitle>{'درباره ی من'}</AboutTitle> */}
+          <AboutTitle>{translator('home:about_title')}</AboutTitle>
           <p>
             <Image
               src="/images/Bullet.svg"
@@ -63,9 +66,9 @@ const AboutSection = () => {
               height={14}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
-            {/* {translator('about_text_1')} */}
-            سلام! من آروین رمضانی هستم. 30 سالمه و ساکن ایران / مازندران /
-            بابلسر هستم.
+            {translator('home:about_text_1')}
+            {/* سلام! من آروین رمضانی هستم. 30 سالمه و ساکن ایران / مازندران /
+            بابلسر هستم. */}
           </p>
 
           <p>
@@ -76,9 +79,10 @@ const AboutSection = () => {
               height={14}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
-            یادگیری توسعه وب را در شهریور 1399 با آموزش های آنلاین فارسی و
+            {/* یادگیری توسعه وب را در شهریور 1399 با آموزش های آنلاین فارسی و
             یوتیوب شروع کردم و پس از آن دانش خود را از طریق دوره های آنلاین
-            Udemy و به خصوص دوره های Academind گسترش دادم.
+            Udemy و به خصوص دوره های Academind گسترش دادم. */}
+            {translator('home:about_text_2')}
           </p>
 
           <p>
@@ -89,7 +93,9 @@ const AboutSection = () => {
               height={14}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
-            در تلاش برای JavaScript FullStack Developer شدن !!
+            {/* در تلاش برای JavaScript FullStack Developer شدن !! */}
+
+            {translator('home:about_text_3')}
           </p>
         </AboutTextBlock>
 
@@ -101,7 +107,8 @@ const AboutSection = () => {
           animate={isSkillsInView ? 'animate' : 'exit'}
           exit={'exit'}
         >
-          <AboutSkillsTitle>مهارت ها</AboutSkillsTitle>
+          {/* <AboutSkillsTitle>مهارت ها</AboutSkillsTitle> */}
+          <AboutSkillsTitle>{translator('home:skills_title')}</AboutSkillsTitle>
           <AboutSkillsItemBlock>
             <AboutSkillsItem>
               <Image
@@ -110,7 +117,8 @@ const AboutSection = () => {
                 height={40}
                 alt="nodejs"
               />
-              <AboutSkill>NodeJS</AboutSkill>
+
+              <AboutSkill>{translator('home:skill_name_nodejs')}</AboutSkill>
             </AboutSkillsItem>
             <AboutSkillsItem>
               <Image
@@ -119,7 +127,7 @@ const AboutSection = () => {
                 height={40}
                 alt="nextjs"
               />
-              <AboutSkill>NextJS</AboutSkill>
+              <AboutSkill>{translator('home:skill_name_nextjs')}</AboutSkill>
             </AboutSkillsItem>
           </AboutSkillsItemBlock>
         </AboutSkillsContainer>

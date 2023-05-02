@@ -1,10 +1,10 @@
-import { NextFont } from 'next/dist/compiled/@next/font';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { FormEvent, useEffect, useRef, useState, FC } from 'react';
 import { useInView } from 'framer-motion';
 import { CSSProperties } from 'styled-components';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
 import {
   ContactBlock,
@@ -26,6 +26,7 @@ import StarsCanvas from '../stars-canvas/stars-canvas';
 import { footerItemsVariants } from './footer.variants';
 
 const Footer = () => {
+  const { t: translator } = useTranslation();
   const sendEmailRef = useRef(null);
   const contactRef = useRef(null);
   const isEmailInView = useInView(sendEmailRef);
@@ -36,6 +37,10 @@ const Footer = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter();
   const [emailLoading, setEmailLoading] = useState(false);
+
+  const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
+    router.locale === 'fa' ? 'rtl' : 'ltr'
+  );
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -64,6 +69,10 @@ const Footer = () => {
     height: '100%',
   };
 
+  useEffect(() => {
+    setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
+  }, [router.locale]);
+
   return (
     <StyledFooter
     // className={myVazirFont.className}
@@ -83,13 +92,16 @@ const Footer = () => {
           initial="hidden"
           animate={isContactInView ? 'visible' : 'hidden'}
           exit="hidden"
-          pagedir={'rtl'}
+          pagedir={pageDir}
         >
-          <ContactTitle pagedir={'rtl'}>تماس با من</ContactTitle>
+          {/* <ContactTitle pagedir={'rtl'}>تماس با من</ContactTitle> */}
+          <ContactTitle pagedir={pageDir}>
+            {translator('home:footer_contact')}
+          </ContactTitle>
 
           <EmailBlock
             id="phoneBlock"
-            pagedir={'rtl'}
+            pagedir={pageDir}
             onClick={() => {
               if (typeof window !== 'undefined')
                 window.open('tel:+989361599686');
@@ -104,7 +116,7 @@ const Footer = () => {
             <p>+98 936 159 9686</p>
           </EmailBlock>
 
-          <EmailBlock pagedir={'rtl'}>
+          <EmailBlock pagedir={pageDir}>
             <Image
               src="/images/icons/mail-icon.svg"
               alt="Email Icon"
@@ -114,7 +126,7 @@ const Footer = () => {
             <p>a.plus.webb@gmail.com</p>
           </EmailBlock>
 
-          <LocationBlock pagedir={'rtl'}>
+          <LocationBlock pagedir={pageDir}>
             <Image
               src="/images/icons/location.svg"
               alt="Location Icon"
@@ -122,7 +134,8 @@ const Footer = () => {
               height={46}
             />
 
-            <p>ایران / مازندران / بابلسر</p>
+            <p>{translator('home:footer_location_text')}</p>
+            {/* <p>ایران / مازندران / بابلسر</p> */}
           </LocationBlock>
 
           <SocialMediaBlock>
@@ -196,7 +209,10 @@ const Footer = () => {
           animate={isEmailInView ? 'visible' : 'hidden'}
           exit="hidden"
         >
-          <SendEmailTitle>ارسال ایمیل</SendEmailTitle>
+          <SendEmailTitle>
+            {translator('home:footer_send_email_title')}
+          </SendEmailTitle>
+          {/* <SendEmailTitle>ارسال ایمیل</SendEmailTitle> */}
 
           <SendEmailForm
             onSubmit={onSubmit}
@@ -205,14 +221,14 @@ const Footer = () => {
           >
             <StyledInput
               ref={userNameRef}
-              placeholder={`* نام شما `}
+              placeholder={`* ${translator('common:name_input_label')}`}
               required
               name="name"
             />
             <StyledInput
               ref={userEmailRef}
               type="email"
-              placeholder={`* ایمیل شما`}
+              placeholder={`* ${translator('common:email_input_label')}`}
               required
               name="email"
             />
@@ -220,7 +236,7 @@ const Footer = () => {
             <StyledTextarea
               ref={userMessageRef}
               rows={4}
-              placeholder={`* پیام شما`}
+              placeholder={`* ${translator('common:message_input_label')}`}
               required
               name="message"
             />
@@ -235,8 +251,7 @@ const Footer = () => {
               }}
             /> */}
             <Button
-              // text={translatorCommon('call_me_btn')}
-              text={'ارسال'}
+              text={translator('common:submit_btn')}
               color={theme.colors.primary}
               textColor={theme.colors.black}
               wrapperStyle={{

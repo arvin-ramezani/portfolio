@@ -14,8 +14,6 @@ const LangSelectBox = () => {
   const { t: translatorCommon } = useTranslation('common');
 
   const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    // return;
-
     if (router.locale === e.target.value) return;
 
     router.push('/', '/', { locale: e.target.value });

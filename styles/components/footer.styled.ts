@@ -104,7 +104,7 @@ export const ContactTitle = styled.h3<{ pagedir: 'rtl' | 'ltr' }>`
     pagedir === 'rtl' ? '3rem 0 3rem auto' : '3rem auto 3rem 0'}; */
 
   color: ${({ theme }) => theme.colors.textPrimary};
-  margin-right: ${({ pagedir }) => (pagedir === 'rtl' ? '0' : '0')};
+  margin-right: ${({ pagedir }) => (pagedir === 'rtl' ? '0' : 'auto')};
   margin-left: ${({ pagedir }) => (pagedir === 'rtl' ? 'auto' : '0')};
   margin-top: 3rem;
   margin-bottom: 3rem;
