@@ -74,17 +74,10 @@ const Footer = () => {
   }, [router.locale]);
 
   return (
-    <StyledFooter
-    // className={myVazirFont.className}
-    >
+    <StyledFooter>
       <StarsCanvas styles={starsCanvasStyles} />
 
-      <Container
-      // variants={footerContainerVariants}
-      // initial="hidden"
-      // animate={'visible'}
-      // exit="hidden"
-      >
+      <Container>
         <ContactBlock
           id={'contact'}
           variants={footerItemsVariants}
@@ -94,7 +87,6 @@ const Footer = () => {
           exit="hidden"
           pagedir={pageDir}
         >
-          {/* <ContactTitle pagedir={'rtl'}>تماس با من</ContactTitle> */}
           <ContactTitle pagedir={pageDir}>
             {translator('home:footer_contact')}
           </ContactTitle>
@@ -212,7 +204,6 @@ const Footer = () => {
           <SendEmailTitle>
             {translator('home:footer_send_email_title')}
           </SendEmailTitle>
-          {/* <SendEmailTitle>ارسال ایمیل</SendEmailTitle> */}
 
           <SendEmailForm
             onSubmit={onSubmit}
@@ -241,15 +232,6 @@ const Footer = () => {
               name="message"
             />
 
-            {/* <Button
-              text={'ارسال'}
-              color={theme.colors.textPrimary}
-              textColor={theme.colors.black}
-              wrapperStyle={{
-                marginTop: '1.4rem',
-                width: '100%',
-              }}
-            /> */}
             <Button
               text={translator('common:submit_btn')}
               color={theme.colors.primary}

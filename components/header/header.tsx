@@ -1,4 +1,3 @@
-import { NextFont } from 'next/dist/compiled/@next/font';
 import { useRouter } from 'next/router';
 import React, { FC, useEffect, useState } from 'react';
 import { useTranslation } from 'next-i18next';

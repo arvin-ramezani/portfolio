@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { NextFont } from 'next/dist/compiled/@next/font';
 
 import { buttonVariants } from './outline-btn.variants';
 import { theme } from '@/styles/theme.styled';

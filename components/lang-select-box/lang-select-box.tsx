@@ -8,11 +8,6 @@ import { selectBoxVariants } from './lang-select-box.variants';
 const LangSelectBox = () => {
   const router = useRouter();
 
-  const [pageDir, setPageDir] = useState(
-    router.locale === 'fa' ? 'rtl' : 'ltr'
-  );
-  const { t: translatorCommon } = useTranslation('common');
-
   const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
     if (router.locale === e.target.value) return;
 

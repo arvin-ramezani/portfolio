@@ -39,10 +39,7 @@ export default function Home() {
 
       <Header />
 
-      <main
-        // className={myVazirLocalFont.className}
-        style={{ scrollBehavior: 'smooth' }}
-      >
+      <main>
         <HeroSection />
 
         <AboutSection />

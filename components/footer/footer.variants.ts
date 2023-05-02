@@ -6,10 +6,6 @@ export const footerContainerVariants: Variants = {
   },
   visible: {
     opacity: 1,
-    // transition: {
-    //   when: 'beforeChildren',
-    //   staggerChildren: 0.2,
-    // },
   },
 };
 

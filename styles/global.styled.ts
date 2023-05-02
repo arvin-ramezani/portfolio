@@ -55,97 +55,6 @@ table {
 }
 
 
-/* Vazir Fonts */
-
-/* @font-face {
-  font-family: Vazir;
-  
-  src: url('/fonts/vazir/Vazir-Thin.ttf') format('truetype');
-  font-weight: 100;
-}
-      
-@font-face {
-  font-family: Vazir;
-  
-  src: url('/fonts/vazir/Vazir-Light.ttf') format('truetype');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: Vazir;
-  
-    src: url('/fonts/vazir/Vazir-Regular.ttf') format('truetype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: Vazir;
-
-    src: url('/fonts/vazir/Vazir-Medium.ttf') format('truetype');
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: Vazir;
-
-    src: url('/fonts/vazir/Vazir-Bold.ttf') format('truetype');
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: Vazir;
-
-    src: url('/fonts/vazir/Vazir-Black.ttf') format('truetype');
-  font-weight: 900;
-} */
-
-
-
-
-
-/* Roboto Fonts */
-/* @font-face {
-  font-family: Roboto;
-  
-  src: url('/fonts/roboto/Roboto-Thin.ttf') format('truetype');
-  font-weight: 100;
-}
-      
-@font-face {
-  font-family: Roboto;
-  
-  src: url('/fonts/roboto/Roboto-Light.ttf') format('truetype');
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: Roboto;
-  
-    src: url('/fonts/roboto/Roboto-Regular.ttf') format('truetype');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: Roboto;
-
-    src: url('/fonts/roboto/Roboto-Medium.ttf') format('truetype');
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: Roboto;
-
-    src: url('/fonts/roboto/Roboto-Bold.ttf') format('truetype');
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: Roboto;
-
-    src: url('/fonts/roboto/Roboto-Black.ttf') format('truetype');
-  font-weight: 900;
-} */
-
 * {
   box-sizing: border-box;
 }
@@ -187,6 +96,7 @@ html {
       overflow-x: hidden !important;
     }
   }
+
 
 `;
 

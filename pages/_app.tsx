@@ -35,35 +35,6 @@ const myVazirLocalFont = localFont({
   ],
 });
 
-// const myRobotoFont = localFont({
-//   src: [
-//     {
-//       path: '../public/fonts/roboto/Roboto-Thin.ttf',
-//       weight: '100',
-//     },
-//     {
-//       path: '../public/fonts/roboto/Roboto-Light.ttf',
-//       weight: '300',
-//     },
-//     {
-//       path: '../public/fonts/roboto/Roboto-Regular.ttf',
-//       weight: '400',
-//     },
-//     {
-//       path: '../public/fonts/roboto/Roboto-Medium.ttf',
-//       weight: '500',
-//     },
-//     {
-//       path: '../public/fonts/roboto/Roboto-Bold.ttf',
-//       weight: '700',
-//     },
-//     {
-//       path: '../public/fonts/roboto/Roboto-Black.ttf',
-//       weight: '900',
-//     },
-//   ],
-// });
-
 function App({ Component, pageProps }: AppProps) {
   if (typeof document !== 'undefined') {
     document.body.classList.add(myVazirLocalFont.className);
@@ -71,10 +42,7 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle
-        localVazirFont={myVazirLocalFont}
-        // localRobotoFont={myRobotoFont}
-      />
+      <GlobalStyle localVazirFont={myVazirLocalFont} />
       <Component {...pageProps} />
     </ThemeProvider>
   );

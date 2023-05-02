@@ -1,13 +1,12 @@
-import { NextFont } from 'next/dist/compiled/@next/font';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import React, { CSSProperties, FC } from 'react';
 
 import {
   StyledButton,
   StyledButtonWrapper,
 } from '@/styles/components/button.styled';
-import { Variants, motion } from 'framer-motion';
-import React, { CSSProperties, FC } from 'react';
 import { buttonVariants } from './button.variants';
-import Image from 'next/image';
 
 interface ButtonProps {
   text: string;
@@ -41,13 +40,6 @@ const Button: FC<ButtonProps> = ({
         textcolor={textColor}
         layout
       >
-        {/* <Image
-          src="images/loading.svg"
-          alt="Loading"
-          width={16}
-          height={16}
-        /> */}
-
         {loading ? (
           <Image
             src="/images/icons/spinner-lg.svg"

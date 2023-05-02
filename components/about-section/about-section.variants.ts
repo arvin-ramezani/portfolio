@@ -1,6 +1,6 @@
 import { Variants } from 'framer-motion';
 
-export const AboutItemsVariants: Variants = {
+export const aboutItemsVariants: Variants = {
   initial: (dir) => {
     if (dir === 'left') {
       return { x: '100%', opacity: 0 };
@@ -22,7 +22,7 @@ export const AboutItemsVariants: Variants = {
   exit: { opacity: 0 },
 };
 
-export const AboutTextItemsVariants: Variants = {
+export const aboutTextItemsVariants: Variants = {
   initial: {
     opacity: 0,
   },

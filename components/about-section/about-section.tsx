@@ -15,8 +15,8 @@ import {
 } from '@/styles/components/about-section.styled';
 import { Container } from '@/styles/global.styled';
 import {
-  AboutItemsVariants,
-  AboutTextItemsVariants,
+  aboutItemsVariants,
+  aboutTextItemsVariants,
 } from './about-section.variants';
 import { useTranslation } from 'next-i18next';
 
@@ -33,7 +33,7 @@ const AboutSection = () => {
     <StyledAboutSection>
       <Container>
         <AboutImageBlock
-          variants={AboutItemsVariants}
+          variants={aboutItemsVariants}
           ref={imageRef}
           custom={'left'}
           initial="initial"
@@ -48,15 +48,13 @@ const AboutSection = () => {
         </AboutImageBlock>
 
         <AboutTextBlock
-          variants={AboutTextItemsVariants}
+          variants={aboutTextItemsVariants}
           ref={textRef}
           custom={null}
           initial="initial"
           animate={isTextInView ? 'animate' : 'exit'}
           exit={'exit'}
-          // transition={{ delay: 2 }}
         >
-          {/* <AboutTitle>{'درباره ی من'}</AboutTitle> */}
           <AboutTitle>{translator('home:about_title')}</AboutTitle>
           <p>
             <Image
@@ -67,8 +65,6 @@ const AboutSection = () => {
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
             {translator('home:about_text_1')}
-            {/* سلام! من آروین رمضانی هستم. 30 سالمه و ساکن ایران / مازندران /
-            بابلسر هستم. */}
           </p>
 
           <p>
@@ -79,10 +75,6 @@ const AboutSection = () => {
               height={14}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
-            {/* یادگیری توسعه وب را در شهریور 1399 با آموزش های آنلاین فارسی و
-            یوتیوب شروع کردم و پس از آن دانش خود را از طریق دوره های آنلاین
-            Udemy و به خصوص دوره های Academind گسترش دادم. */}
-            {translator('home:about_text_2')}
           </p>
 
           <p>
@@ -93,21 +85,19 @@ const AboutSection = () => {
               height={14}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
-            {/* در تلاش برای JavaScript FullStack Developer شدن !! */}
 
             {translator('home:about_text_3')}
           </p>
         </AboutTextBlock>
 
         <AboutSkillsContainer
-          variants={AboutItemsVariants}
+          variants={aboutItemsVariants}
           ref={skillsRef}
           custom={'right'}
           initial="initial"
           animate={isSkillsInView ? 'animate' : 'exit'}
           exit={'exit'}
         >
-          {/* <AboutSkillsTitle>مهارت ها</AboutSkillsTitle> */}
           <AboutSkillsTitle>{translator('home:skills_title')}</AboutSkillsTitle>
           <AboutSkillsItemBlock>
             <AboutSkillsItem>

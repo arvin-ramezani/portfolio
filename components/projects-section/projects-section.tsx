@@ -44,7 +44,6 @@ const ProjectsSection = () => {
       <StyledDarkLayout />
 
       <Container id="projectsSectionContainer">
-        {/* <StyledProjectsTitle>پروژه های من</StyledProjectsTitle> */}
         <StyledProjectsTitle>
           {translator('home:projects_title')}
         </StyledProjectsTitle>

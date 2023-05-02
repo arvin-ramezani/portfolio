@@ -11,12 +11,7 @@ import {
 import { Container } from '@/styles/global.styled';
 import Button from '../ui/button/button';
 import { theme } from '@/styles/theme.styled';
-import {
-  HeroImageVariants,
-  HeroTextVariants,
-  heroImageVariants,
-  heroTextVariants,
-} from './hero-section.variants';
+import { heroImageVariants, heroTextVariants } from './hero-section.variants';
 import { useRouter } from 'next/router';
 
 function HeroSection() {
@@ -50,10 +45,8 @@ function HeroSection() {
           custom={pageDir}
         >
           <p>{translator('home:hero_section_sub_heading')}</p>
-          {/* <p>برنامه های کاربردی وب سریع با REACT.JS و NODE.JS</p> */}
 
           <h1>{translator('home:hero_section_heading')}</h1>
-          {/* <h1>رویاهای آنلاین خود را به واقعیت تبدیل کنید</h1> */}
 
           <Button
             text={translator('common:call_me_btn')}
