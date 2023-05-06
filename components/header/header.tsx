@@ -34,6 +34,7 @@ const Header = () => {
           height={30}
           priority
           pagedir={pageDir}
+          onClick={router.push.bind(null, '/') as () => void}
         />
 
         <OutlineBtn

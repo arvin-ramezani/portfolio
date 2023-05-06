@@ -42,6 +42,7 @@ export const StyledArrowUp = styled(motion.div)`
 
 export const Logo = styled(Image)<{ pagedir: 'rtl' | 'ltr' }>`
   margin-right: -1rem;
+  cursor: pointer;
 
   margin: ${({ pagedir }) => (pagedir === 'rtl' ? '0 0 0 auto' : '0 auto 0 0')};
   /* margin: ${({ pagedir }) =>

@@ -34,6 +34,7 @@ const ProjectsSection = () => {
       <video
         autoPlay
         muted
+        playsInline
         loop
       >
         <source
