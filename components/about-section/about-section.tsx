@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React, { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { useTranslation } from 'next-i18next';
 
 import {
   AboutImageBlock,
@@ -18,7 +19,6 @@ import {
   aboutItemsVariants,
   aboutTextItemsVariants,
 } from './about-section.variants';
-import { useTranslation } from 'next-i18next';
 
 const AboutSection = () => {
   const { t: translator } = useTranslation();
@@ -75,6 +75,7 @@ const AboutSection = () => {
               height={14}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
+            {translator('home:about_text_2')}
           </p>
 
           <p>

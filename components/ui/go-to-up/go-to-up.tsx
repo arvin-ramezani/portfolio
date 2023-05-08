@@ -57,8 +57,8 @@ const GoToUp = () => {
           <Image
             src={'/images/icons/arrow-up.svg'}
             alt="Arrow Up Icon"
-            width={40}
-            height={40}
+            width={48}
+            height={48}
           />
         </StyledGoToUp>
       </GoToUpWrapper>
