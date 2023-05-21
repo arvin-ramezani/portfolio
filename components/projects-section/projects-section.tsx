@@ -4,12 +4,14 @@ import TypeWriter from '../ui/type-writer/type-writer';
 import { useTranslation } from 'next-i18next';
 
 import {
+  ProjectsContainer,
   StyledComingSoon,
   StyledDarkLayout,
   StyledProjectsSection,
   StyledProjectsTitle,
 } from '@/styles/components/projects-section.styled';
 import { Container } from '@/styles/global.styled';
+import Project from '../project/project';
 
 const ProjectsSection = () => {
   const { t: translator } = useTranslation();
@@ -49,9 +51,17 @@ const ProjectsSection = () => {
           {translator('home:projects_title')}
         </StyledProjectsTitle>
 
-        <StyledComingSoon>
-          <TypeWriter text={['Coming Soon...!!']} />
-        </StyledComingSoon>
+        <ProjectsContainer>
+          <Project
+            name="Realtor App"
+            video="/videos/nestjs-realtor-demo.mp4"
+          />
+
+          <Project
+            name="Pizza Shop"
+            video="/videos/pizza-shop.mp4"
+          />
+        </ProjectsContainer>
       </Container>
 
       <Image
