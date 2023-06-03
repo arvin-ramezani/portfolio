@@ -44,7 +44,7 @@ export const StyledProjectsSection = styled.section`
 
   & #projectsSectionContainer {
     flex: 1;
-    /* justify-content: center; */
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     padding: 0.5rem;
@@ -97,7 +97,7 @@ export const StyledDarkLayout = styled.div`
 `;
 
 export const StyledProjectsTitle = styled(motion.h2)`
-  margin-top: 1rem;
+  margin: 0rem 0 3rem;
   font-size: 2rem;
   font-weight: 700;
 
@@ -131,9 +131,20 @@ export const StyledComingSoon = styled(motion.div)`
 `;
 
 export const ProjectsContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-gap: 1rem;
   margin-top: 2rem;
-  direction: ltr;
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    max-width: 80%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: ${theme.breakpoints.lg}) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: ${theme.breakpoints.xxl}) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;

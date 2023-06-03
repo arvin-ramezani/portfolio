@@ -11,7 +11,7 @@ import {
   StyledProjectsTitle,
 } from '@/styles/components/projects-section.styled';
 import { Container } from '@/styles/global.styled';
-import Project from '../project/project';
+import ProjectCard from '../project-card/project-card';
 
 const ProjectsSection = () => {
   const { t: translator } = useTranslation();
@@ -52,14 +52,27 @@ const ProjectsSection = () => {
         </StyledProjectsTitle>
 
         <ProjectsContainer>
-          <Project
+          <ProjectCard
             name="Realtor App"
             video="/videos/nestjs-realtor-demo.mp4"
+            cover="/images/projects-cover/realtor-app.svg"
           />
 
-          <Project
+          <ProjectCard
             name="Pizza Shop"
             video="/videos/pizza-shop.mp4"
+            cover="/images/projects-cover/pizza-shop.svg"
+          />
+          <ProjectCard
+            name="Realtor App"
+            video="/videos/nestjs-realtor-demo.mp4"
+            cover="/images/projects-cover/realtor-app.svg"
+          />
+
+          <ProjectCard
+            name="Pizza Shop"
+            video="/videos/pizza-shop.mp4"
+            cover="/images/projects-cover/pizza-shop.svg"
           />
         </ProjectsContainer>
       </Container>
