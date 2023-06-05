@@ -36,7 +36,7 @@ export const StyledProjectsSection = styled.section`
     right: 0;
     left: 0;
     bottom: 0;
-    height: 100vh;
+    height: 100%;
     min-width: 100vw;
     object-fit: cover;
     z-index: -1;

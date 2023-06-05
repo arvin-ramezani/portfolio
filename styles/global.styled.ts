@@ -74,29 +74,32 @@ table {
 
 }
 
+* strong {
+  font-weight: 700;
+}
+
 html {
   scroll-behavior: smooth !important;
 }
 
 
 
-  body {
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 
-    font-family: ${({ localVazirFont }) =>
-      localVazirFont.style.fontFamily} !important;
+  font-family: ${({ localVazirFont }) =>
+    localVazirFont.style.fontFamily} !important;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+  
+  background-color: ${theme.backgroundColors.primary};
+  color: ${theme.colors.textPrimary};
+
+  & section {
     overflow-x: hidden !important;
-    scroll-behavior: smooth;
-    
-    background-color: ${theme.backgroundColors.primary};
-    color: ${theme.colors.textPrimary};
-
-    & section {
-      overflow-x: hidden !important;
-    }
   }
-
+}
 
 `;
 

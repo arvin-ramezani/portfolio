@@ -3,7 +3,8 @@ import { theme } from '../theme.styled';
 import { motion } from 'framer-motion';
 
 export const StyledProject = styled.article`
-  padding: 0.5rem;
+  position: relative;
+  padding: 0.5rem 0.5rem 1.8rem;
   background: #fff;
   border-radius: 0.5rem;
   color: #000;
@@ -11,6 +12,8 @@ export const StyledProject = styled.article`
   grid-row: span 1;
 
   & h4 {
+    font-size: 1.4rem;
+    padding: 0.5rem 1rem;
     font-weight: 700;
     margin-bottom: 0.7rem;
     direction: ltr;
@@ -45,7 +48,7 @@ export const PlayBackDrop = styled(motion.div)`
   border-radius: 0.3rem;
 `;
 
-export const VideoModal = styled(motion.div)`
+export const StyledVideoModal = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
@@ -55,6 +58,7 @@ export const VideoModal = styled(motion.div)`
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 2;
+  cursor: default;
 
   & img {
     position: fixed;
@@ -66,6 +70,7 @@ export const VideoModal = styled(motion.div)`
   & video {
     width: 100%;
     height: auto;
+    cursor: pointer;
   }
 
   @media (min-width: ${theme.breakpoints.md}) {
@@ -73,6 +78,24 @@ export const VideoModal = styled(motion.div)`
       width: 70%;
       height: auto;
     }
+  }
+`;
+
+export const StyledNotice = styled.div`
+  width: 90%;
+  background: #fff;
+  padding: 2rem 1rem 1rem;
+  border-radius: 0.5rem;
+  line-height: 130%;
+  font-size: 1.2rem;
+
+  & h4 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  @media (min-width: ${theme.breakpoints.lg}) {
+    width: 60%;
   }
 `;
 
@@ -96,5 +119,28 @@ export const ToolsContainer = styled.div`
     & img {
       margin-right: 0.2rem;
     }
+  }
+`;
+
+export const StyledProjectDesc = styled(motion.div)`
+  font-size: 1.2rem;
+  line-height: 120%;
+  overflow: hidden;
+  padding: 0 0.3rem;
+`;
+
+export const ShowMore = styled.div`
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.blue};
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  cursor: pointer;
+
+  & span {
+    direction: ltr;
+    display: inline-block;
   }
 `;
