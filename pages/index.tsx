@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import localFont from 'next/font/local';
 import HeroSection from '@/components/hero-section/hero-section';
 import Header from '@/components/header/header';
 import AboutSection from '@/components/about-section/about-section';
@@ -10,51 +9,22 @@ import GoToUp from '@/components/ui/go-to-up/go-to-up';
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { IProject } from '@/utils/types/project.types';
+import { PROJECT_LIST } from '@/utils/data/projects.data';
 
-const dummyDescription: string = `This is a practice project from 
-<a
-  href="https://www.udemy.com/course/the-nest-js-bootcamp-complete-developer-guide/"
-  target="_blank"
->
-  <strong>The Nest JS Bootcamp - Complete Developer Guide</strong> 
-  Course. This is a simple API side of Realtor app like 
-</a>
-<a
-  href="https://www.realtor.com"
-  target="_blank"
->
-  Realtor.com
-</a>
-, where users can signup as realtor to show and sell their homes, and
-other users as buyers can signup for message to realtors to buy the
-specific house.
-<br />
-This was very simple app but teaches a lot about different parts of
-NestJS framework like: ORM Integration, Middleware, Interceptors,
-Guards, Decorators, Param Decorators, Integration Testing and so on.
-<br />I also learned Swagger for API documentation and apply to this
-project.`;
-
-const DUMMY_PROJECT_LIST: IProject[] = [
-  {
-    name: 'Realtor App',
-    video: '/videos/nestjs-realtor-demo.mp4',
-    cover: '/images/projects-cover/realtor-app.svg',
-    description: dummyDescription,
-    translatorName: 'realtor_app',
-  },
-];
+interface HomePageProps {
+  projectList: IProject[];
+}
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       ...(await serverSideTranslations(locale as string, ['home', 'common'])),
-      projectList: DUMMY_PROJECT_LIST,
+      projectList: PROJECT_LIST,
     },
   };
 };
 
-export default function Home({ projectList }: { projectList: IProject[] }) {
+export default function Home({ projectList }: HomePageProps) {
   return (
     <>
       <Head>

@@ -6,28 +6,26 @@ import {
   ShowMore,
   StyledProjectDesc,
 } from '@/styles/components/project-card.styled';
-import { projectsDescVariants } from './project-desc.variants';
 
 interface ProjectDescProps {
-  description: string;
   translatorName: string;
+  onShowMore: Function;
+  showMore: boolean;
 }
 
-const ProjectDesc: FC<ProjectDescProps> = ({ description, translatorName }) => {
+const ProjectDesc: FC<ProjectDescProps> = ({
+  translatorName,
+  onShowMore,
+  showMore,
+}) => {
   const { t: translator } = useTranslation();
-  const [showFullText, setShowFullText] = useState(false);
 
   function toggleFullText() {
-    setShowFullText((prev) => !prev);
+    onShowMore();
   }
 
   return (
-    <StyledProjectDesc
-      variants={projectsDescVariants}
-      initial={'less'}
-      animate={'more'}
-      custom={showFullText}
-    >
+    <StyledProjectDesc>
       <p
         dangerouslySetInnerHTML={{
           __html: `${translator(`home:projects_desc_${translatorName}`)}`,
@@ -62,7 +60,7 @@ const ProjectDesc: FC<ProjectDescProps> = ({ description, translatorName }) => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.2 }}
         >
-          {showFullText ? 'less..' : 'more...'}
+          {showMore ? 'less..' : 'more...'}
         </motion.span>
       </ShowMore>
     </StyledProjectDesc>

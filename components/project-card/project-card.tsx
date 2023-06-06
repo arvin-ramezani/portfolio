@@ -12,12 +12,12 @@ import Image from 'next/image';
 import ProjectSkillsList from './project-skills-list/project-skills-list';
 import ProjectVideoModal from './video-modal/video-modal';
 import ProjectDesc from './project-desc/project-desc';
+import { projectsVariants } from './project-desc/project-desc.variants';
 
 interface ProjectProps {
   name: string;
   video: string;
   cover: string;
-  description: string;
   translatorName: string;
 }
 
@@ -25,13 +25,20 @@ const ProjectCard: FC<ProjectProps> = ({
   name,
   video,
   cover,
-  description,
   translatorName,
 }) => {
   const [playVideo, setPlayVideo] = useState(false);
+  const [ShowMore, setShowMore] = useState(false);
+
+  const showMoreHandler = () => setShowMore((prev) => !prev);
 
   return (
-    <StyledProject>
+    <StyledProject
+      variants={projectsVariants}
+      initial={'less'}
+      animate={'more'}
+      custom={ShowMore}
+    >
       <h4>{name}</h4>
       <VideoContainer>
         <motion.img
@@ -61,8 +68,9 @@ const ProjectCard: FC<ProjectProps> = ({
       />
 
       <ProjectDesc
-        description={description}
         translatorName={translatorName}
+        onShowMore={showMoreHandler}
+        showMore={ShowMore}
       />
     </StyledProject>
   );

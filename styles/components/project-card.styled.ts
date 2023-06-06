@@ -2,14 +2,15 @@ import styled from 'styled-components';
 import { theme } from '../theme.styled';
 import { motion } from 'framer-motion';
 
-export const StyledProject = styled.article`
+export const StyledProject = styled(motion.article)`
   position: relative;
   padding: 0.5rem 0.5rem 1.8rem;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.white};
   border-radius: 0.5rem;
   color: #000;
   grid-column: span 1;
   grid-row: span 1;
+  overflow: hidden;
 
   & h4 {
     font-size: 1.4rem;
@@ -111,7 +112,7 @@ export const ToolsContainer = styled.div`
     & li {
       cursor: pointer;
       padding: 0.3rem;
-      background: #fff;
+      background: ${({ theme }) => theme.colors.white};
       display: block;
       border-radius: 0.3rem;
     }
@@ -130,14 +131,16 @@ export const StyledProjectDesc = styled(motion.div)`
 `;
 
 export const ShowMore = styled.div`
-  display: inline-block;
   font-size: 1rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.blue};
+  background: ${({ theme }) => theme.colors.white};
   position: absolute;
+  width: 100%;
   bottom: 0;
-  left: 1rem;
+  left: 0;
   cursor: pointer;
+  padding: 0.3rem 0.8rem;
 
   & span {
     direction: ltr;

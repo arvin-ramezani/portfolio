@@ -60,8 +60,8 @@ const AboutSection = () => {
             <Image
               src="/images/Bullet.svg"
               alt="bullet"
-              width={14}
-              height={14}
+              width={10}
+              height={10}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
             {translator('home:about_text_1')}
@@ -71,8 +71,8 @@ const AboutSection = () => {
             <Image
               src="/images/Bullet.svg"
               alt="bullet"
-              width={14}
-              height={14}
+              width={10}
+              height={10}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
             {translator('home:about_text_2')}
@@ -82,8 +82,8 @@ const AboutSection = () => {
             <Image
               src="/images/Bullet.svg"
               alt="bullet"
-              width={14}
-              height={14}
+              width={10}
+              height={10}
               style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
 

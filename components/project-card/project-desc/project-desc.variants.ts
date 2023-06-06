@@ -1,7 +1,8 @@
 import { Variants } from 'framer-motion';
 
-export const projectsDescVariants: Variants = {
-  less: { height: '200px' },
+export const projectsVariants: Variants = {
+  // less: { height: '100px' },
+  less: { height: '430px' },
   more: (showFullText: boolean) =>
-    showFullText ? { height: 'auto' } : { height: '200px' },
+    showFullText ? { height: 'auto' } : { height: '430px' },
 };
