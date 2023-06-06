@@ -141,6 +141,7 @@ export const ShowMore = styled.div`
   left: 0;
   cursor: pointer;
   padding: 0.3rem 0.8rem;
+  direction: ltr;
 
   & span {
     direction: ltr;
