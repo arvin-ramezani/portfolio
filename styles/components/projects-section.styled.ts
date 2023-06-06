@@ -103,12 +103,10 @@ export const StyledProjectsTitle = styled(motion.h2)`
 
   @media (min-width: ${theme.breakpoints.md}) {
     font-size: 3rem;
-    margin-top: 4rem;
   }
 
   @media (min-width: ${theme.breakpoints.xl}) {
     font-size: 4rem;
-    margin-top: 5rem;
   }
 `;
 
