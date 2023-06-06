@@ -21,7 +21,10 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projectList }) => {
   const { t: translator } = useTranslation();
 
   return (
-    <StyledProjectsSection id={'projects'}>
+    <StyledProjectsSection
+      id={'projects'}
+      layout
+    >
       <Image
         id="projectsSectionSmBgTop"
         src="/images/projects-section-background-top.svg"
@@ -55,7 +58,7 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projectList }) => {
           {translator('home:projects_title')}
         </StyledProjectsTitle>
 
-        <ProjectsContainer>
+        <ProjectsContainer layout>
           {projectList.map(({ name, cover, video, translatorName }) => (
             <ProjectCard
               key={name}
@@ -65,33 +68,6 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projectList }) => {
               translatorName={translatorName}
             />
           ))}
-
-          {/* <ProjectCard
-            name="Realtor App"
-            video="/videos/nestjs-realtor-demo.mp4"
-            cover="/images/projects-cover/realtor-app.svg"
-            description={dummyDescription}
-          />
-
-          <ProjectCard
-            name="Pizza Shop"
-            video="/videos/pizza-shop.mp4"
-            cover="/images/projects-cover/pizza-shop.svg"
-            description={dummyDescription}
-          />
-          <ProjectCard
-            name="Realtor App"
-            video="/videos/nestjs-realtor-demo.mp4"
-            cover="/images/projects-cover/realtor-app.svg"
-            description={dummyDescription}
-          />
-
-          <ProjectCard
-            name="Pizza Shop"
-            video="/videos/pizza-shop.mp4"
-            cover="/images/projects-cover/pizza-shop.svg"
-            description={dummyDescription}
-          /> */}
         </ProjectsContainer>
       </Container>
 

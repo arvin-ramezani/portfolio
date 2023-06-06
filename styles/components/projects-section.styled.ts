@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
-
 import styled from 'styled-components';
+
 import { theme } from '../theme.styled';
 
-export const StyledProjectsSection = styled.section`
+export const StyledProjectsSection = styled(motion.section)`
   position: relative;
   min-height: 95vh;
   width: 100vw;
@@ -128,10 +128,11 @@ export const StyledComingSoon = styled(motion.div)`
   }
 `;
 
-export const ProjectsContainer = styled.div`
+export const ProjectsContainer = styled(motion.div)`
   display: grid;
   grid-gap: 1rem;
   margin-top: 2rem;
+  grid-template-columns: 1fr;
 
   @media (min-width: ${theme.breakpoints.md}) {
     max-width: 80%;

@@ -16,8 +16,8 @@ const ProjectSkillsList: FC<ProjectSkillsList> = ({ skills }) => {
         {skills.map((skill) => (
           <motion.li
             key={skill}
-            initial={{ background: '#fff' }}
-            whileHover={{ background: `${theme.colors.darkWhite}` }}
+            initial={{ background: theme.colors.white }}
+            whileHover={{ background: theme.colors.darkWhite }}
           >
             <Image
               src="images/icons/bullet.svg"
@@ -28,55 +28,6 @@ const ProjectSkillsList: FC<ProjectSkillsList> = ({ skills }) => {
             {skill}
           </motion.li>
         ))}
-
-        {/* <motion.li
-          initial={{ background: '#fff' }}
-          whileHover={{ background: `${theme.colors.darkWhite}` }}
-        >
-          <Image
-            src="images/icons/bullet.svg"
-            width={10}
-            height={10}
-            alt="bullet icon"
-          />
-          Swagger
-        </motion.li>
-        <motion.li
-          initial={{ background: '#fff' }}
-          whileHover={{ background: `${theme.colors.darkWhite}` }}
-        >
-          <Image
-            src="images/icons/bullet.svg"
-            width={10}
-            height={10}
-            alt="bullet icon"
-          />
-          NestJs
-        </motion.li>
-        <motion.li
-          initial={{ background: '#fff' }}
-          whileHover={{ background: `${theme.colors.darkWhite}` }}
-        >
-          <Image
-            src="images/icons/bullet.svg"
-            width={10}
-            height={10}
-            alt="bullet icon"
-          />
-          Prisma
-        </motion.li>
-        <motion.li
-          initial={{ background: '#fff' }}
-          whileHover={{ background: `${theme.colors.darkWhite}` }}
-        >
-          <Image
-            src="images/icons/bullet.svg"
-            width={10}
-            height={10}
-            alt="bullet icon"
-          />
-          PostgreSQL
-        </motion.li> */}
       </ul>
     </ToolsContainer>
   );

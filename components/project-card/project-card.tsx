@@ -1,18 +1,18 @@
-import React, { FC, useState, useRef } from 'react';
-import { AnimatePresence, Variants, motion } from 'framer-motion';
+import React, { FC, useState } from 'react';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 import {
   PlayBackDrop,
-  ShowMore,
-  StyledProject,
-  ToolsContainer,
+  StyledProjectCard,
   VideoContainer,
 } from '@/styles/components/project-card.styled';
-import Image from 'next/image';
 import ProjectSkillsList from './project-skills-list/project-skills-list';
 import ProjectVideoModal from './video-modal/video-modal';
 import ProjectDesc from './project-desc/project-desc';
-import { projectsVariants } from './project-desc/project-desc.variants';
+import ProjectActions from './project-actions/project-action';
+import { projectsVariants } from './project-card.variants';
+import useWindowDimensions from '@/hooks/use-window-dimensions/use-window-dimensions';
 
 interface ProjectProps {
   name: string;
@@ -28,16 +28,17 @@ const ProjectCard: FC<ProjectProps> = ({
   translatorName,
 }) => {
   const [playVideo, setPlayVideo] = useState(false);
-  const [ShowMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(false);
+  const { width: windowWidth } = useWindowDimensions();
 
   const showMoreHandler = () => setShowMore((prev) => !prev);
 
   return (
-    <StyledProject
+    <StyledProjectCard
       variants={projectsVariants}
       initial={'less'}
       animate={'more'}
-      custom={ShowMore}
+      custom={{ showMore, windowWidth }}
     >
       <h4>{name}</h4>
       <VideoContainer>
@@ -63,16 +64,20 @@ const ProjectCard: FC<ProjectProps> = ({
         />
       </VideoContainer>
 
-      <ProjectSkillsList
-        skills={['Swagger', 'NestJs', 'Prisma', 'PostgreSQL']}
-      />
+      <div style={{ position: 'relative' }}>
+        <ProjectSkillsList
+          skills={['Swagger', 'NestJs', 'Prisma', 'PostgreSQL']}
+        />
 
-      <ProjectDesc
-        translatorName={translatorName}
-        onShowMore={showMoreHandler}
-        showMore={ShowMore}
-      />
-    </StyledProject>
+        <ProjectDesc
+          translatorName={translatorName}
+          onShowMore={showMoreHandler}
+          showMore={showMore}
+        />
+      </div>
+
+      <ProjectActions />
+    </StyledProjectCard>
   );
 };
 

@@ -2,15 +2,16 @@ import styled from 'styled-components';
 import { theme } from '../theme.styled';
 import { motion } from 'framer-motion';
 
-export const StyledProject = styled(motion.article)`
+export const StyledProjectCard = styled(motion.article)`
   position: relative;
-  padding: 0.5rem 0.5rem 1.8rem;
+  padding: 0.5rem 0.5rem 1rem;
   background: ${({ theme }) => theme.colors.white};
   border-radius: 0.5rem;
   color: #000;
   grid-column: span 1;
   grid-row: span 1;
   overflow: hidden;
+  height: fit-content;
 
   & h4 {
     font-size: 1.4rem;
@@ -128,10 +129,14 @@ export const StyledProjectDesc = styled(motion.div)`
   line-height: 120%;
   overflow: hidden;
   padding: 0 0.3rem;
+
+  & p {
+    margin-bottom: 2rem;
+  }
 `;
 
 export const ShowMore = styled.div`
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.blue};
   background: ${({ theme }) => theme.colors.white};
@@ -139,12 +144,30 @@ export const ShowMore = styled.div`
   width: 100%;
   bottom: 0;
   left: 0;
-  cursor: pointer;
-  padding: 0.3rem 0.8rem;
+  padding: 0.3rem 0.5rem;
   direction: ltr;
+
+  & > div {
+    display: inline-block;
+    cursor: pointer;
+  }
 
   & span {
     direction: ltr;
     display: inline-block;
+  }
+`;
+
+export const StyledProjectActions = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+
+  & button {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
   }
 `;
