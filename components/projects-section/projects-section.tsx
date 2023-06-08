@@ -59,15 +59,19 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projectList }) => {
         </StyledProjectsTitle>
 
         <ProjectsContainer layout>
-          {projectList.map(({ name, cover, video, translatorName }) => (
-            <ProjectCard
-              key={name}
-              name={name}
-              cover={cover}
-              video={video}
-              translatorName={translatorName}
-            />
-          ))}
+          {projectList.map(
+            ({ name, cover, video, translatorName, github, onlineLink }) => (
+              <ProjectCard
+                key={name}
+                name={name}
+                cover={cover}
+                video={video}
+                translatorName={translatorName}
+                github={github}
+                onlineLink={onlineLink}
+              />
+            )
+          )}
         </ProjectsContainer>
       </Container>
 

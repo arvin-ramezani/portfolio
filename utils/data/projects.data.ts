@@ -6,12 +6,14 @@ export const PROJECT_LIST: IProject[] = [
     video: '/videos/nestjs-realtor-demo.mp4',
     cover: '/images/projects-cover/realtor-app.svg',
     translatorName: 'realtor_app',
+    github: 'https://github.com/arvin-ramezani/nest.js-realtor-app',
   },
   {
     name: 'Pizza Shop',
     video: '/videos/pizza-shop.mp4',
     cover: '/images/projects-cover/pizza-shop.svg',
     translatorName: 'pizza_shop',
+    github: 'https://github.com/arvin-ramezani/pizza-shop',
   },
 ];
 

@@ -13,19 +13,17 @@ import ProjectDesc from './project-desc/project-desc';
 import ProjectActions from './project-actions/project-action';
 import { projectsVariants } from './project-card.variants';
 import useWindowDimensions from '@/hooks/use-window-dimensions/use-window-dimensions';
+import { IProject } from '@/utils/types/project.types';
 
-interface ProjectProps {
-  name: string;
-  video: string;
-  cover: string;
-  translatorName: string;
-}
+interface ProjectProps extends IProject {}
 
 const ProjectCard: FC<ProjectProps> = ({
   name,
   video,
   cover,
   translatorName,
+  github,
+  onlineLink,
 }) => {
   const [playVideo, setPlayVideo] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -76,7 +74,10 @@ const ProjectCard: FC<ProjectProps> = ({
         />
       </div>
 
-      <ProjectActions />
+      <ProjectActions
+        github={github}
+        onlineLink={onlineLink}
+      />
     </StyledProjectCard>
   );
 };

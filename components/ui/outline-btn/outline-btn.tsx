@@ -9,16 +9,23 @@ interface OutlineBtnProps {
   text: string;
   onClick: () => void;
   color: string;
+  disabled?: boolean;
 }
 
-const OutlineBtn: FC<OutlineBtnProps> = ({ text, onClick, color }) => {
+const OutlineBtn: FC<OutlineBtnProps> = ({
+  text,
+  onClick,
+  color,
+  disabled,
+}) => {
   return (
     <StyledOutlineBtnContainer onClick={onClick}>
       <StyledOutlineBtn
-        variants={buttonVariants}
+        variants={disabled ? {} : buttonVariants}
         whileHover={'hover'}
         whileTap={'tap'}
         color={color}
+        disabled={disabled}
       >
         {text}
       </StyledOutlineBtn>
@@ -42,6 +49,11 @@ export const StyledOutlineBtn = styled(motion.button)<{ color: string }>`
 
   &:focus {
     outline: 1px solid ${({ theme }) => theme.colors.secondary};
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 
   @media (min-width: ${theme.breakpoints.md}) {

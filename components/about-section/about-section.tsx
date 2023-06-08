@@ -5,11 +5,6 @@ import { useTranslation } from 'next-i18next';
 
 import {
   AboutImageBlock,
-  AboutSkill,
-  AboutSkillsItem,
-  AboutSkillsContainer,
-  AboutSkillsItemBlock,
-  AboutSkillsTitle,
   AboutTextBlock,
   AboutTitle,
   StyledAboutSection,
@@ -19,15 +14,14 @@ import {
   aboutItemsVariants,
   aboutTextItemsVariants,
 } from './about-section.variants';
+import Skills from '../skills/skills';
 
 const AboutSection = () => {
   const { t: translator } = useTranslation();
   const imageRef = useRef(null);
   const textRef = useRef(null);
-  const skillsRef = useRef(null);
   const isImageInView = useInView(imageRef);
   const isTextInView = useInView(textRef);
-  const isSkillsInView = useInView(skillsRef);
 
   return (
     <StyledAboutSection>
@@ -91,37 +85,7 @@ const AboutSection = () => {
           </p>
         </AboutTextBlock>
 
-        <AboutSkillsContainer
-          variants={aboutItemsVariants}
-          ref={skillsRef}
-          custom={'right'}
-          initial="initial"
-          animate={isSkillsInView ? 'animate' : 'exit'}
-          exit={'exit'}
-        >
-          <AboutSkillsTitle>{translator('home:skills_title')}</AboutSkillsTitle>
-          <AboutSkillsItemBlock>
-            <AboutSkillsItem>
-              <Image
-                src="./images/icons/nodejs.svg"
-                width={45}
-                height={40}
-                alt="nodejs"
-              />
-
-              <AboutSkill>{translator('home:skill_name_nodejs')}</AboutSkill>
-            </AboutSkillsItem>
-            <AboutSkillsItem>
-              <Image
-                src="./images/icons/nextjs.svg"
-                width={45}
-                height={40}
-                alt="nextjs"
-              />
-              <AboutSkill>{translator('home:skill_name_nextjs')}</AboutSkill>
-            </AboutSkillsItem>
-          </AboutSkillsItemBlock>
-        </AboutSkillsContainer>
+        <Skills />
       </Container>
     </StyledAboutSection>
   );

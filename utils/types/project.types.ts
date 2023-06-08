@@ -3,4 +3,6 @@ export interface IProject {
   video: string;
   cover: string;
   translatorName: string;
+  github: string;
+  onlineLink?: string;
 }
