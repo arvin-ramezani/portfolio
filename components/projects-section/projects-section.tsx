@@ -10,7 +10,7 @@ import {
   StyledProjectsTitle,
 } from '@/styles/components/projects-section.styled';
 import { Container } from '@/styles/global.styled';
-import ProjectCard from '../project-card/project-card';
+import ProjectCard from './project-card/project-card';
 import { IProject } from '@/utils/types/project.types';
 
 interface ProjectSectionProps {

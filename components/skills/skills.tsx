@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
-import { useInView } from 'framer-motion';
+import { Variants, useInView } from 'framer-motion';
 
 import {
   SkillText,

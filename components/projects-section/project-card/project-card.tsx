@@ -7,10 +7,10 @@ import {
   StyledProjectCard,
   VideoContainer,
 } from '@/styles/components/project-card.styled';
-import ProjectSkillsList from './project-skills-list/project-skills-list';
-import ProjectVideoModal from './video-modal/video-modal';
-import ProjectDesc from './project-desc/project-desc';
-import ProjectActions from './project-actions/project-action';
+import ProjectSkillsList from '../project-skills-list/project-skills-list';
+import ProjectVideoModal from '../video-modal/video-modal';
+import ProjectDesc from '../project-desc/project-desc';
+import ProjectActions from '../project-actions/project-action';
 import { projectsVariants } from './project-card.variants';
 import useWindowDimensions from '@/hooks/use-window-dimensions/use-window-dimensions';
 import { IProject } from '@/utils/types/project.types';
