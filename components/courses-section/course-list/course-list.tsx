@@ -35,7 +35,6 @@ const CourseList: FC<CourseListProps> = ({
 
   useEffect(() => {
     if (typeof data !== 'undefined') {
-      console.log(data.courses, 'aa');
       setCourseList(data.courses.courseList);
       setPagination(data.courses.pagination);
     }

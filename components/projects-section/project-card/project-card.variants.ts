@@ -9,9 +9,7 @@ export const projectsVariants: Variants = {
     showMore: boolean;
     windowWidth: number;
   }) => {
-    console.log(windowWidth, 'windowWidth');
     if (windowWidth < 768) return { gridColumn: 'span 1' };
-    console.log(windowWidth, 'windowWidth', showMore);
 
     return showMore ? { gridColumn: 'span 3' } : { gridColumn: 'span 1 ' };
   },
