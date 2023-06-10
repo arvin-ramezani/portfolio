@@ -24,16 +24,32 @@ interface HomePageProps {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   try {
-    const { data } = await axios.get<IHomePageGetRespose>(
-      'http://localhost:4000/api?courses=true&projects=true'
-    );
+    // const { data } = await axios.get<IHomePageGetRespose>(
+    //   'http://localhost:4000/api?courses=true&projects=true'
+    // );
 
-    // console.log(data, 'data');
+    const data: IHomePageGetRespose = {
+      projects: {
+        projectList: PROJECT_LIST.slice(0, 6),
+        pagination: {
+          count: 6,
+          pageCount: Math.ceil(PROJECT_LIST.length / 6),
+        },
+      },
+      courses: {
+        courseList: COURSES_LIST.slice(0, 6),
+        pagination: {
+          count: 6,
+          pageCount: Math.ceil(COURSES_LIST.length / 6),
+        },
+      },
+    };
+
     return {
       props: {
         ...(await serverSideTranslations(locale as string, ['home', 'common'])),
         projects: data.projects,
-        courses: data.courses,
+        courses: data.courses!,
       },
     };
   } catch (error) {
