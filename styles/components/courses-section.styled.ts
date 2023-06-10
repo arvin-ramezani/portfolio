@@ -24,9 +24,9 @@ export const CoursesContainer = styled.div`
   display: grid;
   grid-gap: 1rem;
   margin-top: 2rem;
-  /* grid-template-columns: 1fr; */
   grid-template-columns: repeat(auto-fit, minmax(0, 500px));
   justify-content: center;
+  grid-row-gap: 3rem;
 
   @media (min-width: ${theme.breakpoints.md}) {
     grid-template-columns: repeat(2, 1fr);
@@ -45,15 +45,29 @@ export const StyledCourseItem = styled.article`
   border: 1px solid ${({ theme }) => theme.colors.textPrimary};
 
   & h3 {
-    padding: 0.5rem;
+    padding: 0.6rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: ${({ theme }) => theme.colors.textSecondary};
   }
+
+  @media (min-width: ${theme.breakpoints.xl}) {
+    & h3 {
+      font-size: 1.6rem;
+      line-height: 130%;
+    }
+  }
+`;
+
+export const CourseItemHeaderWrapper = styled.div`
+  direction: ltr;
 `;
 
 export const ImageWrapper = styled.div`
+  padding: 0 1.4rem;
+
   & img {
-    border-radius: 0.6rem;
+    border-radius: 1rem;
     width: 100%;
     height: auto;
   }

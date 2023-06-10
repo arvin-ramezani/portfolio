@@ -12,12 +12,13 @@ import {
 import { Container } from '@/styles/global.styled';
 import ProjectCard from './project-card/project-card';
 import { IProject } from '@/utils/types/project.types';
+import { IHomePageGetRespose } from '@/pages/api';
 
 interface ProjectSectionProps {
-  projectList: IProject[];
+  projects: IHomePageGetRespose['projects'];
 }
 
-const ProjectsSection: FC<ProjectSectionProps> = ({ projectList }) => {
+const ProjectsSection: FC<ProjectSectionProps> = ({ projects }) => {
   const { t: translator } = useTranslation();
 
   return (
@@ -59,7 +60,7 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projectList }) => {
         </StyledProjectsTitle>
 
         <ProjectsContainer layout>
-          {projectList.map(
+          {projects?.projectList?.map(
             ({ name, cover, video, translatorName, github, onlineLink }) => (
               <ProjectCard
                 key={name}

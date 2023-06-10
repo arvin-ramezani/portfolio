@@ -1,6 +1,11 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { FC } from 'react';
+
 import {
   CourseBody,
   CourseFooter,
+  CourseItemHeaderWrapper,
   CourseLinkItem,
   CourseLinksList,
   ImageWrapper,
@@ -9,16 +14,30 @@ import {
   StyledCourseItem,
 } from '@/styles/components/courses-section.styled';
 import { Variants, useAnimationControls } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { ICourse } from '@/utils/types/course.types';
 
 const onCourseClickVariants: Variants = {
   initial: { scale: 1 },
   animate: { scale: [1.8, 1] },
 };
 
-const CourseItem = () => {
+interface CourseItemProps extends ICourse {
+  // name: string;
+  // image: string;
+  // learnedList: string[];
+  // links: {
+  //   name: string;
+  //   logo: string;
+  //   url: string;
+  // }[];
+}
+
+const CourseItem: FC<CourseItemProps> = ({
+  name,
+  image,
+  learnedList,
+  links,
+}) => {
   const onCourseClickCtrl = useAnimationControls();
 
   const onCourseClick = () => {
@@ -27,30 +46,32 @@ const CourseItem = () => {
 
   return (
     <StyledCourseItem>
-      <div onClick={onCourseClick}>
-        <h3>Next.js & React - The Complete Guide</h3>
+      <CourseItemHeaderWrapper onClick={onCourseClick}>
+        <h3>{name}</h3>
         <ImageWrapper>
           <Image
-            src="/images/courses/nextjs.svg"
-            alt="Nextjs Course"
+            src={image}
+            alt={name}
             width={200}
             height={162}
           />
         </ImageWrapper>
-      </div>
+      </CourseItemHeaderWrapper>
 
       <CourseBody>
         <h6>What I Learned</h6>
-        <LearnedItem>
-          <Image
-            src="/images/icons/check.svg"
-            alt="Check Icon"
-            width={32}
-            height={32}
-          />
-          Authentication and Authorization with next-auth
-        </LearnedItem>
-        <LearnedItem>
+        {learnedList.map((item) => (
+          <LearnedItem key={item}>
+            <Image
+              src="/images/icons/check.svg"
+              alt="Check Icon"
+              width={32}
+              height={32}
+            />
+            {item}
+          </LearnedItem>
+        ))}
+        {/* <LearnedItem>
           <Image
             src="/images/icons/check.svg"
             alt="Check Icon"
@@ -67,7 +88,7 @@ const CourseItem = () => {
             height={32}
           />
           File Upload and Download
-        </LearnedItem>
+        </LearnedItem> */}
 
         <MoreText>more...</MoreText>
       </CourseBody>
@@ -77,7 +98,30 @@ const CourseItem = () => {
           initial={'initial'}
           animate={onCourseClickCtrl}
         >
-          <CourseLinkItem>
+          {links.map((link) => (
+            <CourseLinkItem key={link.name}>
+              <Link
+                href={link.url}
+                passHref
+                legacyBehavior
+              >
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={link.logo!}
+                    alt="Udemy Logo"
+                    width={50}
+                    height={20}
+                  />
+                  {link.name}
+                </a>
+              </Link>
+            </CourseLinkItem>
+          ))}
+
+          {/* <CourseLinkItem>
             <Link
               href="https://www.udemy.com/course/nextjs-react-the-complete-guide/"
               passHref
@@ -116,7 +160,7 @@ const CourseItem = () => {
                 https://pro.academind.com/
               </a>
             </Link>
-          </CourseLinkItem>
+          </CourseLinkItem> */}
         </CourseLinksList>
       </CourseFooter>
     </StyledCourseItem>

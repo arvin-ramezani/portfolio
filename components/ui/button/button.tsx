@@ -11,8 +11,8 @@ import { buttonVariants } from './button.variants';
 interface ButtonProps {
   text: string;
   onClick?: () => void;
-  color: string;
-  textColor: string;
+  color?: string;
+  textColor?: string;
   wrapperStyle?: CSSProperties;
   loading?: boolean;
 }
@@ -36,8 +36,8 @@ const Button: FC<ButtonProps> = ({
         variants={buttonVariants}
         whileHover={'hover'}
         whileTap={'tap'}
-        color={color}
-        textcolor={textColor}
+        color={color || 'unset'}
+        textcolor={textColor || 'unset'}
         layout
       >
         {loading ? (

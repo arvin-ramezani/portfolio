@@ -5,6 +5,8 @@ import localFont from 'next/font/local';
 import { appWithTranslation } from 'next-i18next';
 
 import { ThemeProvider } from 'styled-components';
+import { Provider } from 'react-redux';
+import { store } from '@/features/store';
 
 const myVazirLocalFont = localFont({
   src: [
@@ -41,10 +43,12 @@ function App({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle localVazirFont={myVazirLocalFont} />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={defaultTheme}>
+        <GlobalStyle localVazirFont={myVazirLocalFont} />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </Provider>
   );
 }
 

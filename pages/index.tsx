@@ -12,21 +12,39 @@ import GoToUp from '@/components/ui/go-to-up/go-to-up';
 import { IProject } from '@/utils/types/project.types';
 import { PROJECT_LIST } from '@/utils/data/projects.data';
 import CoursesSection from '@/components/courses-section/courses-section';
+import { ICourse } from '@/utils/types/course.types';
+import { COURSES_LIST } from '@/utils/data/courses.data';
+import axios from 'axios';
+import { IHomePageGetRespose } from './api';
 
 interface HomePageProps {
-  projectList: IProject[];
+  projects: IHomePageGetRespose['projects'];
+  courses: IHomePageGetRespose['courses'];
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale as string, ['home', 'common'])),
-      projectList: PROJECT_LIST,
-    },
-  };
+  try {
+    const { data } = await axios.get<IHomePageGetRespose>(
+      'http://localhost:4000/api?courses=true&projects=true'
+    );
+
+    // console.log(data, 'data');
+    return {
+      props: {
+        ...(await serverSideTranslations(locale as string, ['home', 'common'])),
+        projects: data.projects,
+        courses: data.courses,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {},
+    };
+  }
 };
 
-export default function Home({ projectList }: HomePageProps) {
+export default function Home({ projects, courses }: HomePageProps) {
   return (
     <>
       <Head>
@@ -52,9 +70,9 @@ export default function Home({ projectList }: HomePageProps) {
 
         <AboutSection />
 
-        <ProjectsSection projectList={projectList} />
+        <ProjectsSection projects={projects} />
 
-        <CoursesSection />
+        <CoursesSection courses={courses} />
       </main>
 
       <Footer />

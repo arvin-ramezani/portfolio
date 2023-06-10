@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { StyledCoursesSection } from '@/styles/components/courses-section.styled';
 import CourseList from './course-list/course-list';
+import { IHomePageGetRespose } from '@/pages/api';
 
-const CoursesSection = () => {
+interface CoursesSectionProps {
+  courses: IHomePageGetRespose['courses'];
+}
+
+const CoursesSection: FC<CoursesSectionProps> = ({ courses }) => {
   return (
     <StyledCoursesSection>
-      <h2>CoursesSection</h2>
-      <CourseList />
+      <h2>Courses</h2>
+      <CourseList
+        courseList={courses?.courseList || []}
+        pagination={courses?.pagination}
+      />
     </StyledCoursesSection>
   );
 };
