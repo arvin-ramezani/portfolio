@@ -1,7 +1,7 @@
-import { useAnimationControls, useInView } from 'framer-motion';
+import { useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { FC, useState, useRef, useEffect } from 'react';
+import React, { FC, useState } from 'react';
 
 import {
   CourseBody,
@@ -33,7 +33,6 @@ const CourseItem: FC<CourseItemProps> = ({
 }) => {
   const [openLearnedList, setOpenLearnedList] = useState(false);
   const { width: windowWidth } = useWindowDimensions();
-  const ref = useRef(null);
   const onCourseClickCtrl = useAnimationControls();
 
   const onOpenLearnedList = () => setOpenLearnedList((prev) => !prev);
