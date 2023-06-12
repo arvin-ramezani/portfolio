@@ -18,8 +18,6 @@ const Pagination: FC<PaginationProps> = ({ pagination, setPage, page }) => {
   const [pageCount, setPageCount] = useState(pagination.pageCount);
 
   const onPageSelect: ChangeEventHandler<HTMLSelectElement> = (e) => {
-    if (pagination.count === +e.target.value) return;
-
     setPage(+e.target.value);
   };
 

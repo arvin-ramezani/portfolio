@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { theme } from '../theme.styled';
 
 export const StyledSkills = styled(motion.div)`
-  flex: none;
+  /* flex: none; */
 
   font-size: 1.4rem;
 
   @media (min-width: ${theme.breakpoints.lg}) {
-    flex: none;
+    /* flex: none; */
   }
 
   @media (min-width: ${theme.breakpoints.xxl}) {
@@ -30,6 +30,7 @@ export const SkillsItemBlock = styled(motion.ul)`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
 
   @media (min-width: ${theme.breakpoints.md}) {
@@ -40,10 +41,20 @@ export const SkillsItemBlock = styled(motion.ul)`
 export const SkillsItem = styled(motion.li)`
   display: flex;
   align-items: center;
+  width: 45%;
+
   color: ${({ theme }) => theme.colors.textPrimary};
+
+  @media (min-width: ${theme.breakpoints.sm}) {
+    width: 30%;
+  }
 
   @media (min-width: ${theme.breakpoints.xl}) {
     gap: 0.6rem;
+  }
+
+  @media (min-width: ${theme.breakpoints.xxl}) {
+    width: 45%;
   }
 `;
 

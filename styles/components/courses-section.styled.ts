@@ -37,11 +37,14 @@ export const CoursesContainer = styled.div`
   }
 `;
 
-export const StyledCourseItem = styled.article`
+export const StyledCourseItem = styled(motion.article)`
   line-height: 140%;
-  height: fit-content;
-  background-color: ${({ theme }) => theme.backgroundColors.secondary};
   border-radius: 0.6rem;
+  position: relative;
+  padding: 0.5rem 0.5rem 100px 0.5rem;
+  box-sizing: unset;
+
+  background-color: ${({ theme }) => theme.backgroundColors.secondary};
   border: 1px solid ${({ theme }) => theme.colors.textPrimary};
 
   & h3 {
@@ -56,6 +59,10 @@ export const StyledCourseItem = styled.article`
       font-size: 1.6rem;
       line-height: 130%;
     }
+  }
+
+  @media (min-width: 1660px) {
+    padding-bottom: 150px;
   }
 `;
 
@@ -83,7 +90,9 @@ export const CourseBody = styled(motion.div)`
   }
 `;
 
-export const LearnedList = styled(motion.ul)``;
+export const LearnedList = styled(motion.ul)`
+  overflow: hidden;
+`;
 
 export const LearnedItem = styled(motion.li)`
   display: flex;
@@ -95,13 +104,18 @@ export const LearnedItem = styled(motion.li)`
 `;
 
 export const MoreText = styled(motion.div)`
-  padding-left: 0.5rem;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 2rem;
   font-size: 0.8rem;
+
   color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const CourseFooter = styled.div`
   padding: 0.5rem;
+  position: absolute;
+  bottom: 0;
 `;
 
 export const CourseLinksList = styled(motion.ul)`
@@ -109,8 +123,8 @@ export const CourseLinksList = styled(motion.ul)`
     increase in viewport width, from a base of 0.8rem up to 1rem. */
   font-size: clamp(0.8rem, calc(0.8rem + 0.2vw), 1rem);
   line-height: 100%;
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   gap: 0.5rem;
   flex-wrap: wrap;
 `;

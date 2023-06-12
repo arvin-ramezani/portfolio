@@ -1,6 +1,7 @@
+import { useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 
 import {
   CourseBody,
@@ -10,27 +11,19 @@ import {
   CourseLinksList,
   ImageWrapper,
   LearnedItem,
+  LearnedList,
   MoreText,
   StyledCourseItem,
 } from '@/styles/components/courses-section.styled';
-import { Variants, useAnimationControls } from 'framer-motion';
 import { ICourse } from '@/utils/types/course.types';
+import useWindowDimensions from '@/hooks/use-window-dimensions/use-window-dimensions';
+import {
+  courseItemVariants,
+  learnedListVariants,
+  onCourseClickVariants,
+} from './course-item.variants';
 
-const onCourseClickVariants: Variants = {
-  initial: { scale: 1 },
-  animate: { scale: [1.8, 1] },
-};
-
-interface CourseItemProps extends ICourse {
-  // name: string;
-  // image: string;
-  // learnedList: string[];
-  // links: {
-  //   name: string;
-  //   logo: string;
-  //   url: string;
-  // }[];
-}
+interface CourseItemProps extends ICourse {}
 
 const CourseItem: FC<CourseItemProps> = ({
   name,
@@ -38,14 +31,23 @@ const CourseItem: FC<CourseItemProps> = ({
   learnedList,
   links,
 }) => {
+  const [openLearnedList, setOpenLearnedList] = useState(false);
+  const { width: windowWidth } = useWindowDimensions();
   const onCourseClickCtrl = useAnimationControls();
+
+  const onOpenLearnedList = () => setOpenLearnedList((prev) => !prev);
 
   const onCourseClick = () => {
     onCourseClickCtrl.start(onCourseClickVariants.animate);
   };
 
   return (
-    <StyledCourseItem>
+    <StyledCourseItem
+      variants={courseItemVariants}
+      initial={'close'}
+      animate={openLearnedList ? 'open' : 'close'}
+      custom={windowWidth}
+    >
       <CourseItemHeaderWrapper onClick={onCourseClick}>
         <h3>{name}</h3>
         <ImageWrapper>
@@ -60,37 +62,27 @@ const CourseItem: FC<CourseItemProps> = ({
 
       <CourseBody>
         <h6>What I Learned</h6>
-        {learnedList.map((item) => (
-          <LearnedItem key={item}>
-            <Image
-              src="/images/icons/check.svg"
-              alt="Check Icon"
-              width={32}
-              height={32}
-            />
-            {item}
-          </LearnedItem>
-        ))}
-        {/* <LearnedItem>
-          <Image
-            src="/images/icons/check.svg"
-            alt="Check Icon"
-            width={32}
-            height={32}
-          />
-          SSG - SSR - ISR - CSR
-        </LearnedItem>
-        <LearnedItem>
-          <Image
-            src="/images/icons/check.svg"
-            alt="Check Icon"
-            width={32}
-            height={32}
-          />
-          File Upload and Download
-        </LearnedItem> */}
+        <LearnedList
+          variants={learnedListVariants}
+          initial={'close'}
+          animate={openLearnedList ? 'open' : 'close'}
+        >
+          {learnedList.map((item) => (
+            <LearnedItem key={item}>
+              <Image
+                src="/images/icons/check.svg"
+                alt="Check Icon"
+                width={32}
+                height={32}
+              />
+              {item}
+            </LearnedItem>
+          ))}
+        </LearnedList>
 
-        <MoreText>more...</MoreText>
+        <MoreText onClick={onOpenLearnedList}>
+          {openLearnedList ? 'less...' : 'more...'}
+        </MoreText>
       </CourseBody>
       <CourseFooter>
         <CourseLinksList
@@ -120,47 +112,6 @@ const CourseItem: FC<CourseItemProps> = ({
               </Link>
             </CourseLinkItem>
           ))}
-
-          {/* <CourseLinkItem>
-            <Link
-              href="https://www.udemy.com/course/nextjs-react-the-complete-guide/"
-              passHref
-              legacyBehavior
-            >
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/images/logo-udemy.svg"
-                  alt="Udemy Logo"
-                  width={50}
-                  height={20}
-                />
-                Udemy Link
-              </a>
-            </Link>
-          </CourseLinkItem>
-          <CourseLinkItem>
-            <Link
-              href="https://pro.academind.com/p/nextjs-react-the-complete-guide"
-              passHref
-              legacyBehavior
-            >
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/images/logo-academind.svg"
-                  alt="Udemy Logo"
-                  width={60}
-                  height={45}
-                />
-                https://pro.academind.com/
-              </a>
-            </Link>
-          </CourseLinkItem> */}
         </CourseLinksList>
       </CourseFooter>
     </StyledCourseItem>

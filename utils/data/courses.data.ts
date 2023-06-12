@@ -8,6 +8,9 @@ export const COURSES_LIST: ICourse[] = [
       'Authentication and Authorization with next-auth',
       'SSG - SSR - ISR - CSR',
       'File Upload and Download',
+      'Authentication and Authorization with next-auth1',
+      'SSG - SSR - ISR - CSR1',
+      'File Upload and Download1',
     ],
     links: [
       {
