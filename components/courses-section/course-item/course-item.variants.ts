@@ -2,7 +2,7 @@ import { Variants } from 'framer-motion';
 
 export const courseItemVariants: Variants = {
   close: { height: '420px' },
-  open: { height: 'fit-content', paddingBottom: '80px' },
+  open: { height: 'fit-content', paddingBottom: '100px' },
 };
 
 export const learnedListVariants: Variants = {

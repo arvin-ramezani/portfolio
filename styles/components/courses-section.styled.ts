@@ -41,7 +41,7 @@ export const StyledCourseItem = styled(motion.article)`
   line-height: 140%;
   border-radius: 0.6rem;
   position: relative;
-  padding: 0.5rem 0.5rem 100px 0.5rem;
+  padding: 0.5rem 0.5rem 140px 0.5rem;
   box-sizing: unset;
 
   background-color: ${({ theme }) => theme.backgroundColors.secondary};
@@ -62,7 +62,11 @@ export const StyledCourseItem = styled(motion.article)`
   }
 
   @media (min-width: 1660px) {
-    padding-bottom: 150px;
+    padding-bottom: 200px;
+  }
+
+  @media (min-width: 2300px) {
+    padding-bottom: 290px;
   }
 `;
 
@@ -113,9 +117,11 @@ export const MoreText = styled(motion.div)`
 `;
 
 export const CourseFooter = styled.div`
+  direction: ltr;
   padding: 0.5rem;
   position: absolute;
   bottom: 0;
+  left: 0.5rem;
 `;
 
 export const CourseLinksList = styled(motion.ul)`
@@ -130,13 +136,12 @@ export const CourseLinksList = styled(motion.ul)`
 `;
 
 export const CourseLinkItem = styled.li`
-  margin-bottom: 0.5rem;
-
   & a {
-    color: ${({ theme }) => theme.colors.textSecondary};
     display: flex;
     align-items: center;
     font-size: 0.7rem;
     gap: 0.6rem;
+
+    color: ${({ theme }) => theme.colors.textSecondary};
   }
 `;
