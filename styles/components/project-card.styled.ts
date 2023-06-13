@@ -132,6 +132,10 @@ export const StyledProjectDesc = styled(motion.div)`
 
   & p {
     margin-bottom: 2rem;
+
+    & a {
+      text-decoration: none;
+    }
   }
 `;
 
@@ -165,6 +169,11 @@ export const StyledProjectActions = styled.div`
   margin-top: 0.5rem;
   font-size: 1rem;
   padding: 0 0.5rem;
+
+  & button:first-child {
+    box-shadow: 0 0 4px 1px ${({ theme }) => theme.colors.primary};
+    border: none;
+  }
 
   & button {
     font-size: 0.8rem;

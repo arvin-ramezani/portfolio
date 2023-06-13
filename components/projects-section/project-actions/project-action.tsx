@@ -9,7 +9,7 @@ import { useTranslation } from 'next-i18next';
 
 interface ProjectActionsProps {
   github: IProject['github'];
-  onlineLink: IProject['onlineLink'];
+  onlineLink?: IProject['onlineLink'];
 }
 
 const ProjectActions: FC<ProjectActionsProps> = ({ github, onlineLink }) => {
@@ -28,12 +28,13 @@ const ProjectActions: FC<ProjectActionsProps> = ({ github, onlineLink }) => {
         onClick={onGithubClick}
       />
 
-      <OutlineBtn
-        text={translator('common:view_online_btn')}
-        color={theme.colors.black}
-        onClick={() => {}}
-        disabled={!onlineLink}
-      />
+      {onlineLink && (
+        <OutlineBtn
+          text={translator('common:view_online_btn')}
+          color={theme.colors.black}
+          onClick={() => {}}
+        />
+      )}
     </StyledProjectActions>
   );
 };
