@@ -91,6 +91,12 @@ export const StyledNotice = styled.div`
   line-height: 130%;
   font-size: 1.2rem;
 
+  & button {
+    border: none;
+
+    box-shadow: 0 0 4px 1px ${({ theme }) => theme.colors.primary};
+  }
+
   & h4 {
     text-align: center;
     font-size: 2rem;
@@ -171,8 +177,9 @@ export const StyledProjectActions = styled.div`
   padding: 0 0.5rem;
 
   & button:first-child {
-    box-shadow: 0 0 4px 1px ${({ theme }) => theme.colors.primary};
     border: none;
+
+    box-shadow: 0 0 4px 1px ${({ theme }) => theme.colors.primary};
   }
 
   & button {
