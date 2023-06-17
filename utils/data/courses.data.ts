@@ -2,6 +2,30 @@ import { ICourse } from '../types/course.types';
 
 export const COURSES_LIST: ICourse[] = [
   {
+    name: 'ChatGPT - The Complete Guide',
+    image: '/images/courses/chatgpt.svg',
+    learnedList: [
+      'Authentication and Authorization with next-auth',
+      'SSG - SSR - ISR - CSR',
+      'File Upload and Download',
+      'Authentication and Authorization with next-auth1',
+      'SSG - SSR - ISR - CSR1',
+      'File Upload and Download1',
+    ],
+    links: [
+      {
+        name: 'https://pro.academind.com/',
+        logo: '/images/logo-academind.svg',
+        url: 'https://pro.academind.com/p/chatgpt-the-complete-guide',
+      },
+      {
+        name: 'Udemy',
+        logo: '/images/logo-udemy.svg',
+        url: 'https://www.udemy.com/course/chatgpt-bard-bing-complete-guide-to-chatgpt-openai-apis/',
+      },
+    ],
+  },
+  {
     name: 'Next.js & React - The Complete Guide',
     image: '/images/courses/nextjs.svg',
     learnedList: [
