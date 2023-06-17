@@ -105,6 +105,10 @@ export const StyledNotice = styled.div`
   @media (min-width: ${theme.breakpoints.lg}) {
     width: 60%;
   }
+
+  @media (min-width: ${theme.breakpoints.xxl}) {
+    width: 40%;
+  }
 `;
 
 export const ToolsContainer = styled.div`
