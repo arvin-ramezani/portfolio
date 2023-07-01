@@ -1,4 +1,6 @@
 import React, { FC, useState, ChangeEventHandler } from 'react';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
 import { IHomePageGetRespose } from '@/pages/api';
 import {
@@ -15,7 +17,9 @@ interface PaginationProps {
 }
 
 const Pagination: FC<PaginationProps> = ({ pagination, setPage, page }) => {
-  const [pageCount, setPageCount] = useState(pagination.pageCount);
+  const [pageCount] = useState(pagination.pageCount);
+  const router = useRouter();
+  const { t: translator } = useTranslation();
 
   const onPageSelect: ChangeEventHandler<HTMLSelectElement> = (e) => {
     setPage(+e.target.value);
@@ -36,10 +40,10 @@ const Pagination: FC<PaginationProps> = ({ pagination, setPage, page }) => {
   };
 
   return (
-    <StyledPagination>
+    <StyledPagination locale={router.locale}>
       <PaginationButtons>
         <Button
-          text="Previous"
+          text={translator('common:prev_pagination_btn')}
           onClick={onPrev}
         />
 
@@ -55,7 +59,7 @@ const Pagination: FC<PaginationProps> = ({ pagination, setPage, page }) => {
         </PaginationSelectBox>
 
         <Button
-          text="Next"
+          text={translator('common:next_pagination_btn')}
           onClick={onNext}
         />
       </PaginationButtons>

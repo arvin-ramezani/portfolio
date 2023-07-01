@@ -1,3 +1,4 @@
+import { useTranslation } from 'next-i18next';
 import { useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -34,6 +35,7 @@ const CourseItem: FC<CourseItemProps> = ({
   const [openLearnedList, setOpenLearnedList] = useState(false);
   const { width: windowWidth } = useWindowDimensions();
   const onCourseClickCtrl = useAnimationControls();
+  const { t: translator } = useTranslation();
 
   const onOpenLearnedList = () => setOpenLearnedList((prev) => !prev);
 
@@ -49,7 +51,6 @@ const CourseItem: FC<CourseItemProps> = ({
       custom={windowWidth}
     >
       <CourseItemHeaderWrapper onClick={onCourseClick}>
-        <h3>{name}</h3>
         <ImageWrapper>
           <Image
             src={image}
@@ -58,6 +59,7 @@ const CourseItem: FC<CourseItemProps> = ({
             height={162}
           />
         </ImageWrapper>
+        <h3>{name}</h3>
       </CourseItemHeaderWrapper>
 
       <CourseBody>

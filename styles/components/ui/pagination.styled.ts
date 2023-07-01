@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
-export const StyledPagination = styled.div`
+export const StyledPagination = styled.div<{ locale?: string }>`
   width: fit-content;
-  margin: 2rem 0 0 auto;
+  margin-top: 2rem;
+  margin-right: ${({ locale }) => (locale === 'fa' ? '0' : 'auto')};
+  margin-left: ${({ locale }) => (locale === 'fa' ? 'auto' : '0')};
 `;
+
 export const PaginationButtons = styled.div`
   display: flex;
   align-items: center;

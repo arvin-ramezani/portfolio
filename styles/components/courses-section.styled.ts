@@ -41,7 +41,7 @@ export const StyledCourseItem = styled(motion.article)`
   line-height: 140%;
   border-radius: 0.6rem;
   position: relative;
-  padding: 0.5rem 0.5rem 140px 0.5rem;
+  padding: 1.5rem 0.5rem 140px 0.5rem;
   box-sizing: unset;
 
   background-color: ${({ theme }) => theme.backgroundColors.secondary};
@@ -51,7 +51,7 @@ export const StyledCourseItem = styled(motion.article)`
     padding: 0.6rem;
     font-size: 1.2rem;
     font-weight: 700;
-    color: ${({ theme }) => theme.colors.textSecondary};
+    color: ${({ theme }) => theme.colors.textPrimary};
   }
 
   @media (min-width: ${theme.breakpoints.xl}) {
@@ -86,6 +86,7 @@ export const ImageWrapper = styled.div`
 
 export const CourseBody = styled(motion.div)`
   padding: 0.5rem;
+  color: ${({ theme }) => theme.colors.textSecondary};
 
   & > h6 {
     font-size: 1.2rem;

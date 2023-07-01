@@ -1,20 +1,9 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import React, { FC, useState, useEffect } from 'react';
+import { useTranslation } from 'next-i18next';
 
-import {
-  CourseBody,
-  CourseFooter,
-  CourseLinkItem,
-  CourseLinksList,
-  CoursesContainer,
-  ImageWrapper,
-  LearnedItem,
-  MoreText,
-} from '@/styles/components/courses-section.styled';
+import { CoursesContainer } from '@/styles/components/courses-section.styled';
 import CourseItem from '../course-item/course-item';
 import { ICourse } from '@/utils/types/course.types';
-import { IHomePageGetRespose } from '@/pages/api';
 import Pagination from '@/components/ui/pagination/pagination';
 import { IPagination } from '@/utils/types/common.types';
 import { useGetCoursesByPageQuery } from '@/features/api/apiSlice';
@@ -32,6 +21,7 @@ const CourseList: FC<CourseListProps> = ({
   const { data, error, isLoading } = useGetCoursesByPageQuery(`${page}`);
   const [courseList, setCourseList] = useState(initialCourseList);
   const [pagination, setPagination] = useState(initialPagination);
+  const { t: translator } = useTranslation();
 
   useEffect(() => {
     if (typeof data !== 'undefined') {
