@@ -5,27 +5,27 @@ import Image from 'next/image';
 import { ToolsContainer } from '@/styles/components/project-card.styled';
 import { theme } from '@/styles/themes/theme.styled';
 
-interface ProjectSkillsList {
-  skills: string[];
+interface ProjectToolsListProps {
+  tools: string[];
 }
 
-const ProjectSkillsList: FC<ProjectSkillsList> = ({ skills }) => {
+const ProjectToolsList: FC<ProjectToolsListProps> = ({ tools }) => {
   return (
     <ToolsContainer>
       <ul>
-        {skills.map((skill) => (
+        {tools.map((tools) => (
           <motion.li
-            key={skill}
+            key={tools}
             initial={{ background: theme.colors.white }}
             whileHover={{ background: theme.colors.darkWhite }}
           >
             <Image
               src="images/icons/bullet.svg"
-              width={10}
-              height={10}
+              width={8}
+              height={8}
               alt="bullet icon"
             />
-            {skill}
+            {tools}
           </motion.li>
         ))}
       </ul>
@@ -33,4 +33,4 @@ const ProjectSkillsList: FC<ProjectSkillsList> = ({ skills }) => {
   );
 };
 
-export default ProjectSkillsList;
+export default ProjectToolsList;

@@ -19,6 +19,7 @@ export const StyledProjectCard = styled(motion.article)`
     font-weight: 700;
     margin-bottom: 0.7rem;
     direction: ltr;
+    height: 60px;
   }
 `;
 
@@ -119,17 +120,35 @@ export const ToolsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     column-gap: 0.5rem;
+    font-size: 0.9rem;
+    align-items: flex-start;
+    align-content: flex-start;
+    height: 124px;
 
     & li {
       cursor: pointer;
       padding: 0.3rem;
-      background: ${({ theme }) => theme.colors.white};
-      display: block;
+      padding-top: 0.5rem;
+      display: flex;
+      align-items: center;
       border-radius: 0.3rem;
+      width: 48%;
+      color: #000;
+
+      background: ${({ theme }) => theme.colors.white};
     }
 
     & img {
       margin-right: 0.2rem;
+      padding-bottom: 0.1rem;
+    }
+
+    @media (min-width: ${theme.breakpoints.lg}) {
+      font-size: 0.7rem;
+    }
+
+    @media (min-width: ${theme.breakpoints.xl}) {
+      font-size: 0.9rem;
     }
   }
 `;
@@ -159,7 +178,6 @@ export const ShowMore = styled.div`
   bottom: 0;
   left: 0;
   padding: 0.3rem 0.5rem;
-  direction: ltr;
 
   & > div {
     display: inline-block;

@@ -5,4 +5,5 @@ export interface IProject {
   translatorName: string;
   github: string;
   onlineLink?: string;
+  tools: string[];
 }

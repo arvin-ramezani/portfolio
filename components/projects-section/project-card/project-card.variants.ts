@@ -11,6 +11,6 @@ export const projectsVariants: Variants = {
   }) => {
     if (windowWidth < 768) return { gridColumn: 'span 1' };
 
-    return showMore ? { gridColumn: 'span 3' } : { gridColumn: 'span 1 ' };
+    return showMore ? { gridColumn: 'span 2' } : { gridColumn: 'span 1 ' };
   },
 };

@@ -7,6 +7,7 @@ import {
   StyledProjectDesc,
 } from '@/styles/components/project-card.styled';
 import { projectsDescVariants } from './project-desc.variants';
+import { useRouter } from 'next/router';
 
 interface ProjectDescProps {
   translatorName: string;
@@ -20,10 +21,14 @@ const ProjectDesc: FC<ProjectDescProps> = ({
   showMore,
 }) => {
   const { t: translator } = useTranslation();
+  const { locale } = useRouter();
 
   function toggleFullText() {
     onShowMore();
   }
+
+  const moreTextContent = locale === 'fa' ? '...بیشتر' : 'more...';
+  const lessTextContent = locale === 'fa' ? '...کمتر' : 'less...';
 
   return (
     <StyledProjectDesc
@@ -43,7 +48,7 @@ const ProjectDesc: FC<ProjectDescProps> = ({
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.2 }}
           >
-            {showMore ? 'less..' : 'more...'}
+            {showMore ? lessTextContent : moreTextContent}
           </motion.span>
         </div>
       </ShowMore>

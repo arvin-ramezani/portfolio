@@ -61,7 +61,15 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projects }) => {
 
         <ProjectsContainer layout>
           {projects?.projectList?.map(
-            ({ name, cover, video, translatorName, github, onlineLink }) => (
+            ({
+              name,
+              cover,
+              video,
+              translatorName,
+              github,
+              onlineLink,
+              tools,
+            }) => (
               <ProjectCard
                 key={name}
                 name={name}
@@ -70,6 +78,7 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projects }) => {
                 translatorName={translatorName}
                 github={github}
                 onlineLink={onlineLink}
+                tools={tools}
               />
             )
           )}

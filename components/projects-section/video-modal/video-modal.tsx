@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import React, { FC, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
 import {
   StyledNotice,
@@ -12,7 +13,6 @@ import {
 } from './project-video-modal.variants';
 import Button from '@/components/ui/button/button';
 import { theme } from '@/styles/themes/theme.styled';
-import { useTranslation } from 'next-i18next';
 
 interface VideoModalProps {
   show: boolean;
@@ -53,7 +53,7 @@ const VideoModal: FC<VideoModalProps> = ({ show, video, onClose }) => {
           />
 
           {showNotice ? (
-            <StyledNotice>
+            <StyledNotice onClick={(e) => e.stopPropagation()}>
               <h4>Notice:</h4>
               <p>{translator('home:projects_video_modal_notice_problem')}</p>
               <p>{translator('home:projects_video_modal_notice_solution')}</p>
@@ -76,6 +76,7 @@ const VideoModal: FC<VideoModalProps> = ({ show, video, onClose }) => {
               initial={'initial'}
               animate={'animate'}
               exit={'initial'}
+              onClick={(e) => e.stopPropagation()}
             ></motion.video>
           )}
         </StyledVideoModal>

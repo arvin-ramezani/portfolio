@@ -7,7 +7,7 @@ import {
   StyledProjectCard,
   VideoContainer,
 } from '@/styles/components/project-card.styled';
-import ProjectSkillsList from '../project-skills-list/project-skills-list';
+import ProjectToolsList from '../project-tools-list/project-tools-list';
 import ProjectVideoModal from '../video-modal/video-modal';
 import ProjectDesc from '../project-desc/project-desc';
 import ProjectActions from '../project-actions/project-action';
@@ -24,6 +24,7 @@ const ProjectCard: FC<ProjectProps> = ({
   translatorName,
   github,
   onlineLink,
+  tools,
 }) => {
   const [playVideo, setPlayVideo] = useState(false);
   const [showMore, setShowMore] = useState(false);
@@ -63,9 +64,7 @@ const ProjectCard: FC<ProjectProps> = ({
       </VideoContainer>
 
       <div style={{ position: 'relative' }}>
-        <ProjectSkillsList
-          skills={['Swagger', 'NestJs', 'Prisma', 'PostgreSQL']}
-        />
+        <ProjectToolsList tools={tools} />
 
         <ProjectDesc
           translatorName={translatorName}

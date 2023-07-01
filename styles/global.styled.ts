@@ -108,7 +108,7 @@ body {
 } 
  
 ::-webkit-scrollbar { 
-  width: 4px; 
+  width: 6px; 
   background-color: ${theme.backgroundColors.primary}; 
   border-radius: 8px; 
 } 
@@ -117,16 +117,16 @@ body {
   border-radius: 8px; 
   /* -webkit-box-shadow: inset 0 0 6px rgba(238, 9, 120, 0.6745098039);  */
   
-  background-image: linear-gradient(to top, ${theme.colors.textPrimary} 0%, ${
+  /* background-image: linear-gradient(to top, ${
+    theme.colors.textPrimary
+  } 0%, ${theme.backgroundColors.primary} 100%);  */
+
+background-image: linear-gradient(to top, ${
   theme.backgroundColors.primary
-} 100%); 
+} 0%, ${theme.colors.textPrimary} 50%, ${theme.backgroundColors.primary} 100%); 
+
 } 
  
-/* background-image: linear-gradient(to top, ${
-  theme.backgroundColors.primary
-} 0%, ${theme.colors.textPrimary} 50%, ${
-  theme.backgroundColors.primary
-} 100%);  */
 
   
 

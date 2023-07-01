@@ -133,6 +133,7 @@ export const ProjectsContainer = styled(motion.div)`
   grid-gap: 1rem;
   margin-top: 2rem;
   grid-template-columns: 1fr;
+  padding: 0 0.5rem;
 
   @media (min-width: ${theme.breakpoints.md}) {
     max-width: 80%;

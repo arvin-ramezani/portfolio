@@ -7,6 +7,7 @@ export const PROJECT_LIST: IProject[] = [
     cover: '/images/projects-cover/realtor-app.svg',
     translatorName: 'realtor_app',
     github: 'https://github.com/arvin-ramezani/nest.js-realtor-app',
+    tools: ['Swagger', 'NestJs', 'Prisma', 'PostgreSQL'],
   },
   {
     name: 'Pizza Shop',
@@ -14,6 +15,15 @@ export const PROJECT_LIST: IProject[] = [
     cover: '/images/projects-cover/pizza-shop.svg',
     translatorName: 'pizza_shop',
     github: 'https://github.com/arvin-ramezani/pizza-shop',
+    tools: [
+      'NextJS',
+      'TypeScript',
+      'Mongoose',
+      'redux-toolkit',
+      'framer-motion',
+      'styled-compnents',
+      'react-hook-form',
+    ],
   },
   {
     name: 'MERN Simple Watch Shop',
@@ -21,6 +31,14 @@ export const PROJECT_LIST: IProject[] = [
     cover: '/images/projects-cover/simple-watch-shop.svg',
     translatorName: 'watch_shop',
     github: 'https://github.com/arvin-ramezani/MERN-simple-watch-shop',
+    tools: [
+      'TypeScript',
+      'Mongoose',
+      'redux-toolkit',
+      'Material UI',
+      'react-hook-form',
+      'axios',
+    ],
   },
   {
     name: 'MERN Animals House',
@@ -28,6 +46,15 @@ export const PROJECT_LIST: IProject[] = [
     cover: '/images/projects-cover/animals-house.svg',
     translatorName: 'animals_house',
     github: 'https://github.com/arvin-ramezani/MERN-animals-house',
+    tools: [
+      'TypeScript',
+      'Mongoose',
+      'redux-toolkit',
+      'styled-components',
+      'framer-motion',
+      'react-hook-form',
+      'axios',
+    ],
   },
 ];
 
