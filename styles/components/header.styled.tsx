@@ -5,6 +5,10 @@ import { theme } from '../themes/theme.styled';
 
 export const StyledHeader = styled(motion.header)`
   font-family: Vazir;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  transition: all 1s;
 
   & > div {
     flex-direction: row;

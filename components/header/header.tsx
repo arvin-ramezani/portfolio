@@ -8,6 +8,7 @@ import { theme } from '@/styles/themes/theme.styled';
 import LangSelectBox from '../lang-select-box/lang-select-box';
 import { Container } from '@/styles/global.styled';
 import { HeaderItemsVariants } from './header.variants';
+import { useScroll, useTransform } from 'framer-motion';
 
 const Header = () => {
   const router = useRouter();
@@ -15,6 +16,18 @@ const Header = () => {
     router.locale === 'fa' ? 'rtl' : 'ltr'
   );
   const { t: translator } = useTranslation();
+  const { scrollY } = useScroll();
+  const bgColor = useTransform(
+    scrollY,
+    [0, 50],
+    ['transparent', theme.backgroundColors.primary]
+  );
+
+  const shadow = useTransform(
+    scrollY,
+    [0, 50],
+    ['none', `0 4px 6px 2px ${theme.backgroundColors.primary}`]
+  );
 
   useEffect(() => {
     setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
@@ -25,6 +38,7 @@ const Header = () => {
       variants={HeaderItemsVariants}
       initial="initial"
       animate="animate"
+      style={{ background: bgColor, boxShadow: shadow }}
     >
       <Container>
         <Logo
