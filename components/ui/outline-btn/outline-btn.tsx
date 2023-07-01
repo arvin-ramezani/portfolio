@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { buttonVariants } from './outline-btn.variants';
-import { theme } from '@/styles/theme.styled';
+import { theme } from '@/styles/themes/theme.styled';
 
 interface OutlineBtnProps {
   text: string;

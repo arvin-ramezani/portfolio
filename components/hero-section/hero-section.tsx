@@ -10,7 +10,7 @@ import {
 } from '@/styles/components/hero-section.styled';
 import { Container } from '@/styles/global.styled';
 import Button from '../ui/button/button';
-import { theme } from '@/styles/theme.styled';
+import { theme } from '@/styles/themes/theme.styled';
 import { heroImageVariants, heroTextVariants } from './hero-section.variants';
 import { useRouter } from 'next/router';
 

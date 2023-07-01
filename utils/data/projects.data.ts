@@ -15,6 +15,20 @@ export const PROJECT_LIST: IProject[] = [
     translatorName: 'pizza_shop',
     github: 'https://github.com/arvin-ramezani/pizza-shop',
   },
+  {
+    name: 'MERN Simple Watch Shop',
+    video: '/videos/watch-shop.mp4',
+    cover: '/images/projects-cover/simple-watch-shop.svg',
+    translatorName: 'watch_shop',
+    github: 'https://github.com/arvin-ramezani/MERN-simple-watch-shop',
+  },
+  {
+    name: 'MERN Animals House',
+    video: '/videos/animals-house.mp4',
+    cover: '/images/projects-cover/animals-house.svg',
+    translatorName: 'animals_house',
+    github: 'https://github.com/arvin-ramezani/MERN-animals-house',
+  },
 ];
 
 const pizzaDescription = `
@@ -51,3 +65,15 @@ NestJS framework like: ORM Integration, Middleware, Interceptors,
 Guards, Decorators, Param Decorators, Integration Testing and so on.
 <br />I also learned Swagger for API documentation and apply to this
 project.`;
+
+const watchShopDescription: string = `This is a practice MERN project in which I focused on implementing authentication and authorization with accessToken and refreshToken. 
+  To enhance the user interface, I used react-hook-form with yup for form validation. I utilized material-ui for UI library, 
+  I practiced implementing a shopping cart with redux-toolkit, By working on this project 
+  I gained hands-on experience in developing a web application with user authentication and authorization features.`;
+
+const animalsHouseDescription: string = `I worked on a MERN project that focused on authentication and authorization using accessToken and refreshToken, 
+which accessToken will expire after 180 seconds. 
+I also utilized react-hook-form with yup for client-side form validation. 
+To improve the user experience, I implemented a loading skeleton and utilized styled-components for the UI library. 
+For animations, I used framer-motion to create smooth and seamless transitions between components. 
+To fetch data, I practiced using redux-thunk in redux-toolkit, and I also learned how to fetch data using searchQueryParams.`;

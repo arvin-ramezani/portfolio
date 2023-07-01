@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '../theme.styled';
+import { theme } from '../themes/theme.styled';
 import { motion } from 'framer-motion';
 
 export const StyledHeroSection = styled.section`

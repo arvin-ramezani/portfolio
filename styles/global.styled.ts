@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { theme } from './theme.styled';
+import { theme } from './themes/theme.styled';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { NextFont } from 'next/dist/compiled/@next/font';
@@ -100,6 +100,36 @@ body {
     overflow-x: hidden !important;
   }
 }
+
+::-webkit-scrollbar-track { 
+  /* -webkit-box-shadow: inset 0 0 6px #ee0979;  */
+  background-color:  ${theme.backgroundColors.primary}; 
+  border-radius: 8px; 
+} 
+ 
+::-webkit-scrollbar { 
+  width: 4px; 
+  background-color: ${theme.backgroundColors.primary}; 
+  border-radius: 8px; 
+} 
+ 
+::-webkit-scrollbar-thumb { 
+  border-radius: 8px; 
+  /* -webkit-box-shadow: inset 0 0 6px rgba(238, 9, 120, 0.6745098039);  */
+  
+  background-image: linear-gradient(to top, ${theme.colors.textPrimary} 0%, ${
+  theme.backgroundColors.primary
+} 100%); 
+} 
+ 
+/* background-image: linear-gradient(to top, ${
+  theme.backgroundColors.primary
+} 0%, ${theme.colors.textPrimary} 50%, ${
+  theme.backgroundColors.primary
+} 100%);  */
+
+  
+
 
 `;
 

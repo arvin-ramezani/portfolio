@@ -1,4 +1,4 @@
-import { theme } from '@/styles/theme.styled';
+import { theme } from '@/styles/themes/theme.styled';
 import { Variants } from 'framer-motion';
 
 export const HeaderItemsVariants: Variants = {

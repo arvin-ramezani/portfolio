@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import React, { CSSProperties, FC } from 'react';
+import React, { CSSProperties, FC, MouseEvent, MouseEventHandler } from 'react';
 
 import {
   StyledButton,
@@ -25,10 +25,15 @@ const Button: FC<ButtonProps> = ({
   wrapperStyle,
   loading,
 }) => {
+  const onClickHandler: MouseEventHandler<HTMLDivElement> = (e) => {
+    e.stopPropagation();
+    onClick && onClick();
+  };
+
   return (
     <StyledButtonWrapper
       id="#buttonWrapper"
-      onClick={onClick}
+      onClick={onClickHandler}
       style={wrapperStyle}
     >
       <StyledButton

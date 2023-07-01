@@ -9,7 +9,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { theme } from '@/styles/theme.styled';
+import { theme } from '@/styles/themes/theme.styled';
 
 const goToUpVariants: Variants = {
   hidden: {

@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import Button from '@/components/ui/button/button';
 import OutlineBtn from '@/components/ui/outline-btn/outline-btn';
 import { StyledProjectActions } from '@/styles/components/project-card.styled';
-import { theme } from '@/styles/theme.styled';
+import { theme } from '@/styles/themes/theme.styled';
 import { IProject } from '@/utils/types/project.types';
 import { useTranslation } from 'next-i18next';
 

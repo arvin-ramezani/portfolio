@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import { Logo, StyledHeader } from '@/styles/components/header.styled';
 import OutlineBtn from '../ui/outline-btn/outline-btn';
-import { theme } from '@/styles/theme.styled';
+import { theme } from '@/styles/themes/theme.styled';
 import LangSelectBox from '../lang-select-box/lang-select-box';
 import { Container } from '@/styles/global.styled';
 import { HeaderItemsVariants } from './header.variants';

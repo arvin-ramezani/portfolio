@@ -11,7 +11,7 @@ import {
   videoVariants,
 } from './project-video-modal.variants';
 import Button from '@/components/ui/button/button';
-import { theme } from '@/styles/theme.styled';
+import { theme } from '@/styles/themes/theme.styled';
 import { useTranslation } from 'next-i18next';
 
 interface VideoModalProps {
@@ -29,7 +29,9 @@ const VideoModal: FC<VideoModalProps> = ({ show, video, onClose }) => {
     onClose(false);
   };
 
-  const noticeHandler = () => setShowNotice(false);
+  const noticeHandler = () => {
+    setShowNotice(false);
+  };
 
   return (
     <AnimatePresence>
@@ -40,6 +42,7 @@ const VideoModal: FC<VideoModalProps> = ({ show, video, onClose }) => {
           animate={'visible'}
           exit={'hidden'}
           key="videoModal"
+          onClick={onCloseHandler}
         >
           <Image
             src="./images/icons/close.svg"

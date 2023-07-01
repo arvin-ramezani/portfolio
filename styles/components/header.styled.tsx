@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styled from 'styled-components';
-import { theme } from '../theme.styled';
+import { theme } from '../themes/theme.styled';
 
 export const StyledHeader = styled(motion.header)`
   font-family: Vazir;

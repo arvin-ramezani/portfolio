@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 import { ToolsContainer } from '@/styles/components/project-card.styled';
-import { theme } from '@/styles/theme.styled';
+import { theme } from '@/styles/themes/theme.styled';
 
 interface ProjectSkillsList {
   skills: string[];

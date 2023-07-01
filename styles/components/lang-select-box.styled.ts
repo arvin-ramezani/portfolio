@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { theme } from '../theme.styled';
+import { theme } from '../themes/theme.styled';
 
 export const StyledLangSelectBox = styled(motion.select)`
   padding: 0.4rem 0.2rem;
