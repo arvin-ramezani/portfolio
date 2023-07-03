@@ -103,3 +103,17 @@ export const AboutTitle = styled(motion.h2)`
     margin-top: 0;
   }
 `;
+
+export const AboutTextItem = styled(motion.p)`
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.textPrimary};
+`;
+
+export const StyledBullet = styled(motion.span)`
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  background-color: ${({ theme }) => theme.colors.textPrimary};
+  margin-right: 0.5rem;
+  cursor: pointer;
+`;
