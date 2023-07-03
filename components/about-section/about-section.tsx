@@ -60,50 +60,38 @@ const AboutSection = () => {
           exit={'exit'}
         >
           <AboutTitle>{translator('home:about_title')}</AboutTitle>
-          <AboutTextItem
-            variants={aboutTextItemsVariants}
-            initial={'initial'}
-            animate={aboutTextHover === 1 ? 'animate' : 'initial'}
-            onHoverStart={onAboutTextHoverStart.bind(null, 1)}
-            onHoverEnd={onAboutTextHoverEnd}
-          >
-            <StyledBullet
-              variants={styledBulletVariants}
-              initial="initial"
-              animate={aboutTextHover === 1 ? 'animate' : 'initial'}
+          <p>
+            <Image
+              src="/images/Bullet.svg"
+              alt="bullet"
+              width={10}
+              height={10}
+              style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
             {translator('home:about_text_1')}
-          </AboutTextItem>
+          </p>
 
-          <AboutTextItem
-            variants={aboutTextItemsVariants}
-            initial={'initial'}
-            animate={aboutTextHover === 2 ? 'animate' : 'initial'}
-            onHoverStart={onAboutTextHoverStart.bind(null, 2)}
-            onHoverEnd={onAboutTextHoverEnd}
-          >
-            <StyledBullet
-              variants={styledBulletVariants}
-              initial="initial"
-              animate={aboutTextHover === 2 ? 'animate' : 'initial'}
+          <p>
+            <Image
+              src="/images/Bullet.svg"
+              alt="bullet"
+              width={10}
+              height={10}
+              style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
             {translator('home:about_text_2')}
-          </AboutTextItem>
+          </p>
 
-          <AboutTextItem
-            variants={aboutTextItemsVariants}
-            initial={'initial'}
-            animate={aboutTextHover === 3 ? 'animate' : 'initial'}
-            onHoverStart={onAboutTextHoverStart.bind(null, 3)}
-            onHoverEnd={onAboutTextHoverEnd}
-          >
-            <StyledBullet
-              variants={styledBulletVariants}
-              initial="initial"
-              animate={aboutTextHover == 3 ? 'animate' : 'initial'}
+          <p>
+            <Image
+              src="/images/Bullet.svg"
+              alt="bullet"
+              width={10}
+              height={10}
+              style={{ display: 'inline-block', margin: '0 0.4rem' }}
             />
             {translator('home:about_text_3')}
-          </AboutTextItem>
+          </p>
         </AboutTextBlock>
 
         <Skills />
