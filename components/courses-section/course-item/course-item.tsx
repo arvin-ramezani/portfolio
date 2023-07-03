@@ -74,8 +74,8 @@ const CourseItem: FC<CourseItemProps> = ({
               <Image
                 src="/images/icons/check.svg"
                 alt="Check Icon"
-                width={32}
-                height={32}
+                width={16}
+                height={16}
               />
               {item}
             </LearnedItem>

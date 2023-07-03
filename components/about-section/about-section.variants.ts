@@ -1,3 +1,4 @@
+import { theme } from '@/styles/themes/theme.styled';
 import { Variants } from 'framer-motion';
 
 export const aboutItemsVariants: Variants = {
@@ -22,12 +23,41 @@ export const aboutItemsVariants: Variants = {
   exit: { opacity: 0 },
 };
 
-export const aboutTextItemsVariants: Variants = {
+export const aboutTextBlockVariants: Variants = {
   initial: {
     opacity: 0,
   },
   animate: {
     opacity: 1,
     transition: { duration: 0.8, delay: 0.8, staggerChildren: 0.1 },
+  },
+};
+
+export const aboutTextItemsVariants: Variants = {
+  initial: {
+    color: `${theme.colors.textSecondary}`,
+    textShadow: 'none',
+  },
+  animate: {
+    color: `${theme.colors.textPrimary}`,
+    textShadow: `0 0 2px ${theme.colors.textPrimary}`,
+  },
+};
+
+export const styledBulletVariants: Variants = {
+  initial: {
+    borderRadius: 0,
+    scale: 1,
+    backgroundColor: `${theme.colors.textSecondary}`,
+    boxShadow: 'none',
+    marginRight: '0.5rem',
+  },
+
+  animate: {
+    borderRadius: '50%',
+    scale: 1.3,
+    backgroundColor: `${theme.colors.textPrimary}`,
+    boxShadow: `0 0 3px 1px ${theme.colors.textPrimary}`,
+    marginRight: '.7rem',
   },
 };

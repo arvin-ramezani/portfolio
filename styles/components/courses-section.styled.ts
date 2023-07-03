@@ -103,9 +103,9 @@ export const LearnedItem = styled(motion.li)`
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin: 0.4rem 0;
+  margin: 0.8rem 0;
   font-size: 0.9rem;
-  line-height: 110%;
+  line-height: 140%;
 `;
 
 export const MoreText = styled(motion.div)`
