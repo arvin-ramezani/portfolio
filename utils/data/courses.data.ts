@@ -5,7 +5,7 @@ export const COURSES_LIST: ICourse[] = [
     name: 'ChatGPT - The Complete Guide',
     image: '/images/courses/chatgpt.svg',
     learnedList: [
-      'How ChatGPT was created and how it works',
+      'How Was ChatGPT Created, And How Does It Work?',
       'What is features and limitations are ?',
       'Understanding Tokens',
       'ChatGPT Hallucinations',
@@ -183,7 +183,7 @@ export const COURSES_LIST: ICourse[] = [
     name: 'Git & GitHub - The Practical Guide',
     image: '/images/courses/git-github.svg',
     learnedList: [
-      'How Git & GitHub Works (Repositories, Branches and Commits)',
+      'How does Git work with GitHub - Repositories, Branches and Commits',
       'Manages and Combining Git Branches - Understanding Stash - Resolving Conflicts',
       'Remote Branches, Remote Tracking Branches and Local Tracking Branches - Understanding Upstreams',
       'Collaboration and Contributions - Understanding GitHub Accounts Types and Repository Types',
@@ -264,7 +264,7 @@ export const COURSES_LIST: ICourse[] = [
     name: `React, NodeJS, Express & MongoDB - The MERN Fullstack Guide`,
     image: '/images/courses/mern.svg',
     learnedList: [
-      'MERN Theory (How React, NodeJS, Express & MongoDB Works Together - Different Approaches of Combining These Pieces',
+      'MERN Theory (How do React, NodeJS, Express & MongoDB Work Together - Different Approaches of Combining These Pieces',
       'Planning a MERN Project (What to Do When)',
       'File Upload',
       'Authentication and Authorization',
@@ -353,9 +353,17 @@ export const COURSES_LIST: ICourse[] = [
     name: `Microservices with Node JS and React`,
     image: '/images/courses/microservices.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Fundamentals Around Microservices - Big Problems With Data In Microservices - Communication Strategies Between Services (Sync and Async)',
+      'Running Services With Docker and Orchestrating Collections of Services with Kubernetes (Skaffold)',
+      'Build a Central Library as an NPM module to Share Code Between Services - Handle Concurrency Issues',
+      'Error Handling in Express.js App - Database Management and Modeling (Create Database With Kubernetes)',
+      'Fundamental Authentication Strategies - Individual Services Rely On Auth the Service(sync) or They Know How to Authenticate a User(async)',
+      'Testing Isolated Microservices (Different Scopes of Testing)',
+      'Integrating Next.js Framework to Our Microservice Application',
+      'Event Bus Implementation Using NATS Streaming Server (Connecting to NATS in a Node JS World and Managing a NATS Client)',
+      'Understanding Event Flow and Handling Concurrency Issues',
+      'Worker Services - Implement an Expiration Service',
+      'CI / CD (GitHub)',
     ],
     links: [
       {
@@ -369,9 +377,18 @@ export const COURSES_LIST: ICourse[] = [
     name: `NestJS: The Complete Developer's Guide`,
     image: '/images/courses/stephen-grider-nestjs.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Basics of Nest.js',
+      'Validating Request Data With Pipes',
+      'Nest.js Architecture - How Do Services and Repositories Work Together',
+      'Understanding Modules and Dependency Injection',
+      'Persistent Data With Nest.js - (Mongoose, TypeORM and etc)',
+      'Big Project - (Create a Small API and Continue to Explore Some of The Features Around Nest.js',
+      'Custom Data Serialization',
+      'Authentication and Authorization (Explore Different Options)',
+      'Unit Testing and Integration Testing in Nest.js',
+      'Relations With TypeORM',
+      'How do the Middleware, Guard, Decorators, and Interceptors Work Together, and In Which Order Do They Run On A Request?',
+      'Query Builders With TypeORM',
     ],
     links: [
       {
@@ -385,9 +402,11 @@ export const COURSES_LIST: ICourse[] = [
     name: `The Nest JS Bootcamp - Complete Developer Guide`,
     image: '/images/courses/laith-harb-nestjs.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Controllers and Decorator Params, Services In Nest.js',
+      'Adding With Pipes and DTOs (Enum Validation Pipe, Validation The Body With DTOs and Whitelisting Undesired Properties)',
+      'Transforming the Response With Interceptors',
+      'Big Project - (ORM Integration, Authentication and Authorization, Middleware, Guards and Interceptors)',
+      'Automated Tests In Nest.js',
     ],
     links: [
       {
@@ -401,9 +420,14 @@ export const COURSES_LIST: ICourse[] = [
     name: `Modern GraphQL with Node - Complete Developers Guide`,
     image: '/images/courses/laith-harb-graphql-node.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'What Is GraphQL? and What Problems It Solves? (Prevents Over-Fetching and Under-Fetching - How Data Is Organized)',
+      'Queries and Schemas (Scalar, Array and Object Types - Relating Data - File Structure)',
+      'What Are Mutations? (Creating, Deleting and Updating Data)',
+      'Best Practices And Rules of Designing a GraphQL API (Focusing In On Designing Rules and Principles That We Should Apply and Think About When Creating A GraphQL API - Referring a Tutorial From Shopify)',
+      'Project With GraphQL, Node And TypeScript - Database Storage With Prisma V3',
+      'Authentication And Authorization In GraphQL',
+      'The N + 1 Problem In GraphQL (Caching and Baching Using DataLoader, Pagination)',
+      'Connect API To React.js Using Apollo Client (Querying, Mutations and Passing The Auth Token From The Frontend',
     ],
     links: [
       {
@@ -417,9 +441,9 @@ export const COURSES_LIST: ICourse[] = [
     name: `JavaScript`,
     image: '/images/courses/javascript.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'JavaScript - ES6, ES7 and ES8',
+      'Project-Based JavaScript Course (Video Player, Playing Piano, Drag and Drop, Slider, Snake Game, Images Zoom, Scroll Top, Preload and more)',
+      '',
     ],
     links: [
       {
@@ -432,11 +456,7 @@ export const COURSES_LIST: ICourse[] = [
   {
     name: `HTML and CSS`,
     image: '/images/courses/roocket-html-css.svg',
-    learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
-    ],
+    learnedList: ['HTML', 'CSS (Flexbox, CSS Grid)'],
     links: [
       {
         name: 'https://roocket.ir/',
