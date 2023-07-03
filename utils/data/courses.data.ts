@@ -5,12 +5,16 @@ export const COURSES_LIST: ICourse[] = [
     name: 'ChatGPT - The Complete Guide',
     image: '/images/courses/chatgpt.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
-      'Authentication and Authorization with next-auth1',
-      'SSG - SSR - ISR - CSR1',
-      'File Upload and Download1',
+      'How ChatGPT was created and how it works',
+      'What is features and limitations are ?',
+      'Understanding Tokens',
+      'ChatGPT Hallucinations',
+      'Prompt Engineering',
+      'Using ChatGPT for utility tasks and content creation',
+      'Handson ChatGPT Midjourney for Content Creation',
+      'Using ChatGPT for Programming Web Development',
+      'Using GPT APIs',
+      'AutoGPT LangChain Building Automated AI Tools',
     ],
     links: [
       {
@@ -32,9 +36,7 @@ export const COURSES_LIST: ICourse[] = [
       'Authentication and Authorization with next-auth',
       'SSG - SSR - ISR - CSR',
       'File Upload and Download',
-      'Authentication and Authorization with next-auth1',
-      'SSG - SSR - ISR - CSR1',
-      'File Upload and Download1',
+      'Optimizing Nexjs Apps',
     ],
     links: [
       {
@@ -53,9 +55,11 @@ export const COURSES_LIST: ICourse[] = [
     name: 'Cypress End-to-End Testing - Getting Started',
     image: '/images/courses/cypress.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Fundamentals and Basics',
+      'Deep Dive: A Closer Look at Element Selection, Actions and Assertions',
+      'Test Organization and Configuration: Custom Commands and Queries',
+      'Working with Stubs, Spies, Fixtures & Manipulating the Clock',
+      'HTTP Requests, Databases & Authentication',
     ],
     links: [
       {
@@ -74,9 +78,15 @@ export const COURSES_LIST: ICourse[] = [
     name: 'JavaScript Unit Testing - The Practical Guide',
     image: '/images/courses/unit-testing.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Adjusting The Development Environment (Test Runner & Assertion Library',
+      'Unit Testing Functionals',
+      'AAA Pattern - Arrange, Act, Assert',
+      'What to test ?',
+      'How to Write Good Tests ?',
+      'Integration Testing',
+      'Balancing Unit and Integration Tests',
+      'Advanced Testing Concepts',
+      'Mocking & Spies Dealing with Side Effects',
     ],
     links: [
       {
@@ -95,9 +105,15 @@ export const COURSES_LIST: ICourse[] = [
     name: 'React Native - The Practical Guide',
     image: '/images/courses/react-native.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Debugging React Native Apps',
+      'Diving Deeper into Components, Layouts & Styling - Building a Mini-Game App',
+      'Building Adaptive User Interfaces (Adapt to Platform & Device Sizes)',
+      'React Navigation',
+      'Redux and Context API',
+      'Handling User Inputs',
+      'User Authentication',
+      'Using Native Devices Features',
+      'Push Notifications',
     ],
     links: [
       {
@@ -116,9 +132,15 @@ export const COURSES_LIST: ICourse[] = [
     name: 'SQL - The Complete Guide (MySQL, PostgreSQL & more)',
     image: '/images/courses/sql.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Core SQL Syntax & Rules',
+      'Managing Tables & Working With Data Types',
+      'CRUD Operations With SQL',
+      'Data Normalization & Relationships (Splitting & JOINing Data)',
+      'Composite Primary Keys & Composite Foreign Keys',
+      'Self-Referential Relationships',
+      'Grouping & Aggregate Functions',
+      'Database Transactions',
+      'Using Indexes',
     ],
     links: [
       {
@@ -137,9 +159,12 @@ export const COURSES_LIST: ICourse[] = [
     name: 'Clean Code',
     image: '/images/courses/clean-code.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Assigning Good Names for Variables, Functions, Classes',
+      'Code Structure, Comments & Formatting',
+      'How to Write Clean Function (Parameters - Function lengths and Abstraction Levels & Splitting Functions',
+      'How to Avoid Deeply Nested Control Structures - How to Utilize Errors Instead of Error Statements',
+      'Keep Your Classes and Objects Clean and Work With them in Clean Way - Difference Between Classes, Objects and Data Structures or Data Containers',
+      'Object-oriented Principles (SOLID, Low of Demeter',
     ],
     links: [
       {
@@ -158,9 +183,10 @@ export const COURSES_LIST: ICourse[] = [
     name: 'Git & GitHub - The Practical Guide',
     image: '/images/courses/git-github.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'How Git & GitHub Works (Repositories, Branches and Commits)',
+      'Manages and Combining Git Branches - Understanding Stash - Resolving Conflicts',
+      'Remote Branches, Remote Tracking Branches and Local Tracking Branches - Understanding Upstreams',
+      'Collaboration and Contributions - Understanding GitHub Accounts Types and Repository Types',
     ],
     links: [
       {
@@ -179,9 +205,17 @@ export const COURSES_LIST: ICourse[] = [
     name: 'Docker & Kubernetes: The Practical Guide',
     image: '/images/courses/docker-kubernetes.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Docker Images and Containers',
+      'Understanding Different Kinds of Data - Volumes and Bind Mounts',
+      'Networking in Docker',
+      'Building Multi Container Applications With Docker',
+      'Docker Compose',
+      'Working with Utility Containers and Executing Commands In Containers',
+      'Deploying Docker Containers',
+      'Kubernetes and Docker (Container Orchestration Independent of Cloud Providers We Using)',
+      'Kubernetes Architecture & Core Concepts - (Cluster, Pod, WorkerNodes, MasterNode, The Control Plane and Deployments)',
+      'Managing Data and Volumes With Kubernetes - Kubernetes Networking',
+      'Kubernetes Deployments',
     ],
     links: [
       {
@@ -200,9 +234,18 @@ export const COURSES_LIST: ICourse[] = [
     name: `MongoDB - The Complete Developer's Guide 2022`,
     image: '/images/courses/mongodb.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Understanding the Basics (CRUD Operations)',
+      'Schemas Relations and How to Structure Documents',
+      'Diving Deeper to Create, Read, Update and Delete Operations',
+      'How to Work with Indexes',
+      'Working with Geospatial Data',
+      'Understanding the Aggregation Framework',
+      'Working with Numeric Data (int32, int64, Doubles(64bit), High Precision Doubles(128bit)',
+      'Security in MongoDB (Authentication & Authorization, Transport Encryption and Encryption at Rest',
+      'Performance, Fault Tolerancy & Deployment (Influences Performance, Capped Collections, Replica Sets, Sharding and MongoDB Server Development)',
+      'Transactions',
+      'How to Work with Drivers and Connect MongoDB to Application',
+      'What is MongoDB Stitch and How to Use it',
     ],
     links: [
       {
@@ -221,9 +264,11 @@ export const COURSES_LIST: ICourse[] = [
     name: `React, NodeJS, Express & MongoDB - The MERN Fullstack Guide`,
     image: '/images/courses/mern.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'MERN Theory (How React, NodeJS, Express & MongoDB Works Together - Different Approaches of Combining These Pieces',
+      'Planning a MERN Project (What to Do When)',
+      'File Upload',
+      'Authentication and Authorization',
+      'Application Development',
     ],
     links: [
       {
@@ -242,9 +287,12 @@ export const COURSES_LIST: ICourse[] = [
     name: `JavaScript Data Structures - The Fundamentals`,
     image: '/images/courses/data-structures.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'What are Data Structures? - (Arrays vs Sets - Objects vs Maps - Weak Set & Weak Map - Work with Linked Lists)',
+      'Work With Lists and Tables - Stack Data Structures - Queues - Hash Tables - Understanding Hash Collisions and Solving with Chaining & Open Addressing',
+      'What Are Trees and Core Terminology - Work with Different Trees (Depth First & Breadth First Search, Work With Binary Search Trees, Working With AVL Trees, Working With Tries',
+      'Work With Priority Queues and Heaps',
+      'Work With Graphs',
+      '',
     ],
     links: [
       {
@@ -258,9 +306,13 @@ export const COURSES_LIST: ICourse[] = [
     name: `JavaScript Algorithms - The Fundamentals`,
     image: '/images/courses/algorithms.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Math Algorithms - Big O Notation and The Right Way of Thinking About Problems',
+      'Recursion in Algorithms and Dynamic Programming',
+      'Search Algorithms - (Linear and Binary) - The Master Theorem',
+      'Sorting Algorithms',
+      'Space Complexity',
+      'Sets (Array) Algorithms',
+      'More Complex Algorithms & How To Solve Code Problems',
     ],
     links: [
       {
@@ -274,9 +326,15 @@ export const COURSES_LIST: ICourse[] = [
     name: `Progressive Web Apps (PWA) - The Complete Guide`,
     image: '/images/courses/typescript.svg',
     learnedList: [
-      'Authentication and Authorization with next-auth',
-      'SSG - SSR - ISR - CSR',
-      'File Upload and Download',
+      'Understanding The App Manifest and The Service Workers',
+      'Implementing Caching With Service Workers - (Static Caching, Dynamic Caching and Cache Versioning)',
+      'Advanced Caching and Different Caching Strategies (Post Request and Cache API, Cache with Network Fallback, Network with Cache Fallback, Cache then Network, Cache then Network Dynamic Caching, Cache then Network with Offline Support, Cache Strategies Routing and more...',
+      'Using IndexedDB for Caching Dynamic Data',
+      'Background Synchronization',
+      'Web Push Notifications',
+      'Accessing The Native Device Features',
+      'Service Worker Management with Workbox',
+      'How to Turn React, Vue or Angular App to Progressive Web Apps',
     ],
     links: [
       {
@@ -323,7 +381,6 @@ export const COURSES_LIST: ICourse[] = [
       },
     ],
   },
-
   {
     name: `The Nest JS Bootcamp - Complete Developer Guide`,
     image: '/images/courses/laith-harb-nestjs.svg',
