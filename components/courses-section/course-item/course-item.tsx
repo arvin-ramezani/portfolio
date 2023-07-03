@@ -23,6 +23,7 @@ import {
   learnedListVariants,
   onCourseClickVariants,
 } from './course-item.variants';
+import { useRouter } from 'next/router';
 
 interface CourseItemProps extends ICourse {}
 
@@ -36,12 +37,16 @@ const CourseItem: FC<CourseItemProps> = ({
   const { width: windowWidth } = useWindowDimensions();
   const onCourseClickCtrl = useAnimationControls();
   const { t: translator } = useTranslation();
+  const router = useRouter();
 
   const onOpenLearnedList = () => setOpenLearnedList((prev) => !prev);
 
   const onCourseClick = () => {
     onCourseClickCtrl.start(onCourseClickVariants.animate);
   };
+
+  const moreTextContent = router.locale === 'fa' ? 'بیشتر ...' : 'more...';
+  const lessTextContent = router.locale === 'fa' ? 'کمتر ...' : 'less...';
 
   return (
     <StyledCourseItem
@@ -83,7 +88,7 @@ const CourseItem: FC<CourseItemProps> = ({
         </LearnedList>
 
         <MoreText onClick={onOpenLearnedList}>
-          {openLearnedList ? 'less...' : 'more...'}
+          {openLearnedList ? lessTextContent : moreTextContent}
         </MoreText>
       </CourseBody>
       <CourseFooter>

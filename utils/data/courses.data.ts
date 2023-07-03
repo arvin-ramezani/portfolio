@@ -13,7 +13,7 @@ export const COURSES_LIST: ICourse[] = [
       'Using ChatGPT for utility tasks and content creation',
       'Handson ChatGPT Midjourney for Content Creation',
       'Using ChatGPT for Programming Web Development',
-      'Using GPT APIs',
+      'How To Use GPT APIs ?',
       'AutoGPT LangChain Building Automated AI Tools',
     ],
     links: [
@@ -208,8 +208,7 @@ export const COURSES_LIST: ICourse[] = [
       'Docker Images and Containers',
       'Understanding Different Kinds of Data - Volumes and Bind Mounts',
       'Networking in Docker',
-      'Building Multi Container Applications With Docker',
-      'Docker Compose',
+      'Building Multi Container Applications With Docker and Docker Compose',
       'Working with Utility Containers and Executing Commands In Containers',
       'Deploying Docker Containers',
       'Kubernetes and Docker (Container Orchestration Independent of Cloud Providers We Using)',
@@ -292,7 +291,6 @@ export const COURSES_LIST: ICourse[] = [
       'What Are Trees and Core Terminology - Work with Different Trees (Depth First & Breadth First Search, Work With Binary Search Trees, Working With AVL Trees, Working With Tries',
       'Work With Priority Queues and Heaps',
       'Work With Graphs',
-      '',
     ],
     links: [
       {
@@ -443,7 +441,6 @@ export const COURSES_LIST: ICourse[] = [
     learnedList: [
       'JavaScript - ES6, ES7 and ES8',
       'Project-Based JavaScript Course (Video Player, Playing Piano, Drag and Drop, Slider, Snake Game, Images Zoom, Scroll Top, Preload and more)',
-      '',
     ],
     links: [
       {
@@ -456,7 +453,7 @@ export const COURSES_LIST: ICourse[] = [
   {
     name: `HTML and CSS`,
     image: '/images/courses/roocket-html-css.svg',
-    learnedList: ['HTML', 'CSS (Flexbox, CSS Grid)'],
+    learnedList: ['HTML, CSS (Flexbox, CSS Grid)'],
     links: [
       {
         name: 'https://roocket.ir/',
@@ -465,4 +462,30 @@ export const COURSES_LIST: ICourse[] = [
       },
     ],
   },
+];
+
+const persianWhatILearned = [
+  `مبانی میکروسرویس ها - مشکلات بزرگ با داده ها در میکروسرویس ها -
+  استراتژی های ارتباطی بین سرویس ها (sync & async)`,
+
+  `اجرای سرویس ها با داکر و مدیریت سرویس ها با Kubernetes (Skaffold)`,
+
+  `ساخت یک کتابخانه مرکزی به عنوان یک پکیج NPM برای به اشتراک گذاری کد بین سرویس ها - مدیریت مشکلات همزمانی`,
+
+  `مدیریت خطا در برنامه Express.js - مدیریت پایگاه داده و مدل سازی (ایجاد پایگاه داده با Kubernetes)`,
+
+  `استراتژی های اصلی تأیید هویت - سرویس های جداگانه به تأیید هویت (sync) وابسته هستند یا هر سرویس خودش هویت سنجی را انجام می دهند (async)`,
+
+  `تست میکروسرویس های (محدوده های مختلف)`,
+
+  `یکپارچه سازی Next.js در برنامه`,
+
+  `پیاده سازی ایونت باس با استفاده از NATS Streaming Server (اتصال به NATS در
+    Node.JS و مدیریت یک کلاینت NATS)`,
+
+  `روند تایین ایونت ها و حل مشکلات همزمانی`,
+
+  `سرویس های کارگر - پیاده سازی یک سرویس انقضا`,
+
+  `CI / CD (GitHub)`,
 ];
