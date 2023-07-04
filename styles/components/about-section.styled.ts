@@ -23,6 +23,7 @@ export const StyledAboutSection = styled.section`
   @media (min-width: ${theme.breakpoints.lg}) {
     align-items: center;
     min-height: 80vh;
+    padding-bottom: 2rem;
 
     & > div {
       margin: 0 auto;

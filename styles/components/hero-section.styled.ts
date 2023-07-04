@@ -12,7 +12,7 @@ export const StyledHeroSection = styled.section`
 
     @media (min-width: ${theme.breakpoints.md}) {
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       margin-top: 5rem;
     }
@@ -20,9 +20,9 @@ export const StyledHeroSection = styled.section`
 
   @media (min-width: ${theme.breakpoints.md}) {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    margin-top: -4rem;
+    /* margin-top: -4rem; */
   }
 `;
 
@@ -34,7 +34,7 @@ export const HeroTextContainer = styled(motion.div)`
 
   & > p {
     margin-top: 3rem;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
     line-height: 1.5;
@@ -44,13 +44,18 @@ export const HeroTextContainer = styled(motion.div)`
       font-size: 0.8rem;
     }
 
+    @media (min-width: ${theme.breakpoints.md}) {
+      font-size: 0.8rem;
+      margin-top: 0;
+    }
+
     @media (min-width: ${theme.breakpoints.xl}) {
       font-size: 1rem;
     }
   }
 
   & > h1 {
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(2rem, 6vw, 5rem);
     line-height: 1.4;
     font-weight: 700;
   }
