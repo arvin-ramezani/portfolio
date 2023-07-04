@@ -13,7 +13,10 @@ import { IProject } from '@/utils/types/project.types';
 import { PROJECT_LIST } from '@/utils/data/projects.data';
 import CoursesSection from '@/components/courses-section/courses-section';
 import { ICourse } from '@/utils/types/course.types';
-import { COURSES_LIST } from '@/utils/data/courses.data';
+import {
+  COURSES_LIST,
+  COURSES_LIST_WITH_TRANSLATE,
+} from '@/utils/data/courses.data';
 import axios from 'axios';
 import { IHomePageGetRespose } from './api';
 
@@ -37,10 +40,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         },
       },
       courses: {
-        courseList: COURSES_LIST.slice(0, 6),
+        courseList: COURSES_LIST_WITH_TRANSLATE.slice(0, 6),
         pagination: {
           count: 6,
-          pageCount: Math.ceil(COURSES_LIST.length / 6),
+          pageCount: Math.ceil(COURSES_LIST_WITH_TRANSLATE.length / 6),
         },
       },
     };

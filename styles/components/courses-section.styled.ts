@@ -95,11 +95,11 @@ export const CourseBody = styled(motion.div)`
   }
 `;
 
-export const LearnedList = styled(motion.ul)`
+export const StyledLearnedList = styled(motion.ul)`
   overflow: hidden;
 `;
 
-export const LearnedItem = styled(motion.li)`
+export const StyledLearnedItem = styled(motion.li)`
   display: flex;
   align-items: center;
   gap: 0.4rem;

@@ -36,7 +36,7 @@ export const aboutTextBlockVariants: Variants = {
 export const aboutTextItemsVariants: Variants = {
   initial: {
     color: `${theme.colors.textSecondary}`,
-    textShadow: 'none',
+    textShadow: '0 0 0px ${theme.colors.textPrimary}',
   },
   animate: {
     color: `${theme.colors.textPrimary}`,
@@ -49,8 +49,8 @@ export const styledBulletVariants: Variants = {
     borderRadius: 0,
     scale: 1,
     backgroundColor: `${theme.colors.textSecondary}`,
-    boxShadow: 'none',
-    marginRight: '0.5rem',
+    boxShadow: '0 0 0px 0px ${theme.colors.textPrimary}',
+    margin: '0 0.5rem',
   },
 
   animate: {
@@ -58,6 +58,6 @@ export const styledBulletVariants: Variants = {
     scale: 1.3,
     backgroundColor: `${theme.colors.textPrimary}`,
     boxShadow: `0 0 3px 1px ${theme.colors.textPrimary}`,
-    marginRight: '.7rem',
+    marginRight: '0 0.7rem',
   },
 };

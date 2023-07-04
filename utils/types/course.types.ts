@@ -11,3 +11,10 @@ export interface ICourse {
   links: ILink[];
   date?: Date;
 }
+
+export interface ICourseWithTranslate extends ICourse {
+  learned: {
+    translatorName: string;
+    itemLength: number;
+  };
+}

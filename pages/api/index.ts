@@ -1,7 +1,10 @@
-import { COURSES_LIST } from '@/utils/data/courses.data';
+import {
+  COURSES_LIST,
+  COURSES_LIST_WITH_TRANSLATE,
+} from '@/utils/data/courses.data';
 import { PROJECT_LIST } from '@/utils/data/projects.data';
 import { IPagination } from '@/utils/types/common.types';
-import { ICourse } from '@/utils/types/course.types';
+import { ICourse, ICourseWithTranslate } from '@/utils/types/course.types';
 import { IProject } from '@/utils/types/project.types';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -14,7 +17,7 @@ export interface IHomePageGetRespose {
     };
   };
   courses: {
-    courseList: ICourse[];
+    courseList: ICourseWithTranslate[];
     pagination: IPagination;
   };
 }
@@ -66,7 +69,7 @@ export default function handler(
     }
 
     if (req.query.courses) {
-      const courseList = COURSES_LIST.slice(
+      const courseList = COURSES_LIST_WITH_TRANSLATE.slice(
         skipCoursesItems,
         skipCoursesItems + coursesItemsPerPage
       );
@@ -75,9 +78,10 @@ export default function handler(
         courseList,
         pagination: {
           count:
-            COURSES_LIST.length - (skipCoursesItems + coursesItemsPerPage) || 0,
+            COURSES_LIST_WITH_TRANSLATE.length -
+              (skipCoursesItems + coursesItemsPerPage) || 0,
           pageCount: Math.ceil(
-            (COURSES_LIST.length || 0) / coursesItemsPerPage
+            (COURSES_LIST_WITH_TRANSLATE.length || 0) / coursesItemsPerPage
           ),
         },
       };

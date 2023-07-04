@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useAnimationControls } from 'framer-motion';
 import Image from 'next/image';
@@ -11,27 +12,25 @@ import {
   CourseLinkItem,
   CourseLinksList,
   ImageWrapper,
-  LearnedItem,
-  LearnedList,
   MoreText,
   StyledCourseItem,
 } from '@/styles/components/courses-section.styled';
-import { ICourse } from '@/utils/types/course.types';
+import { ICourseWithTranslate } from '@/utils/types/course.types';
 import useWindowDimensions from '@/hooks/use-window-dimensions/use-window-dimensions';
 import {
   courseItemVariants,
-  learnedListVariants,
   onCourseClickVariants,
 } from './course-item.variants';
-import { useRouter } from 'next/router';
+import LearnedList from './learned-list/learned-list';
 
-interface CourseItemProps extends ICourse {}
+interface CourseItemProps extends ICourseWithTranslate {}
 
 const CourseItem: FC<CourseItemProps> = ({
   name,
   image,
   learnedList,
   links,
+  learned,
 }) => {
   const [openLearnedList, setOpenLearnedList] = useState(false);
   const { width: windowWidth } = useWindowDimensions();
@@ -68,24 +67,12 @@ const CourseItem: FC<CourseItemProps> = ({
       </CourseItemHeaderWrapper>
 
       <CourseBody>
-        <h6>What I Learned</h6>
+        <h6>{translator('home:courses_learned_title')}</h6>
+
         <LearnedList
-          variants={learnedListVariants}
-          initial={'close'}
-          animate={openLearnedList ? 'open' : 'close'}
-        >
-          {learnedList.map((item) => (
-            <LearnedItem key={item}>
-              <Image
-                src="/images/icons/check.svg"
-                alt="Check Icon"
-                width={16}
-                height={16}
-              />
-              {item}
-            </LearnedItem>
-          ))}
-        </LearnedList>
+          learned={learned}
+          openLearnedList={openLearnedList}
+        />
 
         <MoreText onClick={onOpenLearnedList}>
           {openLearnedList ? lessTextContent : moreTextContent}

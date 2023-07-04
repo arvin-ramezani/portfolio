@@ -3,13 +3,13 @@ import { useTranslation } from 'next-i18next';
 
 import { CoursesContainer } from '@/styles/components/courses-section.styled';
 import CourseItem from '../course-item/course-item';
-import { ICourse } from '@/utils/types/course.types';
+import { ICourse, ICourseWithTranslate } from '@/utils/types/course.types';
 import Pagination from '@/components/ui/pagination/pagination';
 import { IPagination } from '@/utils/types/common.types';
 import { useGetCoursesByPageQuery } from '@/features/api/apiSlice';
 
 interface CourseListProps {
-  courseList: ICourse[];
+  courseList: ICourseWithTranslate[];
   pagination: IPagination;
 }
 
@@ -39,6 +39,7 @@ const CourseList: FC<CourseListProps> = ({
             name={course.name}
             image={course.image}
             learnedList={course.learnedList}
+            learned={course.learned}
             links={course.links}
           />
         ))}
