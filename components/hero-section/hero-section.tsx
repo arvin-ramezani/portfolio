@@ -48,10 +48,15 @@ function HeroSection() {
 
           <h2>{translator('home:hero_section_sub_heading_1')}</h2>
           <p>{translator('home:hero_section_sub_heading_2')}</p>
-          <p>{translator('home:hero_section_sub_heading_3')}</p>
+
+          {pageDir === 'ltr' && (
+            <p>{translator('home:hero_section_sub_heading_3')}</p>
+          )}
 
           <Button
-            text={translator('common:call_me_btn')}
+            text={`${translator('common:call_me_btn')}${
+              pageDir === 'rtl' && 'بگیرید'
+            }`}
             onClick={onCall}
             color={theme.colors.primary}
             textColor={theme.colors.black}
