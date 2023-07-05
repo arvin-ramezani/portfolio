@@ -129,7 +129,11 @@ const Footer = () => {
             <p>{translator('home:footer_location_text')}</p>
           </LocationBlock>
 
-          <SocialMediaBlock>
+          <SocialMediaBlock
+            initial={{ scale: 1 }}
+            animate={{ scale: 1 }}
+            whileHover={{ scaleX: 1.4 }}
+          >
             <Link
               href="https://www.linkedin.com/in/arvin-ramezani"
               passHref
@@ -178,18 +182,18 @@ const Footer = () => {
                 height={32}
               />
             </Link>
-            {/* <Link
-              href="https://twitter.com/a_plus_webb"
+            <Link
+              href="https://instagram.com/arvin.web?igshid=MzNlNGNkZWQ4Mg=="
               passHref
               target="_blank"
             >
               <Image
-                src="/images/icons/twitter.svg"
+                src="/images/icons/instagram.svg"
                 alt="LinkedIn Logo"
-                width={42}
-                height={42}
+                width={32}
+                height={32}
               />
-            </Link> */}
+            </Link>
           </SocialMediaBlock>
         </ContactBlock>
 

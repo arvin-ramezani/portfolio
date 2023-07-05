@@ -87,10 +87,9 @@ export const ContactBlock = styled(motion.div)<{ pagedir: 'rtl' | 'ltr' }>`
   direction: ltr;
   color: ${({ theme }) => theme.colors.textSecondary};
 
-  /* direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')}; */
-
   & > div#phoneBlock {
     cursor: pointer;
+    margin-top: 0.5rem;
   }
 
   @media (min-width: ${theme.breakpoints.md}) {
@@ -100,22 +99,25 @@ export const ContactBlock = styled(motion.div)<{ pagedir: 'rtl' | 'ltr' }>`
 `;
 
 export const ContactTitle = styled.h3<{ pagedir: 'rtl' | 'ltr' }>`
-  /* margin: ${({ pagedir }) =>
-    pagedir === 'rtl' ? '3rem 0 3rem auto' : '3rem auto 3rem 0'}; */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 
   color: ${({ theme }) => theme.colors.textPrimary};
   margin-right: ${({ pagedir }) => (pagedir === 'rtl' ? '0' : 'auto')};
   margin-left: ${({ pagedir }) => (pagedir === 'rtl' ? 'auto' : '0')};
-  margin-top: 3rem;
-  margin-bottom: 3rem;
 `;
 
-export const SocialMediaBlock = styled.div`
+export const SocialMediaBlock = styled(motion.div)`
   padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+
+  & a:hover {
+    transform: scale(1.2);
+    transition: 0.3s;
+  }
 
   & img {
     cursor: pointer;
@@ -128,8 +130,6 @@ export const EmailBlock = styled.div<{ pagedir: 'rtl' | 'ltr' }>`
   gap: 0.8rem;
   margin-bottom: 1rem;
 
-  /* direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')}; */
-
   & p {
     margin-top: 0.3rem;
   }
@@ -140,5 +140,4 @@ export const LocationBlock = styled.div<{ pagedir: 'rtl' | 'ltr' }>`
   align-items: center;
   gap: 0.6rem;
   margin-bottom: 1rem;
-  /* direction: ${({ pagedir }) => (pagedir === 'rtl' ? 'ltr' : 'rtl')}; */
 `;
