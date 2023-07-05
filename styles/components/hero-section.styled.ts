@@ -22,7 +22,6 @@ export const StyledHeroSection = styled.section`
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    /* margin-top: -4rem; */
   }
 `;
 
@@ -32,32 +31,28 @@ export const HeroTextContainer = styled(motion.div)`
   flex-direction: column;
   text-align: center;
 
-  & > p {
-    margin-top: 3rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    line-height: 1.5;
-    color: ${({ theme }) => theme.colors.textSecondary};
-
-    @media (min-width: ${theme.breakpoints.sm}) {
-      font-size: 0.8rem;
-    }
-
-    @media (min-width: ${theme.breakpoints.md}) {
-      font-size: 0.8rem;
-      margin-top: 0;
-    }
-
-    @media (min-width: ${theme.breakpoints.xl}) {
-      font-size: 1rem;
-    }
-  }
-
   & > h1 {
-    font-size: clamp(2rem, 6vw, 5rem);
+    font-size: clamp(2rem, 6vw, 4.6rem);
     line-height: 1.4;
     font-weight: 700;
+  }
+
+  & > h2 {
+    margin-top: 3rem;
+  }
+
+  & > p {
+    margin-top: 1rem;
+  }
+
+  & > h2,
+  > p {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    line-height: 1.4;
+
+    color: ${({ theme }) => theme.colors.textSecondary};
   }
 
   & > div:last-child {
@@ -71,6 +66,13 @@ export const HeroTextContainer = styled(motion.div)`
     }
   }
 
+  @media (min-width: ${theme.breakpoints.sm}) {
+    & > h2,
+    > p {
+      font-size: 0.8rem;
+    }
+  }
+
   @media (min-width: ${theme.breakpoints.md}) {
     text-align: start;
     height: auto;
@@ -79,6 +81,15 @@ export const HeroTextContainer = styled(motion.div)`
     & button {
       font-size: 1rem;
       padding: 0.8rem 0;
+    }
+  }
+
+  @media (min-width: ${theme.breakpoints.xl}) {
+    font-size: 1rem;
+
+    & > h2,
+    > p {
+      font-size: 1rem;
     }
   }
 `;

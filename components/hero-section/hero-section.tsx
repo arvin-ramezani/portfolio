@@ -44,9 +44,11 @@ function HeroSection() {
           animate="visible"
           custom={pageDir}
         >
-          <p>{translator('home:hero_section_sub_heading')}</p>
-
           <h1>{translator('home:hero_section_heading')}</h1>
+
+          <h2>{translator('home:hero_section_sub_heading_1')}</h2>
+          <p>{translator('home:hero_section_sub_heading_2')}</p>
+          <p>{translator('home:hero_section_sub_heading_3')}</p>
 
           <Button
             text={translator('common:call_me_btn')}

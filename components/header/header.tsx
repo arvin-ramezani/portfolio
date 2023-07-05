@@ -26,7 +26,7 @@ const Header = () => {
   const shadow = useTransform(
     scrollY,
     [0, 50],
-    ['none', `0 4px 6px 2px ${theme.backgroundColors.primary}`]
+    ['none', `0 4px 6px 2px #03142c`]
   );
 
   useEffect(() => {

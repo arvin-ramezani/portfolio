@@ -115,26 +115,25 @@ const Footer = () => {
               width={32}
               height={32}
             />
-            <p>a.plus.webb@gmail.com</p>
+            <p>arvin.ramezani6@gmail.com</p>
           </EmailBlock>
 
           <LocationBlock pagedir={pageDir}>
             <Image
               src="/images/icons/location.svg"
               alt="Location Icon"
-              width={28}
-              height={46}
+              width={32}
+              height={40}
             />
 
             <p>{translator('home:footer_location_text')}</p>
-            {/* <p>ایران / مازندران / بابلسر</p> */}
           </LocationBlock>
 
           <SocialMediaBlock>
             <Link
               href="https://www.linkedin.com/in/arvin-ramezani"
               passHref
-              legacyBehavior
+              target="_blank"
             >
               <Image
                 src="/images/icons/linkedIn.svg"
@@ -144,9 +143,9 @@ const Footer = () => {
               />
             </Link>
             <Link
-              href="https://github.com/A-Plus-web"
+              href="https://github.com/Arvin-Ramezani"
               passHref
-              legacyBehavior
+              target="_blank"
             >
               <Image
                 src="/images/icons/github.svg"
@@ -158,7 +157,7 @@ const Footer = () => {
             <Link
               href="https://wa.me/989361599686"
               passHref
-              legacyBehavior
+              target="_blank"
             >
               <Image
                 src="/images/icons/whatsapp.svg"
@@ -170,7 +169,7 @@ const Footer = () => {
             <Link
               href="https://t.me/Arvinrmz"
               passHref
-              legacyBehavior
+              target="_blank"
             >
               <Image
                 src="/images/icons/telegram.svg"
@@ -179,10 +178,10 @@ const Footer = () => {
                 height={32}
               />
             </Link>
-            <Link
+            {/* <Link
               href="https://twitter.com/a_plus_webb"
               passHref
-              legacyBehavior
+              target="_blank"
             >
               <Image
                 src="/images/icons/twitter.svg"
@@ -190,7 +189,7 @@ const Footer = () => {
                 width={42}
                 height={42}
               />
-            </Link>
+            </Link> */}
           </SocialMediaBlock>
         </ContactBlock>
 
