@@ -76,6 +76,10 @@ export const CourseItemHeaderWrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   padding: 0 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 
   & img {
     border-radius: 1rem;

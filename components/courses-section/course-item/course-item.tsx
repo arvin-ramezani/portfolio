@@ -22,6 +22,7 @@ import {
   onCourseClickVariants,
 } from './course-item.variants';
 import LearnedList from './learned-list/learned-list';
+import LoadingSpinner from '@/components/ui/loading-spinner/loading-spinnet';
 
 interface CourseItemProps extends ICourseWithTranslate {}
 
@@ -32,6 +33,7 @@ const CourseItem: FC<CourseItemProps> = ({
   links,
   learned,
 }) => {
+  const [imageLoading, setImageLoading] = useState(true);
   const [openLearnedList, setOpenLearnedList] = useState(false);
   const { width: windowWidth } = useWindowDimensions();
   const onCourseClickCtrl = useAnimationControls();
@@ -52,15 +54,18 @@ const CourseItem: FC<CourseItemProps> = ({
       variants={courseItemVariants}
       initial={'close'}
       animate={openLearnedList ? 'open' : 'close'}
-      custom={windowWidth}
+      custom={{ windowWidth, imageLoading }}
     >
       <CourseItemHeaderWrapper onClick={onCourseClick}>
         <ImageWrapper>
+          {imageLoading && <LoadingSpinner />}
+
           <Image
             src={image}
             alt={name}
             width={200}
             height={162}
+            onLoadingComplete={() => setImageLoading(false)}
           />
         </ImageWrapper>
         <h3>{name}</h3>
