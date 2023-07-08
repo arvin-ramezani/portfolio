@@ -55,7 +55,7 @@ function HeroSection() {
 
           <Button
             text={`${translator('common:call_me_btn')}${
-              pageDir === 'rtl' && 'بگیرید'
+              pageDir === 'rtl' ? 'بگیرید' : ''
             }`}
             onClick={onCall}
             color={theme.colors.primary}
