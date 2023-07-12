@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useInView } from 'framer-motion';
 import { useTranslation } from 'next-i18next';
 
 import {
@@ -19,7 +19,7 @@ import {
   styledBulletVariants,
 } from './about-section.variants';
 import Skills from '../skills/skills';
-import { theme } from '@/styles/themes/theme.styled';
+import DownloadResume from './download-resume/download-resume';
 
 const AboutSection = () => {
   const [aboutTextHover, setAboutTextHover] = useState<number>(0);
@@ -104,6 +104,8 @@ const AboutSection = () => {
             />
             {translator('home:about_text_3')}
           </AboutTextItem>
+
+          <DownloadResume />
         </AboutTextBlock>
 
         <Skills />

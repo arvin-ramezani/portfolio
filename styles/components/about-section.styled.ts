@@ -110,6 +110,28 @@ export const AboutTextItem = styled(motion.p)`
   color: ${({ theme }) => theme.colors.textPrimary};
 `;
 
+export const DownloadResumeBlock = styled(motion.div)`
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: fit-content;
+  margin-top: 3rem;
+  position: relative;
+`;
+
+export const StyledCloseIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const DownloadResumeBtnWrapper = styled(motion.div)`
+  & button {
+    border: none;
+    box-shadow: 0 0 4px 1px ${({ theme }) => theme.colors.primary};
+  }
+`;
+
 export const StyledBullet = styled(motion.span)`
   display: inline-block;
   width: 0.7rem;

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import React, { CSSProperties, FC, MouseEvent, MouseEventHandler } from 'react';
+import React, { CSSProperties, FC, MouseEventHandler } from 'react';
 
 import {
   StyledButton,
@@ -14,6 +14,7 @@ interface ButtonProps {
   color?: string;
   textColor?: string;
   wrapperStyle?: CSSProperties;
+  buttonStyles?: CSSProperties;
   loading?: boolean;
 }
 
@@ -23,6 +24,7 @@ const Button: FC<ButtonProps> = ({
   color,
   textColor,
   wrapperStyle,
+  buttonStyles,
   loading,
 }) => {
   const onClickHandler: MouseEventHandler<HTMLDivElement> = (e) => {
@@ -43,6 +45,7 @@ const Button: FC<ButtonProps> = ({
         whileTap={'tap'}
         color={color || 'unset'}
         textcolor={textColor || 'unset'}
+        style={buttonStyles}
         layout
       >
         {loading ? (
