@@ -59,11 +59,10 @@ export const HeroTextContainer = styled(motion.div)`
     margin: auto auto 0;
     width: 100%;
     max-width: 400px;
+  }
 
-    @media (min-width: ${theme.breakpoints.md}) {
-      margin: 3rem 0 0;
-      width: 60%;
-    }
+  & buttun {
+    border: none;
   }
 
   @media (min-width: ${theme.breakpoints.sm}) {
@@ -77,6 +76,11 @@ export const HeroTextContainer = styled(motion.div)`
     text-align: start;
     height: auto;
     flex: 1;
+
+    & > div:last-child {
+      margin: 3rem 0 0;
+      width: 60%;
+    }
 
     & button {
       font-size: 1rem;

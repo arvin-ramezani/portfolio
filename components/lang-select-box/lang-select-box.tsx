@@ -1,18 +1,21 @@
 import { useRouter } from 'next/router';
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { useTranslation } from 'next-i18next';
 
 import { StyledLangSelectBox } from '@/styles/components/lang-select-box.styled';
 import { selectBoxVariants } from './lang-select-box.variants';
-import Image from 'next/image';
+import LoadingLanguageSpinner from '../ui/loading-language-spinner/loading-language-spinner';
+import { AnimatePresence } from 'framer-motion';
 
 const LangSelectBox = () => {
   const router = useRouter();
+  const [loadingLanguage, setLoadingLanguage] = useState(false);
 
-  const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+  const onSelectChange = async (e: ChangeEvent<HTMLSelectElement>) => {
     if (router.locale === e.target.value) return;
+    setLoadingLanguage(true);
 
-    router.push('/', '/', { locale: e.target.value });
+    await router.push('/', '/', { locale: e.target.value });
+    setLoadingLanguage(false);
   };
 
   useEffect(() => {
@@ -30,17 +33,25 @@ const LangSelectBox = () => {
   }, [router.locale]);
 
   return (
-    <StyledLangSelectBox
-      variants={selectBoxVariants}
-      whileHover={'hover'}
-      whileTap={'tap'}
-      onChange={onSelectChange}
-      defaultValue={router.locale}
-      direction={router.locale === 'fa' ? 'rtl' : 'ltr'}
-    >
-      <option value="en">English</option>
-      <option value="fa">فارسی</option>
-    </StyledLangSelectBox>
+    <>
+      <AnimatePresence>
+        {loadingLanguage && (
+          <LoadingLanguageSpinner key="loadingLanguageSpinner" />
+        )}
+      </AnimatePresence>
+
+      <StyledLangSelectBox
+        variants={selectBoxVariants}
+        whileHover={'hover'}
+        whileTap={'tap'}
+        onChange={onSelectChange}
+        defaultValue={router.locale}
+        direction={router.locale === 'fa' ? 'rtl' : 'ltr'}
+      >
+        <option value="en">English</option>
+        <option value="fa">فارسی</option>
+      </StyledLangSelectBox>
+    </>
   );
 };
 
