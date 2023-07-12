@@ -2,14 +2,14 @@ import { Variants } from 'framer-motion';
 
 export const courseItemVariants: Variants = {
   close: ({ imageLoading }) => {
-    return { height: '420px', opacity: `${imageLoading ? 0.6 : 1}` };
+    return { height: '420px', opacity: imageLoading ? 0.6 : 1 };
   },
 
   open: ({ imageLoading }) => {
     return {
       height: 'fit-content',
       paddingBottom: '100px',
-      opacity: `${imageLoading ? 0.6 : 1}`,
+      opacity: imageLoading ? 0.6 : 1,
     };
   },
 };

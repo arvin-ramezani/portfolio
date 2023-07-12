@@ -115,7 +115,7 @@ export const DownloadResumeBlock = styled(motion.div)`
   align-items: center;
   gap: 1.5rem;
   width: fit-content;
-  margin-top: 3rem;
+  margin-top: 4rem;
   position: relative;
 `;
 

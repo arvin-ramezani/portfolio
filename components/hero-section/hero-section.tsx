@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { isMobile } from 'react-device-detect';
 import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
 
 import {
   HeroImageContainer,
@@ -12,7 +13,6 @@ import { Container } from '@/styles/global.styled';
 import Button from '../ui/button/button';
 import { theme } from '@/styles/themes/theme.styled';
 import { heroImageVariants, heroTextVariants } from './hero-section.variants';
-import { useRouter } from 'next/router';
 
 function HeroSection() {
   const router = useRouter();

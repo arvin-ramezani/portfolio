@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const StyledPagination = styled.div<{ locale?: string }>`
   width: fit-content;
   margin-top: 2rem;
+
   margin-right: ${({ locale }) => (locale === 'fa' ? '0' : 'auto')};
   margin-left: ${({ locale }) => (locale === 'fa' ? 'auto' : '0')};
 `;
@@ -26,6 +27,9 @@ export const PaginationSelectBox = styled.select`
   padding: 0.1rem 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
+
+  background-color: ${({ theme }) => theme.backgroundColors.primary};
+  color: ${({ theme }) => theme.colors.textPrimary};
 
   & option {
     cursor: pointer;

@@ -20,9 +20,9 @@ const ProjectToolsList: FC<ProjectToolsListProps> = ({ tools }) => {
             whileHover={{ background: theme.colors.darkWhite }}
           >
             <Image
-              src="images/icons/bullet.svg"
-              width={8}
-              height={8}
+              src="/images/icons/bullet.svg"
+              width={7}
+              height={7}
               alt="bullet icon"
             />
             {tools}

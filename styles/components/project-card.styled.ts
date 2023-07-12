@@ -140,7 +140,7 @@ export const ToolsContainer = styled.div`
 
     & img {
       margin-right: 0.2rem;
-      padding-bottom: 0.1rem;
+      margin-bottom: 0.3rem;
     }
 
     @media (min-width: ${theme.breakpoints.lg}) {
