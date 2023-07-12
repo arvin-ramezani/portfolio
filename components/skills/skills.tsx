@@ -59,8 +59,8 @@ const Skills = () => {
             >
               <Image
                 src={skill.image}
-                width={45}
-                height={40}
+                width={35}
+                height={35}
                 alt={skill.name}
               />
 

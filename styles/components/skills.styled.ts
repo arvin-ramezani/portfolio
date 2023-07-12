@@ -26,7 +26,7 @@ export const SkillsTitle = styled(motion.h2)`
 `;
 
 export const SkillsItemBlock = styled(motion.ul)`
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -42,6 +42,7 @@ export const SkillsItem = styled(motion.li)`
   display: flex;
   align-items: center;
   width: 45%;
+  gap: 0.7rem;
 
   color: ${({ theme }) => theme.colors.textPrimary};
 
@@ -58,4 +59,6 @@ export const SkillsItem = styled(motion.li)`
   }
 `;
 
-export const SkillText = styled(motion.p)``;
+export const SkillText = styled(motion.p)`
+  text-align: left;
+`;

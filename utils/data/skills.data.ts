@@ -35,7 +35,7 @@ export const SKILLS_LIST: ISkill[] = [
   },
   {
     image: '/images/icons/framer-motion.svg',
-    name: 'Freamer Motion',
+    name: 'Framer-Motion',
   },
   {
     image: '/images/icons/nestjs.svg',
