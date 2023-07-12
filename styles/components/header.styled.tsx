@@ -16,22 +16,31 @@ export const StyledHeader = styled(motion.header)`
     justify-content: flex-start;
     padding: 1rem;
     width: 100%;
+  }
 
-    @media (min-width: ${theme.breakpoints.sm}) {
+  & button {
+    margin: 0 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  @media (min-width: ${theme.breakpoints.sm}) {
+    & > div {
       padding: 1.6rem 1rem;
       width: 90%;
     }
+  }
 
-    @media (min-width: ${theme.breakpoints.md}) {
+  @media (min-width: ${theme.breakpoints.md}) {
+    & > div {
       width: 80%;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
     }
-  }
 
-  & button {
-    margin: 0 0.4rem;
+    & button {
+      font-size: 1rem;
+    }
   }
 `;
 

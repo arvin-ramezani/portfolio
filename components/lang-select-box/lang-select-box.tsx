@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import { StyledLangSelectBox } from '@/styles/components/lang-select-box.styled';
 import { selectBoxVariants } from './lang-select-box.variants';
+import Image from 'next/image';
 
 const LangSelectBox = () => {
   const router = useRouter();
@@ -35,6 +36,7 @@ const LangSelectBox = () => {
       whileTap={'tap'}
       onChange={onSelectChange}
       defaultValue={router.locale}
+      direction={router.locale === 'fa' ? 'rtl' : 'ltr'}
     >
       <option value="en">English</option>
       <option value="fa">فارسی</option>
