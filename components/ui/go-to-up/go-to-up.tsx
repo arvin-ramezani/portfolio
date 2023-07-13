@@ -10,6 +10,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { theme } from '@/styles/themes/theme.styled';
+import { useRouter } from 'next/router';
 
 const goToUpVariants: Variants = {
   hidden: {
@@ -25,6 +26,7 @@ const goToUpVariants: Variants = {
 const GoToUp = () => {
   const { scrollY } = useScroll();
   const [showIcon, setShowIcon] = useState(false);
+  const router = useRouter();
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     if (latest > 600) {
@@ -35,7 +37,7 @@ const GoToUp = () => {
   });
 
   const onGoToUp = () => {
-    typeof window !== 'undefined' && window.scrollTo(0, 0);
+    router.push('/');
   };
 
   return (
