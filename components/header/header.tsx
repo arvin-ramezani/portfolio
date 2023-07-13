@@ -81,8 +81,8 @@ const Header = () => {
           <motion.img
             src="/images/icons/menu.svg"
             alt="Menu"
-            width={42}
-            height={42}
+            width={24}
+            height={24}
             variants={mobileNavBtnVariants}
             initial="initial"
             whileTap={'tap'}
