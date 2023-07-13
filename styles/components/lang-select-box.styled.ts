@@ -33,7 +33,7 @@ export const StyledLangSelectBox = styled(motion.select)<{
 
   @media (min-width: ${theme.breakpoints.md}) {
     padding: 0.25rem 0.7rem;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
     background-position: ${({ direction }) =>
       direction === 'rtl' ? '93%' : '7%'};

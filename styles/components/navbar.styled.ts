@@ -19,6 +19,7 @@ export const StyledNavbar = styled.nav`
   & > ul > li > a {
     text-decoration: none;
     font-weight: 500;
+    font-size: 0.9rem;
 
     color: ${({ theme }) => theme.colors.textPrimary};
   }
@@ -29,7 +30,7 @@ export const StyledNavbar = styled.nav`
 `;
 
 export const ActiveNavItemStyle = styled(motion.span)`
-  height: 0.3rem;
+  height: 0.2rem;
   display: block;
   margin-top: 0.4rem;
   border-radius: 40%;

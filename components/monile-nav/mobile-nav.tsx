@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
 import {
   ActiveLinkStyle,
@@ -94,6 +95,7 @@ const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
   const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
     router.locale === 'fa' ? 'rtl' : 'ltr'
   );
+  const { t: translator } = useTranslation();
 
   useEffect(() => {
     setCurrentPath(router.asPath);
@@ -143,7 +145,9 @@ const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
               onClick={onCloseNav}
               custom={pageDir}
             >
-              <Link href={item.href}>{item.name}</Link>
+              <Link href={item.href}>
+                {translator(`common:${item.translatorName}`)}
+              </Link>
 
               <AnimatePresence>
                 {currentPath === item.href && (
