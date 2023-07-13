@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { theme } from '../themes/theme.styled';
 import { motion } from 'framer-motion';
+
+import { theme } from '../themes/theme.styled';
 
 export const StyledHeroSection = styled.section`
   min-height: 100vh;

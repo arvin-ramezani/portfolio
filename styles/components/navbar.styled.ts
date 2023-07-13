@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+
 import { theme } from '../themes/theme.styled';
 
 export const StyledNavbar = styled.nav`

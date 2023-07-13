@@ -1,17 +1,12 @@
 import React, { FC, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { Variants, motion } from 'framer-motion';
+import { iconButtonVariants } from './icon-button.variants';
+import { StyledIconButton } from '@/styles/components/ui/icon-button.styled';
 
 interface IconButtonProps {
   onClick: () => void;
 }
-
-const iconButtonVariants: Variants = {
-  initial: { scale: 1 },
-  animate: { scale: 1 },
-  tap: { scale: 0.5 },
-  hover: { scale: 1.2 },
-};
 
 const IconButton: FC<PropsWithChildren<IconButtonProps>> = ({
   onClick,
@@ -31,12 +26,5 @@ const IconButton: FC<PropsWithChildren<IconButtonProps>> = ({
     </StyledIconButton>
   );
 };
-
-const StyledIconButton = styled.div`
-  & button {
-    background: transparent;
-    border: none;
-  }
-`;
 
 export default IconButton;
