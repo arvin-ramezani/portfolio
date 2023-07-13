@@ -9,15 +9,12 @@ import ProjectsSection from '@/components/projects-section/projects-section';
 import Footer from '@/components/footer/footer';
 import StarsCanvas from '@/components/stars-canvas/stars-canvas';
 import GoToUp from '@/components/ui/go-to-up/go-to-up';
-import { IProject } from '@/utils/types/project.types';
 import { PROJECT_LIST } from '@/utils/data/projects.data';
 import CoursesSection from '@/components/courses-section/courses-section';
-import { ICourse } from '@/utils/types/course.types';
 import {
   COURSES_LIST,
   COURSES_LIST_WITH_TRANSLATE,
 } from '@/utils/data/courses.data';
-import axios from 'axios';
 import { IHomePageGetRespose } from './api';
 
 interface HomePageProps {
@@ -30,6 +27,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     // const { data } = await axios.get<IHomePageGetRespose>(
     //   'http://localhost:4000/api?courses=true&projects=true'
     // );
+
+    console.log(locale, 'locale');
 
     const data: IHomePageGetRespose = {
       projects: {

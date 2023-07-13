@@ -6,7 +6,6 @@ import Document, {
   NextScript,
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import localFont from 'next/font/local';
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -37,8 +36,8 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html
-        lang="fa"
-        style={{ scrollBehavior: 'smooth', direction: 'rtl' }}
+        lang="en"
+        style={{ scrollBehavior: 'smooth', direction: 'ltr' }}
       >
         <Head>
           <meta charSet="utf-8" />

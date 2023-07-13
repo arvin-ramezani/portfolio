@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 // Or from '@reduxjs/toolkit/query/react'
 import { setupListeners } from '@reduxjs/toolkit/query';
+
 import { coursesApi } from './api/apiSlice';
 
 export const store = configureStore({

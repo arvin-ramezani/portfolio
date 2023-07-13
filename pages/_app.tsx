@@ -1,12 +1,13 @@
 import type { AppProps } from 'next/app';
 import { GlobalStyle } from '@/styles/global.styled';
 import { defaultTheme } from '@/styles/themes/default-theme';
-import localFont from 'next/font/local';
 import { appWithTranslation } from 'next-i18next';
-
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
+
 import { store } from '@/features/store';
+
+import localFont from 'next/font/local';
 
 const myVazirLocalFont = localFont({
   src: [
