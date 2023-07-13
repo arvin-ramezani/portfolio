@@ -9,7 +9,7 @@ export const StyledLangSelectBox = styled(motion.select)<{
   background: url('/images/icons/earth.svg');
   background-size: 16px 16px;
   background-repeat: no-repeat;
-  font-size: 0.7rem;
+  font-size: 0.5rem;
   cursor: pointer;
 
   background-position: ${({ direction }) =>

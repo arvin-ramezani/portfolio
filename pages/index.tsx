@@ -28,8 +28,6 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     //   'http://localhost:4000/api?courses=true&projects=true'
     // );
 
-    console.log(locale, 'locale');
-
     const data: IHomePageGetRespose = {
       projects: {
         projectList: PROJECT_LIST.slice(0, 6),

@@ -13,7 +13,7 @@ const CoursesSection: FC<CoursesSectionProps> = ({ courses }) => {
   const { t: translator } = useTranslation();
 
   return (
-    <StyledCoursesSection>
+    <StyledCoursesSection id="courses">
       <h2>{translator('home:courses_title')}</h2>
       <CourseList
         courseList={courses?.courseList || []}

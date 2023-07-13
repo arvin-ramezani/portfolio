@@ -13,9 +13,10 @@ export const StyledHeader = styled(motion.header)`
   & > div {
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 1rem;
     width: 100%;
+    position: relative;
   }
 
   & button {
@@ -53,16 +54,28 @@ export const StyledArrowUp = styled(motion.div)`
   z-index: 5;
 `;
 
-export const Logo = styled(Image)<{ pagedir: 'rtl' | 'ltr' }>`
-  margin-right: -1rem;
-  cursor: pointer;
-
-  margin: ${({ pagedir }) => (pagedir === 'rtl' ? '0 0 0 auto' : '0 auto 0 0')};
-  /* margin: ${({ pagedir }) =>
-    pagedir === 'rtl' ? '0 0 0 auto' : '0 auto 0 0'}; */
+export const MobileNavButton = styled(motion.div)`
+  display: flex;
 
   @media (min-width: ${theme.breakpoints.md}) {
-    width: 145px;
+    display: none;
+  }
+`;
+
+export const Logo = styled(Image)<{ pagedir: 'rtl' | 'ltr' }>`
+  cursor: pointer;
+
+  width: fit-content;
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    position: static;
+    transform: translate(0, 0);
+    width: 50px;
     height: 50px;
   }
 `;

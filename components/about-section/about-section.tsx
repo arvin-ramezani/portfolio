@@ -34,7 +34,7 @@ const AboutSection = () => {
   const onAboutTextHoverEnd = () => setAboutTextHover(0);
 
   return (
-    <StyledAboutSection>
+    <StyledAboutSection id="aboutMe">
       <Container>
         <AboutImageBlock
           variants={aboutItemsVariants}
