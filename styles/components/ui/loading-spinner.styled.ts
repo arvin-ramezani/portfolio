@@ -1,13 +1,11 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const StyledLoadingSpinner = styled.span`
+export const StyledLoadingSpinner = styled.span`
   display: block;
   position: absolute;
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  /* position: relative; */
   animation: rotate 1s linear infinite;
 
   ::before {
@@ -44,9 +42,3 @@ const StyledLoadingSpinner = styled.span`
     }
   }
 `;
-
-const LoadingSpinner = () => {
-  return <StyledLoadingSpinner></StyledLoadingSpinner>;
-};
-
-export default LoadingSpinner;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import LoadingSpinner from '../loading-spinner/loading-spinnet';
+import LoadingSpinner from '../loading-spinner/loading-spinner';
 import { loadingLanguageSpinnerVariants } from './loading-language-spinner.variants';
 import { StyledLoadingLanguageSpinner } from '@/styles/components/ui/loading-language-spinner.styled';
 

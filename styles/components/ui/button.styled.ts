@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { theme } from '../themes/theme.styled';
+import { theme } from '../../themes/theme.styled';
 
 export const StyledButtonWrapper = styled(motion.div)``;
 

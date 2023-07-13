@@ -5,7 +5,7 @@ import React, { CSSProperties, FC, MouseEventHandler } from 'react';
 import {
   StyledButton,
   StyledButtonWrapper,
-} from '@/styles/components/button.styled';
+} from '@/styles/components/ui/button.styled';
 import { buttonVariants } from './button.variants';
 
 interface ButtonProps {

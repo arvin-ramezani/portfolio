@@ -22,7 +22,7 @@ import {
   onCourseClickVariants,
 } from './course-item.variants';
 import LearnedList from './learned-list/learned-list';
-import LoadingSpinner from '@/components/ui/loading-spinner/loading-spinnet';
+import LoadingSpinner from '@/components/ui/loading-spinner/loading-spinner';
 
 interface CourseItemProps extends ICourseWithTranslate {}
 
