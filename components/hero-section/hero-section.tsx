@@ -72,6 +72,7 @@ function HeroSection() {
         >
           <Image
             src="/images/freelancer.svg"
+            priority
             alt="FreeLancer"
             fill
           />

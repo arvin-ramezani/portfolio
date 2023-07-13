@@ -40,8 +40,8 @@ const DownloadResume = () => {
   const { t: translator } = useTranslation();
 
   const onResumeDownload = (resumeLanguage: 'persian' | 'english') => {
-    const englishFileName = 'Arvin_ramezani_resume-English.pdf';
-    const persianFileName = 'Arvin_ramezani_resume-Persian.pdf';
+    const englishFileName = 'Arvin_ramezani_resume - English.pdf';
+    const persianFileName = 'Arvin_ramezani_resume - Persian.pdf';
 
     if (typeof document === 'undefined') return;
 
