@@ -10,29 +10,7 @@ import {
 } from '@/styles/components/mobile-nav.styled';
 import { AnimatePresence, Variants, motion } from 'framer-motion';
 import IconButton from '../ui/icon-button/icon-button';
-
-const NAV_LIST = [
-  {
-    name: 'Call Me',
-    href: '/',
-  },
-  {
-    name: 'About Me',
-    href: '/#aboutMe',
-  },
-  {
-    name: 'Projects',
-    href: '/#projects',
-  },
-  {
-    name: 'Courses',
-    href: '/#courses',
-  },
-  {
-    name: 'Contact Me',
-    href: '/#contact',
-  },
-];
+import { NAV_LIST } from '@/utils/data/navigation.data';
 
 const mobileNavVariants: Variants = {
   close: (direction: 'rtl' | 'ltr') => ({
@@ -111,21 +89,11 @@ interface MobileNavProps {
 }
 
 const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
-  const router = useRouter();
   const [currentPath, setCurrentPath] = useState('/');
+  const router = useRouter();
   const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
     router.locale === 'fa' ? 'rtl' : 'ltr'
   );
-  const [navItemVariants, setNavItemVariants] = useState<Variants>({
-    close: {
-      opacity: 0,
-      x: pageDir === 'rtl' ? '100%' : '-100%',
-    },
-    open: {
-      opacity: 1,
-      x: 0,
-    },
-  });
 
   useEffect(() => {
     setCurrentPath(router.asPath);
@@ -133,16 +101,6 @@ const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
 
   useEffect(() => {
     setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
-    setNavItemVariants({
-      close: {
-        opacity: 0,
-        x: pageDir === 'rtl' ? '100%' : '-100%',
-      },
-      open: {
-        opacity: 1,
-        x: 0,
-      },
-    });
   }, [router.locale]);
 
   return (
@@ -196,6 +154,7 @@ const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
                     animate="show"
                     exit="hidden"
                     key={`activeLinkStyle${item.name}`}
+                    layoutId="mobileActiveNavItem"
                   />
                 )}
               </AnimatePresence>

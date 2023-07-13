@@ -61,8 +61,10 @@ export const HeroTextContainer = styled(motion.div)`
     max-width: 400px;
   }
 
-  & buttun {
+  & button {
     border: none;
+
+    box-shadow: 0 0 4px 1px ${({ theme }) => theme.colors.primary};
   }
 
   @media (min-width: ${theme.breakpoints.sm}) {

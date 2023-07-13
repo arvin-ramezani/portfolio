@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+import { theme } from '../themes/theme.styled';
 
 export const StyledMobileNav = styled(motion.nav)`
   position: fixed;
@@ -34,6 +35,10 @@ export const StyledMobileNav = styled(motion.nav)`
     & :focus {
       color: red;
     }
+  }
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    display: none;
   }
 `;
 

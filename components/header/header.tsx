@@ -19,6 +19,7 @@ import LangSelectBox from '../lang-select-box/lang-select-box';
 import { Container } from '@/styles/global.styled';
 import { HeaderItemsVariants } from './header.variants';
 import MobileNav from '../monile-nav/mobile-nav';
+import Navbar from '../navbar/navbar';
 
 const mobileNavBtnVariants: Variants = {
   initial: {
@@ -97,6 +98,8 @@ const Header = () => {
           pagedir={pageDir}
           onClick={router.push.bind(null, '/') as () => void}
         />
+
+        <Navbar />
 
         <LangSelectBox />
       </Container>
