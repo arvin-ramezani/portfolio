@@ -59,23 +59,13 @@ table {
   box-sizing: border-box;
 }
 
-* a {
+* a, 
+* button, 
+* select , 
+* li, 
+* input , 
+* textarea {
   font-family: ${({ localVazirFont }) => localVazirFont.style.fontFamily};
-}
-
-* button {
-  font-family: ${({ localVazirFont }) =>
-    localVazirFont.style.fontFamily} !important;
-}
-
-* select {
-  font-family: ${({ localVazirFont }) => localVazirFont.style.fontFamily};
-}
-
-& input , textarea {
-  font-family: ${({ localVazirFont }) =>
-    localVazirFont.style.fontFamily} !important;
-
 }
 
 * strong {
@@ -85,8 +75,6 @@ table {
 html {
   scroll-behavior: smooth !important;
 }
-
-
 
 body {
   margin: 0;

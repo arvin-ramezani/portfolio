@@ -113,6 +113,12 @@ export const AboutTitle = styled(motion.h2)`
 export const AboutTextItem = styled(motion.p)`
   cursor: pointer;
   color: ${({ theme }) => theme.colors.textPrimary};
+
+  & span > a {
+    text-decoration: none;
+
+    color: ${({ theme }) => theme.colors.primary};
+  }
 `;
 
 export const DownloadResumeBlock = styled(motion.div)`

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
+
 import { theme } from '../themes/theme.styled';
 
 export const StyledMobileNav = styled(motion.nav)`
@@ -22,19 +23,8 @@ export const StyledMobileNav = styled(motion.nav)`
 
   & > ul > li {
     margin: 0.8rem 0;
-  }
-
-  & > ul > li > a {
-    display: block;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
 
     color: ${({ theme }) => theme.colors.textPrimary};
-
-    & :focus {
-      color: red;
-    }
   }
 
   @media (min-width: ${theme.breakpoints.md}) {

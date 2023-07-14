@@ -15,12 +15,9 @@ export const StyledNavbar = styled.nav`
     display: block;
     height: 100%;
     position: relative;
-  }
-
-  & > ul > li > a {
-    text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
+    cursor: pointer;
 
     color: ${({ theme }) => theme.colors.textPrimary};
   }

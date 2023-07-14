@@ -77,8 +77,6 @@ export default function Home({ projects, courses }: HomePageProps) {
 
       <StarsCanvas />
 
-      <GoToUp />
-
       <Header />
 
       <main>

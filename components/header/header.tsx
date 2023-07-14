@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import React, { FC, useEffect, useState } from 'react';
-import { useTranslation } from 'next-i18next';
 import {
   AnimatePresence,
   Variants,
@@ -37,7 +36,6 @@ const Header = () => {
   const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
     router.locale === 'fa' ? 'rtl' : 'ltr'
   );
-  const { t: translator } = useTranslation();
 
   const { scrollY } = useScroll();
   const bgColor = useTransform(
@@ -53,7 +51,6 @@ const Header = () => {
   );
 
   const onCloseMobileNav = () => {
-    console.log('close clicked');
     setShowMobileNav(false);
   };
 

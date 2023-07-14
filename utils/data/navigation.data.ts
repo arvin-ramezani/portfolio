@@ -1,27 +1,27 @@
 export const NAV_LIST = [
   {
     name: 'Call Me',
-    href: '/',
+    href: '',
     translatorName: 'nav_item_call',
   },
   {
     name: 'About Me',
-    href: '/#aboutMe',
+    href: 'about',
     translatorName: 'nav_item_about',
   },
   {
     name: 'Projects',
-    href: '/#projects',
+    href: 'projects',
     translatorName: 'nav_item_projects',
   },
   {
     name: 'Courses',
-    href: '/#courses',
+    href: 'courses',
     translatorName: 'nav_item_courses',
   },
   {
     name: 'Contact Me',
-    href: '/#contact',
+    href: 'contact',
     translatorName: 'nav_item_contact',
   },
 ];

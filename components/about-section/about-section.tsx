@@ -34,7 +34,7 @@ const AboutSection = () => {
   const onAboutTextHoverEnd = () => setAboutTextHover(0);
 
   return (
-    <StyledAboutSection id="aboutMe">
+    <StyledAboutSection id="about">
       <Container>
         <AboutImageBlock
           variants={aboutItemsVariants}
@@ -72,7 +72,13 @@ const AboutSection = () => {
               initial="initial"
               animate={aboutTextHover === 1 ? 'animate' : 'initial'}
             />
-            {translator('home:about_text_1')}
+            <span
+              dangerouslySetInnerHTML={{
+                __html: `${translator(`home:about_text_1`)}`,
+              }}
+            >
+              {/* {translator('home:about_text_1')} */}
+            </span>
           </AboutTextItem>
 
           <AboutTextItem

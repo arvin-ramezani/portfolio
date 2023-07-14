@@ -1,5 +1,4 @@
 import React, { FC, useEffect, useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
@@ -26,15 +25,38 @@ interface MobileNavProps {
 }
 
 const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
-  const [currentPath, setCurrentPath] = useState('/');
+  const [currentPath, setCurrentPath] = useState('');
   const router = useRouter();
   const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
     router.locale === 'fa' ? 'rtl' : 'ltr'
   );
   const { t: translator } = useTranslation();
 
+  const onNavItemClick = (newHash: string) => {
+    router
+      .replace(
+        {
+          pathname: window.location.pathname,
+          hash: newHash,
+          query: window.location.search,
+        },
+        undefined,
+        { shallow: true }
+      )
+      .catch((e) => {
+        if (!e.cancelled) {
+          throw e;
+        }
+      });
+    setCurrentPath(newHash);
+
+    onCloseNav();
+  };
+
   useEffect(() => {
-    setCurrentPath(router.asPath);
+    if (router.asPath === '/') {
+      setCurrentPath('');
+    }
   }, [router.asPath]);
 
   useEffect(() => {
@@ -78,12 +100,10 @@ const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
             <motion.li
               key={item.name}
               variants={mobileNavItemVariants}
-              onClick={onCloseNav}
+              onClick={onNavItemClick.bind(null, item.href)}
               custom={pageDir}
             >
-              <Link href={item.href}>
-                {translator(`common:${item.translatorName}`)}
-              </Link>
+              {translator(`common:${item.translatorName}`)}
 
               <AnimatePresence>
                 {currentPath === item.href && (
@@ -93,7 +113,6 @@ const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
                     initial="hidden"
                     animate="show"
                     exit="hidden"
-                    key={`activeLinkStyle${item.name}`}
                     layoutId="mobileActiveNavItem"
                   />
                 )}
