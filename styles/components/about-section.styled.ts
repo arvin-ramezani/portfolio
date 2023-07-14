@@ -75,6 +75,11 @@ export const AboutTextBlock = styled(motion.div)`
     }
   }
 
+  & p:last-child {
+    margin: 0;
+    color: ${({ theme }) => theme.colors.textSecondary} !important;
+  }
+
   @media (min-width: ${theme.breakpoints.md}) {
     text-align: start;
     flex: 3;
@@ -115,7 +120,7 @@ export const DownloadResumeBlock = styled(motion.div)`
   align-items: center;
   gap: 1.5rem;
   width: fit-content;
-  margin-top: 4rem;
+  margin: 1rem 0;
   position: relative;
 `;
 

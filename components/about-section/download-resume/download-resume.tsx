@@ -8,7 +8,7 @@ import {
   DownloadResumeBtnWrapper,
 } from '@/styles/components/about-section.styled';
 import { theme } from '@/styles/themes/theme.styled';
-import { CSSProperties } from 'styled-components';
+import styled, { CSSProperties } from 'styled-components';
 
 export const downloadResumeBlockVariants: Variants = {
   closed: { display: 'flex', justifyContent: 'flex-start' },
@@ -91,7 +91,11 @@ const DownloadResume = () => {
       transition={{ delay: 0.5 }}
     >
       <AnimatePresence>
-        {!isDownloadOpen && (
+        <StyledTextButton>
+          <button>Download My Resume and Get in Touch ↗</button>
+        </StyledTextButton>
+
+        {/* {!isDownloadOpen && (
           <DownloadResumeBtnWrapper
             variants={dowloadResumeBtnVariants}
             initial={'initial'}
@@ -105,7 +109,7 @@ const DownloadResume = () => {
               onClick={setIsDownloadOpen.bind(null, true)}
             />
           </DownloadResumeBtnWrapper>
-        )}
+        )} */}
       </AnimatePresence>
 
       <AnimatePresence>
@@ -156,5 +160,17 @@ const DownloadResume = () => {
     </DownloadResumeBlock>
   );
 };
+
+export const StyledTextButton = styled.div`
+  & button {
+    border: none;
+    background: yellow;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 0.3rem;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+  }
+`;
 
 export default DownloadResume;
