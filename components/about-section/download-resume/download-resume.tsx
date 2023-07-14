@@ -74,6 +74,7 @@ const DownloadResume = () => {
   const closeBtnWrapperStyles: CSSProperties = {
     position: 'absolute',
     top: '-80%',
+    maxWidth: 'fit-content',
   };
 
   const closeBtnStyles: CSSProperties = {
@@ -91,11 +92,7 @@ const DownloadResume = () => {
       transition={{ delay: 0.5 }}
     >
       <AnimatePresence>
-        <StyledTextButton>
-          <button>Download My Resume and Get in Touch ↗</button>
-        </StyledTextButton>
-
-        {/* {!isDownloadOpen && (
+        {!isDownloadOpen && (
           <DownloadResumeBtnWrapper
             variants={dowloadResumeBtnVariants}
             initial={'initial'}
@@ -109,7 +106,7 @@ const DownloadResume = () => {
               onClick={setIsDownloadOpen.bind(null, true)}
             />
           </DownloadResumeBtnWrapper>
-        )} */}
+        )}
       </AnimatePresence>
 
       <AnimatePresence>
@@ -129,22 +126,6 @@ const DownloadResume = () => {
               animate={'animate'}
               exit={'exit'}
               transition={{ delay: 0.5 }}
-              key="downloadPersianResumeBtn"
-            >
-              <Button
-                text="رزومه فارسی"
-                color={theme.colors.primary}
-                textColor={theme.colors.black}
-                onClick={onResumeDownload.bind(null, 'persian')}
-              />
-            </DownloadResumeBtnWrapper>
-
-            <DownloadResumeBtnWrapper
-              variants={dowloadResumeBtnVariants}
-              initial={'initial'}
-              animate={'animate'}
-              exit={'exit'}
-              transition={{ delay: 0.5 }}
               key="downloadEnglishResumeBtn"
             >
               <Button
@@ -154,23 +135,27 @@ const DownloadResume = () => {
                 onClick={onResumeDownload.bind(null, 'english')}
               />
             </DownloadResumeBtnWrapper>
+
+            <DownloadResumeBtnWrapper
+              variants={dowloadResumeBtnVariants}
+              initial={'initial'}
+              animate={'animate'}
+              exit={'exit'}
+              transition={{ delay: 0.5 }}
+              key="downloadPersianResumeBtn"
+            >
+              <Button
+                text="رزومه فارسی"
+                color={theme.colors.primary}
+                textColor={theme.colors.black}
+                onClick={onResumeDownload.bind(null, 'persian')}
+              />
+            </DownloadResumeBtnWrapper>
           </>
         )}
       </AnimatePresence>
     </DownloadResumeBlock>
   );
 };
-
-export const StyledTextButton = styled.div`
-  & button {
-    border: none;
-    background: yellow;
-    font-size: 0.85rem;
-    font-weight: 700;
-    border-radius: 0.3rem;
-    padding: 0.4rem 0.8rem;
-    cursor: pointer;
-  }
-`;
 
 export default DownloadResume;

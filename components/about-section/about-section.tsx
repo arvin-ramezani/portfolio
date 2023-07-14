@@ -106,21 +106,6 @@ const AboutSection = () => {
           </AboutTextItem>
 
           <DownloadResume />
-
-          <AboutTextItem
-          // variants={aboutTextItemsVariants}
-          // initial={'initial'}
-          // animate={aboutTextHover === 4 ? 'animate' : 'initial'}
-          // onHoverStart={onAboutTextHoverStart.bind(null, 4)}
-          // onHoverEnd={onAboutTextHoverEnd}
-          >
-            {/* <StyledBullet
-              variants={styledBulletVariants}
-              initial="initial"
-              animate={aboutTextHover == 4 ? 'animate' : 'initial'}
-            /> */}
-            {translator('home:about_text_4')}
-          </AboutTextItem>
         </AboutTextBlock>
 
         <Skills />

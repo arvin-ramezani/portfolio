@@ -120,8 +120,18 @@ export const DownloadResumeBlock = styled(motion.div)`
   align-items: center;
   gap: 1.5rem;
   width: fit-content;
-  margin: 1rem 0;
+  margin: 3rem auto 0;
   position: relative;
+  width: 100%;
+  max-width: 400px;
+
+  & div:first-child {
+    width: 100%;
+  }
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    margin: 3rem 0 0;
+  }
 `;
 
 export const StyledCloseIconWrapper = styled.div`
