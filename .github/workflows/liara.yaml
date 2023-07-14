@@ -1,13 +1,7 @@
 name: CD-Liara
 on:
   push:
-    branches:
-      [
-        master,
-        no-translation,
-        feat/internationalization,
-        feat/font-optimization,
-      ]
+    branches: [master]
 jobs:
   deploy:
     runs-on: ubuntu-latest
