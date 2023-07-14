@@ -11,7 +11,6 @@ export const StyledButton = styled(motion.button)<{
   border-radius: 0.3rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  font-family: Roboto, Vazir;
   font-size: 1rem;
   font-weight: 900;
   width: 100%;

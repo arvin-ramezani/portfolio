@@ -60,10 +60,10 @@ table {
 }
 
 * a, 
-* button, 
-* select , 
-* li, 
-* input , 
+* button,
+* select,
+* li,
+* input,
 * textarea {
   font-family: ${({ localVazirFont }) => localVazirFont.style.fontFamily};
 }

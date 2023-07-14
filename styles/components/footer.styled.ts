@@ -61,7 +61,7 @@ export const StyledInput = styled.input`
   margin: 0.5rem 0rem;
   padding: 0.6rem;
   border-radius: 0.3rem;
-  font: 1rem Roboto, Vazir;
+  font-size: 1rem;
 
   &:focus {
     outline: 1px solid ${({ theme }) => theme.colors.primary};
@@ -73,7 +73,7 @@ export const StyledTextarea = styled.textarea`
   width: 100%;
   padding: 0.6rem;
   border-radius: 0.3rem;
-  font: 1rem Roboto, Vazir;
+  font: 1rem;
 
   &:focus {
     outline: 1px solid ${({ theme }) => theme.colors.primary};
