@@ -54,10 +54,8 @@ const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
   };
 
   useEffect(() => {
-    if (router.asPath === '/') {
-      setCurrentPath('');
-    }
-  }, [router.asPath]);
+    setCurrentPath(router.asPath.slice(2));
+  }, [router.asPath, router.locale]);
 
   useEffect(() => {
     setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');

@@ -11,8 +11,8 @@ import { NAV_LIST } from '@/utils/data/navigation.data';
 import GoToUp from '../ui/go-to-up/go-to-up';
 
 const Navbar = () => {
-  const [currentPath, setCurrentPath] = useState('');
   const router = useRouter();
+  const [currentPath, setCurrentPath] = useState('');
   const { t: translator } = useTranslation();
 
   const onNavItemClick = (newHash: string) => {
@@ -35,8 +35,8 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    setCurrentPath('');
-  }, [router.locale]);
+    setCurrentPath(router.asPath.slice(2));
+  }, [router.asPath, router.locale]);
 
   return (
     <>
