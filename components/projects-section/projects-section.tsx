@@ -8,6 +8,8 @@ import {
   StyledDarkLayout,
   StyledProjectsSection,
   StyledProjectsTitle,
+  StyledVideo,
+  StyledVideoPortrait,
 } from '@/styles/components/projects-section.styled';
 import { Container } from '@/styles/global.styled';
 import ProjectCard from './project-card/project-card';
@@ -41,7 +43,19 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projects }) => {
         height={72}
       />
 
-      <video
+      <StyledVideoPortrait
+        autoPlay
+        muted
+        playsInline
+        loop
+      >
+        <source
+          src="/videos/matrix-portrait.mp4"
+          type="video/mp4"
+        />
+      </StyledVideoPortrait>
+
+      <StyledVideo
         autoPlay
         muted
         playsInline
@@ -51,7 +65,7 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projects }) => {
           src="/videos/matrix.mp4"
           type="video/mp4"
         />
-      </video>
+      </StyledVideo>
       <StyledDarkLayout />
 
       <Container id="projectsSectionContainer">
