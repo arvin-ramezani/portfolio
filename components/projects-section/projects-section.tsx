@@ -68,7 +68,7 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projects }) => {
       </StyledVideo>
       <StyledDarkLayout />
 
-      {/* <Container id="projectsSectionContainer">
+      <Container id="projectsSectionContainer">
         <StyledProjectsTitle>
           {translator('home:projects_title')}
         </StyledProjectsTitle>
@@ -97,7 +97,7 @@ const ProjectsSection: FC<ProjectSectionProps> = ({ projects }) => {
             )
           )}
         </ProjectsContainer>
-      </Container> */}
+      </Container>
 
       <Image
         id="projectsSectionLgBgBottom"
