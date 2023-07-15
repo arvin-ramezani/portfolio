@@ -71,7 +71,15 @@ function HeroSection() {
           pagedir={pageDir}
         >
           <Image
-            src="/images/freelancer.svg"
+            id="freelancerImageSm"
+            src="/images/freelancer-sm.svg"
+            priority
+            alt="FreeLancer"
+            fill
+          />
+          <Image
+            id="freelancerImageLg"
+            src="/images/freelancer-lg.svg"
             priority
             alt="FreeLancer"
             fill

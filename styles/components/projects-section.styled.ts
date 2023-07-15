@@ -30,7 +30,7 @@ export const StyledProjectsSection = styled(motion.section)`
     margin: auto 0 -0.5rem;
   }
 
-  & > video {
+  /* & > video {
     position: absolute;
     top: 0;
     right: 0;
@@ -40,7 +40,7 @@ export const StyledProjectsSection = styled(motion.section)`
     min-width: 100vw;
     object-fit: cover;
     z-index: -1;
-  }
+  } */
 
   & #projectsSectionContainer {
     flex: 1;
@@ -83,6 +83,40 @@ export const StyledProjectsSection = styled(motion.section)`
     & > img {
       margin-top: -0.3rem;
     }
+  }
+`;
+
+export const StyledVideo = styled.video`
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  min-width: 100vw;
+  object-fit: cover;
+  z-index: -1;
+
+  @media screen and (orientation: landscape) {
+    display: block;
+  }
+`;
+
+export const StyledVideoPortrait = styled.video`
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  min-width: 100vw;
+  object-fit: cover;
+  z-index: -1;
+
+  @media screen and (orientation: landscape) {
+    display: none;
   }
 `;
 
