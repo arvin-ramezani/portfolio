@@ -36,6 +36,10 @@ export const HeroTextContainer = styled(motion.div)`
     font-size: clamp(2rem, 6vw, 4.6rem);
     line-height: 1.4;
     font-weight: 700;
+
+    & > span {
+      color: ${({ theme }) => theme.colors.blueLight};
+    }
   }
 
   & > h2 {
