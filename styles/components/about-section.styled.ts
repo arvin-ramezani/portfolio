@@ -112,12 +112,22 @@ export const AboutTitle = styled(motion.h2)`
 
 export const AboutTextItem = styled(motion.p)`
   cursor: pointer;
+  transition: color, text-shadow 10s;
+  transition: color 0.6s, text-shadow 0.6s !important;
+
   color: ${({ theme }) => theme.colors.textPrimary};
 
   & span > a {
     text-decoration: none;
 
     color: ${({ theme }) => theme.colors.primary};
+  }
+
+  & :hover {
+    transition: color 0.6s, text-shadow 0.6s !important;
+
+    color: ${({ theme }) => theme.colors.textPrimary};
+    text-shadow: ${({ theme }) => `0 0 2px ${theme.colors.textPrimary}`};
   }
 `;
 
