@@ -57,7 +57,7 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://imarvin.ir/images/portfolio.svg"
+            content="https://imarvin.ir/images/portfolio.jpg"
           />
           <meta
             property="og:url"
