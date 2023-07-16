@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 
 const usePageDir = () => {
   const router = useRouter();
-  const [pageDir, setPageDir] = useState<'ltr' | 'rtl'>(
+
+  const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
     router.locale === 'fa' ? 'rtl' : 'ltr' || 'ltr'
   );
 

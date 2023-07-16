@@ -10,38 +10,20 @@ export const heroTextVariants: Variants = {
 };
 
 export const heroImageVariants: Variants = {
-  hidden: (pageDir: 'rtl' | 'ltr') => ({
+  hidden: (isMobile: boolean) => ({
     opacity: 0,
     rotate: 0,
-    x: pageDir === 'rtl' ? '-100%' : '100%',
+
+    y: isMobile ? 100 : -300,
   }),
 
-  visible: (pageDir: 'rtl' | 'ltr') => {
-    if (pageDir === 'rtl') {
-      return {
-        opacity: 1,
-        x: [-400, 0],
-        rotate: [0, 360],
-
-        transition: { duration: 0.8, delay: 0.4 },
-      };
-    }
-
+  visible: (isMobile: boolean) => {
     return {
       opacity: 1,
-      x: [400, 0],
-      rotate: [0, -360],
+      y: 0,
+      scaleY: 1,
 
-      transition: { duration: 0.8, delay: 0.4 },
+      transition: { stiffness: 200, damping: 20, delay: 0.4 },
     };
   },
-
-  // visible: (pageDir: 'rtl' | 'ltr') => ({
-  //   opacity: 1,
-  //   x: 0,
-
-  //   rotate: pageDir === 'rtl' ? [0, 360] : [0, -360],
-
-  //   transition: { duration: 0.8 },
-  // }),
 };

@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import React, { useState, useEffect, useRef } from 'react';
-import { useRouter } from 'next/router';
+import React, { useRef } from 'react';
 import { useInView } from 'framer-motion';
+import { isMobile } from 'react-device-detect';
 
 import {
   HeroImageContainer,
@@ -13,14 +13,9 @@ import HeroSectionText from './hero-section-text/hero-section-text';
 import usePageDir from '@/hooks/use-page-dir/use-page-dir';
 
 function HeroSection() {
-  const router = useRouter();
   const pageDir = usePageDir();
   const imageRef = useRef(null);
   const isImageInView = useInView(imageRef);
-
-  useEffect(() => {
-    console.log(isImageInView, 'view');
-  }, [isImageInView]);
 
   return (
     <StyledHeroSection>
@@ -31,19 +26,12 @@ function HeroSection() {
           variants={heroImageVariants}
           initial="hidden"
           animate={isImageInView ? 'visible' : 'hidden'}
-          custom={pageDir}
+          custom={isMobile}
           pagedir={pageDir}
         >
           <Image
-            id="freelancerImageSm"
-            src="/images/freelancer-sm.svg"
-            priority
-            alt="FreeLancer"
-            fill
-          />
-          <Image
             id="freelancerImageLg"
-            src="/images/freelancer-lg.svg"
+            src={`/images/coding-transparent-${pageDir}.gif`}
             priority
             alt="FreeLancer"
             fill

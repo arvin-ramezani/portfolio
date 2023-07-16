@@ -113,23 +113,8 @@ export const HeroImageContainer = styled(motion.div)<{
   height: 300px;
   margin-top: 5rem;
 
-  & > img#freelancerImageSm {
-  }
-
-  & > img#freelancerImageLg {
-    display: none;
-  }
-
   @media (min-width: ${theme.breakpoints.md}) {
     margin-top: 0;
-
-    & > img#freelancerImageSm {
-      display: none;
-    }
-
-    & > img#freelancerImageLg {
-      display: block;
-    }
   }
 
   @media (min-width: ${theme.breakpoints.lg}) {
