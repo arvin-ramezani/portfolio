@@ -13,7 +13,6 @@ export const heroImageVariants: Variants = {
   hidden: (isMobile: boolean) => ({
     opacity: 0,
     rotate: 0,
-
     y: isMobile ? 100 : -300,
   }),
 
