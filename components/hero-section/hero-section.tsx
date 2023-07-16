@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React, { useRef } from 'react';
+import { useInView } from 'framer-motion';
+import { isMobile } from 'react-device-detect';
 
 import {
   HeroImageContainer,
@@ -9,17 +10,12 @@ import {
 import { Container } from '@/styles/global.styled';
 import { heroImageVariants } from './hero-section.variants';
 import HeroSectionText from './hero-section-text/hero-section-text';
+import usePageDir from '@/hooks/use-page-dir/use-page-dir';
 
 function HeroSection() {
-  const router = useRouter();
-  const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
-    router.locale === 'fa' ? 'rtl' : 'ltr'
-  );
-
-  useEffect(() => {
-    console.log(router.locale, 'locale');
-    setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
-  }, [router.locale]);
+  const pageDir = usePageDir();
+  const imageRef = useRef(null);
+  const isImageInView = useInView(imageRef);
 
   return (
     <StyledHeroSection>
@@ -29,20 +25,13 @@ function HeroSection() {
         <HeroImageContainer
           variants={heroImageVariants}
           initial="hidden"
-          animate="visible"
-          custom={pageDir}
+          animate={isImageInView ? 'visible' : 'hidden'}
+          custom={isMobile}
           pagedir={pageDir}
         >
           <Image
-            id="freelancerImageSm"
-            src="/images/freelancer-sm.svg"
-            priority
-            alt="FreeLancer"
-            fill
-          />
-          <Image
             id="freelancerImageLg"
-            src="/images/freelancer-lg.svg"
+            src={`/images/coding-transparent-${pageDir}.gif`}
             priority
             alt="FreeLancer"
             fill
