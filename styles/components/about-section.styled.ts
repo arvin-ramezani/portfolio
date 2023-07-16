@@ -50,6 +50,13 @@ export const AboutImageBlock = styled(motion.div)`
     height: 280px;
   }
 
+  & > div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
   @media (min-width: ${theme.breakpoints.md}) {
     width: 200px !important;
     height: 200px !important;

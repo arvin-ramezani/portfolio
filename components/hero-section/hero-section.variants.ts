@@ -13,7 +13,7 @@ export const heroImageVariants: Variants = {
   hidden: (pageDir: 'rtl' | 'ltr') => ({
     opacity: 0,
     rotate: 0,
-    x: pageDir === 'rtl' ? -400 : 400,
+    x: pageDir === 'rtl' ? '-100%' : '100%',
   }),
 
   visible: (pageDir: 'rtl' | 'ltr') => {

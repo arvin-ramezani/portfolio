@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
+import { useInView } from 'framer-motion';
 
 import {
   HeroImageContainer,
@@ -9,17 +10,24 @@ import {
 import { Container } from '@/styles/global.styled';
 import { heroImageVariants } from './hero-section.variants';
 import HeroSectionText from './hero-section-text/hero-section-text';
+import usePageDir from '@/hooks/use-page-dir/use-page-dir';
 
 function HeroSection() {
   const router = useRouter();
-  const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
-    router.locale === 'fa' ? 'rtl' : 'ltr'
-  );
+  const pageDir = usePageDir();
+  // const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
+  //   router.locale === 'fa' ? 'rtl' : 'ltr'
+  // );
+  const imageRef = useRef(null);
+  const isImageInView = useInView(imageRef);
+
+  // useEffect(() => {
+  //   setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
+  // }, [router.locale]);
 
   useEffect(() => {
-    console.log(router.locale, 'locale');
-    setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
-  }, [router.locale]);
+    console.log(isImageInView, 'view');
+  }, [isImageInView]);
 
   return (
     <StyledHeroSection>
@@ -29,7 +37,7 @@ function HeroSection() {
         <HeroImageContainer
           variants={heroImageVariants}
           initial="hidden"
-          animate="visible"
+          animate={isImageInView ? 'visible' : 'hidden'}
           custom={pageDir}
           pagedir={pageDir}
         >
@@ -48,6 +56,7 @@ function HeroSection() {
             fill
           />
         </HeroImageContainer>
+        <div ref={imageRef} />
       </Container>
     </StyledHeroSection>
   );
