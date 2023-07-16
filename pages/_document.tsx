@@ -46,6 +46,27 @@ export default class MyDocument extends Document {
             rel="icon"
             href="/images/a-plus-logo.svg"
           />
+
+          <meta
+            property="og:title"
+            content="Arvin Ramezani - Web Developer Portfolio"
+          />
+          <meta
+            property="og:description"
+            content="Meet Arvin Ramezani, an aspiring full-stack developer with a focus on JavaScript and TypeScript. Explore his portfolio of web application practice projects and discover the breadth of his skills and experience. You can also find a collection of valuable tutorials he has watched to supplement his learning."
+          />
+          <meta
+            property="og:image"
+            content="https://imarvin.ir/images/portfolio.svg"
+          />
+          <meta
+            property="og:url"
+            content="https://imarvin.ir"
+          />
+          <meta
+            property="og:type"
+            content="website"
+          />
         </Head>
 
         <body>
