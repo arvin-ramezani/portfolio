@@ -15,15 +15,8 @@ import usePageDir from '@/hooks/use-page-dir/use-page-dir';
 function HeroSection() {
   const router = useRouter();
   const pageDir = usePageDir();
-  // const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
-  //   router.locale === 'fa' ? 'rtl' : 'ltr'
-  // );
   const imageRef = useRef(null);
   const isImageInView = useInView(imageRef);
-
-  // useEffect(() => {
-  //   setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
-  // }, [router.locale]);
 
   useEffect(() => {
     console.log(isImageInView, 'view');

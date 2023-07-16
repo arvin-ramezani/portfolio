@@ -24,6 +24,7 @@ import Button from '../ui/button/button';
 import { theme } from '@/styles/themes/theme.styled';
 import StarsCanvas from '../stars-canvas/stars-canvas';
 import { footerItemsVariants } from './footer.variants';
+import usePageDir from '@/hooks/use-page-dir/use-page-dir';
 
 const Footer = () => {
   const { t: translator } = useTranslation();
@@ -37,10 +38,7 @@ const Footer = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const router = useRouter();
   const [emailLoading, setEmailLoading] = useState(false);
-
-  const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
-    router.locale === 'fa' ? 'rtl' : 'ltr'
-  );
+  const pageDir = usePageDir();
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -68,10 +66,6 @@ const Footer = () => {
     width: '100%',
     height: '100%',
   };
-
-  useEffect(() => {
-    setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
-  }, [router.locale]);
 
   return (
     <StyledFooter>

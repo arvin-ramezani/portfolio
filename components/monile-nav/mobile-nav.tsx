@@ -18,6 +18,7 @@ import {
   mobileNavListVariants,
   mobileNavVariants,
 } from './mobile-nav.variants';
+import usePageDir from '@/hooks/use-page-dir/use-page-dir';
 
 interface MobileNavProps {
   show: boolean;
@@ -27,9 +28,7 @@ interface MobileNavProps {
 const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
   const [currentPath, setCurrentPath] = useState('');
   const router = useRouter();
-  const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
-    router.locale === 'fa' ? 'rtl' : 'ltr'
-  );
+  const pageDir = usePageDir();
   const { t: translator } = useTranslation();
 
   const onNavItemClick = (newHash: string) => {
@@ -56,10 +55,6 @@ const MobileNav: FC<MobileNavProps> = ({ onCloseNav, show }) => {
   useEffect(() => {
     setCurrentPath(router.asPath.slice(2));
   }, [router.asPath, router.locale]);
-
-  useEffect(() => {
-    setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
-  }, [router.locale]);
 
   return (
     <AnimatePresence>
