@@ -71,7 +71,7 @@ export default function Home({ projects, courses }: HomePageProps) {
         />
         <meta
           name="description"
-          content="Meet Arvin Ramezani, an aspiring full-stack developer with a focus on JavaScript and TypeScript. Explore his portfolio of web application practice projects and discover the breadth of his skills and experience. You can also find a collection of valuable tutorials he has watched to supplement his learning."
+          content="Meet Arvin Ramezani, an aspiring full-stack developer with a focus on ReactJS, NodeJS and TypeScript. Explore his portfolio of web application practice projects and discover the breadth of his skills and experience. You can also find a collection of valuable tutorials he has watched to supplement his learning."
         />
       </Head>
 
