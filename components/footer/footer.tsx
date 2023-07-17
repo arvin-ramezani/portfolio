@@ -126,7 +126,7 @@ const Footer = () => {
           <SocialMediaBlock
             initial={{ scale: 1 }}
             animate={{ scale: 1 }}
-            whileHover={{ scaleX: 1.4 }}
+            whileHover={{ scaleX: 1.2 }}
           >
             <Link
               href="https://www.linkedin.com/in/arvin-ramezani"
