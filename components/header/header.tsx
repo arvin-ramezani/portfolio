@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { FC, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   AnimatePresence,
   Variants,
@@ -19,6 +19,7 @@ import { Container } from '@/styles/global.styled';
 import { HeaderItemsVariants } from './header.variants';
 import MobileNav from '../monile-nav/mobile-nav';
 import Navbar from '../navbar/navbar';
+import usePageDir from '@/hooks/use-page-dir/use-page-dir';
 
 const mobileNavBtnVariants: Variants = {
   initial: {
@@ -33,9 +34,7 @@ const mobileNavBtnVariants: Variants = {
 const Header = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const router = useRouter();
-  const [pageDir, setPageDir] = useState<'rtl' | 'ltr'>(
-    router.locale === 'fa' ? 'rtl' : 'ltr'
-  );
+  const pageDir = usePageDir();
 
   const { scrollY } = useScroll();
   const bgColor = useTransform(
@@ -53,10 +52,6 @@ const Header = () => {
   const onCloseMobileNav = () => {
     setShowMobileNav(false);
   };
-
-  useEffect(() => {
-    setPageDir(router.locale === 'fa' ? 'rtl' : 'ltr');
-  }, [router.locale]);
 
   return (
     <StyledHeader

@@ -10,18 +10,19 @@ import { Container } from '@/styles/global.styled';
 import { aboutItemsVariants } from './about-section.variants';
 import Skills from '../skills/skills';
 import AboutText from './about-text/about-text';
+import usePageDir from '@/hooks/use-page-dir/use-page-dir';
 
 const AboutSection = () => {
   const imageRef = useRef(null);
   const isImageInView = useInView(imageRef);
+  const pageDir = usePageDir();
 
   return (
     <StyledAboutSection id="about">
       <Container>
         <AboutImageBlock
           variants={aboutItemsVariants}
-          ref={imageRef}
-          custom={'left'}
+          custom={pageDir === 'rtl' ? 'left' : 'right'}
           initial="initial"
           animate={isImageInView ? 'animate' : 'exit'}
           exit={'exit'}
@@ -31,6 +32,8 @@ const AboutSection = () => {
             alt="Arvin Ramezani"
             fill
           />
+
+          <div ref={imageRef} />
         </AboutImageBlock>
 
         <AboutText />
