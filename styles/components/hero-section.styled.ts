@@ -113,20 +113,52 @@ export const HeroImageContainer = styled(motion.div)<{
   height: 300px;
   margin-top: 5rem;
 
+  & > img#codingImageSm {
+  }
+
+  & > img#codingImageLg {
+    width: 190% !important;
+    height: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
   @media (min-width: ${theme.breakpoints.md}) {
     margin-top: 0;
+
+    & > img#codingImageSm {
+      display: none;
+    }
+
+    & > img#codingImageLg {
+      display: block;
+    }
   }
 
   @media (min-width: ${theme.breakpoints.lg}) {
-    width: 500px;
+    /* width: 500px;
     height: 500px;
-    flex: 1;
+    flex: 1; */
+
+    & > img#codingImageLg {
+      width: 190% !important;
+    }
   }
 
   @media (min-width: ${theme.breakpoints.xxl}) {
-    & img {
-      margin-right: ${({ pagedir }) => (pagedir === 'rtl' ? '10%' : '0')};
-      margin-left: ${({ pagedir }) => (pagedir === 'ltr' ? '10%' : '0')};
+    /* width: 500px;
+    height: 500px; */
+    min-height: 100vh;
+
+    flex: 1;
+    overflow: visible;
+
+    & > img#codingImageLg {
+      width: 120% !important;
+      margin-top: -5%;
+
+      /* margin-right: ${({ pagedir }) => (pagedir === 'rtl' ? '10%' : '0')};
+      margin-left: ${({ pagedir }) => (pagedir === 'ltr' ? '10%' : '0')}; */
     }
   }
 `;

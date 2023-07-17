@@ -30,7 +30,7 @@ export const styledBulletVariants: Variants = {
     borderRadius: 0,
     scale: 1,
     backgroundColor: `${theme.colors.textSecondary}`,
-    boxShadow: '0 0 0px 0px ${theme.colors.textPrimary}',
+    boxShadow: `0 0 0px 0px ${theme.colors.textPrimary}`,
     margin: '0 0.5rem',
   },
 

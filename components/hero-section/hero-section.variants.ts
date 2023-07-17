@@ -12,7 +12,6 @@ export const heroTextVariants: Variants = {
 export const heroImageVariants: Variants = {
   hidden: (isMobile: boolean) => ({
     opacity: 0,
-    rotate: 0,
     y: isMobile ? 100 : -300,
   }),
 
@@ -20,7 +19,6 @@ export const heroImageVariants: Variants = {
     return {
       opacity: 1,
       y: 0,
-      scaleY: 1,
 
       transition: { stiffness: 200, damping: 20, delay: 0.4 },
     };
