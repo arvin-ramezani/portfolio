@@ -113,14 +113,16 @@ export const HeroImageContainer = styled(motion.div)<{
   height: 300px;
   margin-top: 5rem;
 
-  & > img#codingImageSm {
-  }
-
   & > img#codingImageLg {
     width: 190% !important;
     height: auto !important;
-    left: 50% !important;
-    transform: translateX(-50%);
+
+    right: ${({ pagedir }) => (pagedir === 'rtl' ? '50%' : '0')} !important;
+
+    left: ${({ pagedir }) => (pagedir === 'rtl' ? '0' : '50%')} !important;
+
+    transform: ${({ pagedir }) =>
+      pagedir === 'rtl' ? 'translateX(50%)' : 'translateX(-50%)'} !important;
   }
 
   @media (min-width: ${theme.breakpoints.md}) {
@@ -136,18 +138,15 @@ export const HeroImageContainer = styled(motion.div)<{
   }
 
   @media (min-width: ${theme.breakpoints.lg}) {
-    /* width: 500px;
-    height: 500px;
-    flex: 1; */
-
     & > img#codingImageLg {
       width: 190% !important;
+
+      transform: ${({ pagedir }) =>
+        pagedir === 'rtl' ? 'translateX(44%)' : 'translateX(-44%)'} !important;
     }
   }
 
   @media (min-width: ${theme.breakpoints.xxl}) {
-    /* width: 500px;
-    height: 500px; */
     min-height: 100vh;
 
     flex: 1;
@@ -157,8 +156,8 @@ export const HeroImageContainer = styled(motion.div)<{
       width: 120% !important;
       margin-top: -5%;
 
-      /* margin-right: ${({ pagedir }) => (pagedir === 'rtl' ? '10%' : '0')};
-      margin-left: ${({ pagedir }) => (pagedir === 'ltr' ? '10%' : '0')}; */
+      transform: ${({ pagedir }) =>
+        pagedir === 'rtl' ? 'translateX(35%)' : 'translateX(-35%)'} !important;
     }
   }
 `;

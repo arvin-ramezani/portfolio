@@ -29,17 +29,6 @@ function HeroSection() {
           custom={isMobile}
           pagedir={pageDir}
         >
-          {/* <Image
-            id="codingImageSm"
-            src={`/images/coding-sm-transparent-${pageDir}.gif`}
-            priority
-            alt="FreeLancer"
-            // fill
-            width={256}
-            height={144}
-            unoptimized
-          /> */}
-
           <Image
             id="codingImageLg"
             src={`/images/coding-transparent-${pageDir}.gif`}
