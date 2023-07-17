@@ -37,6 +37,7 @@ function HeroSection() {
             fill
           />
         </HeroImageContainer>
+        <div ref={imageRef} />
       </Container>
     </StyledHeroSection>
   );

@@ -32,7 +32,7 @@ const AboutText = () => {
     } else {
       textItemAnimController.start('initial');
     }
-  }, [isTextInView]);
+  }, [isTextInView, textItemAnimController]);
 
   return (
     <AboutTextBlock
