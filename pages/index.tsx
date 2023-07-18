@@ -20,6 +20,7 @@ import { IHomePageGetRespose } from './api';
 interface HomePageProps {
   projects: IHomePageGetRespose['projects'];
   courses: IHomePageGetRespose['courses'];
+  locale: 'fa' | 'en';
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
@@ -50,6 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         ...(await serverSideTranslations(locale as string, ['home', 'common'])),
         projects: data.projects,
         courses: data.courses!,
+        locale,
       },
     };
   } catch (error) {
@@ -60,7 +62,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   }
 };
 
-export default function Home({ projects, courses }: HomePageProps) {
+export default function Home({ projects, courses, locale }: HomePageProps) {
   return (
     <>
       <Head>
@@ -72,6 +74,10 @@ export default function Home({ projects, courses }: HomePageProps) {
         <meta
           name="description"
           content="Meet Arvin Ramezani, an aspiring full-stack developer with a focus on ReactJS, NodeJS and TypeScript. Explore his portfolio of web application practice projects and discover the breadth of his skills and experience. You can also find a collection of valuable tutorials he has watched to supplement his learning."
+        />
+        <meta
+          property="og:locale"
+          content={locale === 'fa' ? 'fa_IR' : 'en_US'}
         />
       </Head>
 
