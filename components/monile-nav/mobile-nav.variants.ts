@@ -35,13 +35,13 @@ export const mobileNavItemVariants: Variants = {
   close: (direction: 'ltr' | 'rtl') => {
     return {
       opacity: 0,
-      scale: 0,
+      y: -20,
     };
   },
 
   open: {
     opacity: 1,
-    scale: 1,
+    y: 0,
   },
 };
 
