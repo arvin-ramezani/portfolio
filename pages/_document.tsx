@@ -46,6 +46,11 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
 
+          {/* <link
+            rel="icon"
+            href="/images/a-plus-logo-dark.svg"
+          /> */}
+
           <link
             rel="icon"
             href="/images/a-plus-logo.svg"
