@@ -7,6 +7,8 @@ import Document, {
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
+import { LocalesEnums } from '@/utils/types/translate.types';
+
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
@@ -34,10 +36,12 @@ export default class MyDocument extends Document {
   }
 
   render() {
+    const pageDir = this.props.locale === LocalesEnums.FA ? 'rtl' : 'ltr';
+
     return (
       <Html
         lang="en"
-        style={{ scrollBehavior: 'smooth', direction: 'ltr' }}
+        style={{ scrollBehavior: 'smooth', direction: pageDir }}
       >
         <Head>
           <meta charSet="utf-8" />
