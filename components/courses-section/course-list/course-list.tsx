@@ -1,5 +1,4 @@
 import React, { FC, useState, useEffect } from 'react';
-import { useTranslation } from 'next-i18next';
 
 import { CoursesContainer } from '@/styles/components/courses-section.styled';
 import CourseItem from '../course-item/course-item';
@@ -22,10 +21,9 @@ const CourseList: FC<CourseListProps> = ({
   const { data, error, isLoading } = useGetCoursesByPageQuery(`${page}`);
   const [courseList, setCourseList] = useState(initialCourseList);
   const [pagination, setPagination] = useState(initialPagination);
-  const { t: translator } = useTranslation();
   const router = useRouter();
 
-  const onPageChange = () => {
+  const onPaginationChange = () => {
     router
       .replace(
         {
@@ -45,7 +43,6 @@ const CourseList: FC<CourseListProps> = ({
 
   useEffect(() => {
     if (!data) return;
-    onPageChange();
 
     setCourseList(data.courses.courseList);
     setPagination(data.courses.pagination);
@@ -69,6 +66,7 @@ const CourseList: FC<CourseListProps> = ({
         pagination={pagination}
         page={page}
         setPage={setPage}
+        onPaginationChange={onPaginationChange}
       />
     </>
   );

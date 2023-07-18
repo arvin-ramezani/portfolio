@@ -14,15 +14,23 @@ interface PaginationProps {
   pagination: IHomePageGetRespose['courses']['pagination'];
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
+  onPaginationChange: () => void;
 }
 
-const Pagination: FC<PaginationProps> = ({ pagination, setPage, page }) => {
+const Pagination: FC<PaginationProps> = ({
+  pagination,
+  setPage,
+  onPaginationChange,
+  page,
+}) => {
   const [pageCount] = useState(pagination.pageCount);
   const router = useRouter();
   const { t: translator } = useTranslation();
 
   const onPageSelect: ChangeEventHandler<HTMLSelectElement> = (e) => {
     setPage(+e.target.value);
+
+    onPaginationChange && onPaginationChange();
   };
 
   const onNext = () => {
@@ -30,6 +38,8 @@ const Pagination: FC<PaginationProps> = ({ pagination, setPage, page }) => {
       if (p === pageCount) return p;
       return p + 1;
     });
+
+    onPaginationChange && onPaginationChange();
   };
 
   const onPrev = () => {
@@ -37,6 +47,8 @@ const Pagination: FC<PaginationProps> = ({ pagination, setPage, page }) => {
       if (p === 1) return p;
       return p - 1;
     });
+
+    onPaginationChange && onPaginationChange();
   };
 
   return (
