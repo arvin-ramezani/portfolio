@@ -16,6 +16,7 @@ interface ButtonProps {
   wrapperStyle?: CSSProperties;
   buttonStyles?: CSSProperties;
   loading?: boolean;
+  disabled?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -26,9 +27,13 @@ const Button: FC<ButtonProps> = ({
   wrapperStyle,
   buttonStyles,
   loading,
+  disabled,
 }) => {
   const onClickHandler: MouseEventHandler<HTMLDivElement> = (e) => {
     e.stopPropagation();
+
+    if (disabled) return;
+
     onClick && onClick();
   };
 
@@ -41,6 +46,7 @@ const Button: FC<ButtonProps> = ({
       <StyledButton
         as={motion.button}
         variants={buttonVariants}
+        animate={disabled ? 'disabled' : 'initial'}
         whileHover={'hover'}
         whileTap={'tap'}
         color={color || 'unset'}

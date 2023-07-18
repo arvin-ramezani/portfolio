@@ -45,6 +45,7 @@ const Pagination: FC<PaginationProps> = ({ pagination, setPage, page }) => {
         <Button
           text={translator('common:prev_pagination_btn')}
           onClick={onPrev}
+          disabled={page <= 1}
         />
 
         <PaginationSelectBox
@@ -61,6 +62,7 @@ const Pagination: FC<PaginationProps> = ({ pagination, setPage, page }) => {
         <Button
           text={translator('common:next_pagination_btn')}
           onClick={onNext}
+          disabled={page === pageCount}
         />
       </PaginationButtons>
     </StyledPagination>

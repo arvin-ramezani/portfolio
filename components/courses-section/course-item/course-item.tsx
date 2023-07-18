@@ -72,7 +72,7 @@ const CourseItem: FC<CourseItemProps> = ({
       </CourseItemHeaderWrapper>
 
       <CourseBody>
-        <h6>{translator('home:courses_learned_title')}</h6>
+        <h6>{translator('home:courses_learned_title')}:</h6>
 
         <LearnedList
           learned={learned}

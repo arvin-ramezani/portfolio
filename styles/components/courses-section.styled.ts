@@ -95,7 +95,7 @@ export const CourseBody = styled(motion.div)`
   & > h6 {
     font-size: 1.2rem;
     font-weight: 500;
-    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
   }
 `;
 

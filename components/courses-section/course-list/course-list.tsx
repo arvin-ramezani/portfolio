@@ -7,6 +7,7 @@ import { ICourse, ICourseWithTranslate } from '@/utils/types/course.types';
 import Pagination from '@/components/ui/pagination/pagination';
 import { IPagination } from '@/utils/types/common.types';
 import { useGetCoursesByPageQuery } from '@/features/api/apiSlice';
+import { useRouter } from 'next/router';
 
 interface CourseListProps {
   courseList: ICourseWithTranslate[];
@@ -22,12 +23,32 @@ const CourseList: FC<CourseListProps> = ({
   const [courseList, setCourseList] = useState(initialCourseList);
   const [pagination, setPagination] = useState(initialPagination);
   const { t: translator } = useTranslation();
+  const router = useRouter();
+
+  const onPageChange = () => {
+    router
+      .replace(
+        {
+          pathname: window.location.pathname,
+          hash: 'courses',
+          query: window.location.search,
+        },
+        undefined,
+        { shallow: true }
+      )
+      .catch((e) => {
+        if (!e.cancelled) {
+          throw e;
+        }
+      });
+  };
 
   useEffect(() => {
-    if (typeof data !== 'undefined') {
-      setCourseList(data.courses.courseList);
-      setPagination(data.courses.pagination);
-    }
+    if (!data) return;
+    onPageChange();
+
+    setCourseList(data.courses.courseList);
+    setPagination(data.courses.pagination);
   }, [data]);
 
   return (
