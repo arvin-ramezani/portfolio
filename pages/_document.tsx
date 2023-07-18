@@ -48,6 +48,10 @@ export default class MyDocument extends Document {
           />
 
           <meta
+            property="og:site_name"
+            content="Arvin Ramezani"
+          />
+          <meta
             property="og:title"
             content="Arvin Ramezani - Web Developer Portfolio"
           />
@@ -58,6 +62,14 @@ export default class MyDocument extends Document {
           <meta
             property="og:image"
             content="https://imarvin.ir/images/arvin-portfolio.jpg"
+          />
+          <meta
+            property="og:image:width"
+            content="1200"
+          />
+          <meta
+            property="og:image:height"
+            content="700"
           />
           <meta
             property="og:url"
