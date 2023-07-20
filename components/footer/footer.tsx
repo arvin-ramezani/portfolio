@@ -177,7 +177,7 @@ const Footer = () => {
               />
             </Link>
             <Link
-              href="https://instagram.com/arvin.web?igshid=MzNlNGNkZWQ4Mg=="
+              href="https://instagram.com/arvin.webdev?igshid=MzNlNGNkZWQ4Mg=="
               passHref
               target="_blank"
             >
