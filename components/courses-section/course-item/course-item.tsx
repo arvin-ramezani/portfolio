@@ -63,8 +63,11 @@ const CourseItem: FC<CourseItemProps> = ({
           <Image
             src={image}
             alt={name}
-            width={200}
-            height={162}
+            width={705}
+            height={397}
+            sizes="(min-width: 1200px) calc(26.67vw - 84px), 
+            (min-width: 780px) calc(40vw - 87px), 
+            (min-width: 560px) 437px, calc(96.67vw - 85px)"
             onLoadingComplete={() => setImageLoading(false)}
           />
         </ImageWrapper>
