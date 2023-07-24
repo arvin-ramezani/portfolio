@@ -46,7 +46,10 @@ const ProjectCard: FC<ProjectProps> = ({
           alt={`Project ${name} Cover`}
           width={720}
           height={405}
-          sizes="(min-width: 1400px) calc(20vw - 35px), (min-width: 1000px) calc(26.84vw - 38px), (min-width: 780px) calc(40vw - 38px), calc(100vw - 48px)"
+          sizes="(min-width: 1400px) calc(20vw - 35px),
+          (min-width: 1000px) calc(26.84vw - 38px),
+          (min-width: 780px) calc(40vw - 38px),
+          calc(100vw - 48px)"
         />
         <PlayBackDrop onClick={setPlayVideo.bind(null, true)}>
           <Image
