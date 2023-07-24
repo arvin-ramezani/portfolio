@@ -41,11 +41,12 @@ const ProjectCard: FC<ProjectProps> = ({
     >
       <h4>{name}</h4>
       <VideoContainer>
-        <motion.img
+        <Image
           src={cover}
-          alt="project cover"
-          initial={{ opacity: 1 }}
-          animate={playVideo ? { opacity: 0 } : { opacity: 1 }}
+          alt={`Project ${name} Cover`}
+          width={720}
+          height={405}
+          sizes="(min-width: 1400px) calc(20vw - 35px), (min-width: 1000px) calc(26.84vw - 38px), (min-width: 780px) calc(40vw - 38px), calc(100vw - 48px)"
         />
         <PlayBackDrop onClick={setPlayVideo.bind(null, true)}>
           <Image
