@@ -4,7 +4,7 @@ export const PROJECT_LIST: IProject[] = [
   {
     name: 'Realtor App',
     video: '/videos/nestjs-realtor-demo.mp4',
-    cover: '/images/projects-cover/realtor-app.jpg',
+    cover: '/images/projects-cover/realtor-app-cover.jpg',
     translatorName: 'realtor_app',
     github: 'https://github.com/arvin-ramezani/nest.js-realtor-app',
     tools: ['Swagger', 'NestJs', 'Prisma', 'PostgreSQL'],
@@ -12,7 +12,7 @@ export const PROJECT_LIST: IProject[] = [
   {
     name: 'Pizza Shop',
     video: '/videos/pizza-shop.mp4',
-    cover: '/images/projects-cover/pizza-shop.jpg',
+    cover: '/images/projects-cover/pizza-shop-cover.jpg',
     translatorName: 'pizza_shop',
     github: 'https://github.com/arvin-ramezani/pizza-shop',
     tools: [
@@ -28,7 +28,7 @@ export const PROJECT_LIST: IProject[] = [
   {
     name: 'MERN Simple Watch Shop',
     video: '/videos/watch-shop.mp4',
-    cover: '/images/projects-cover/simple-watch-shop.jpg',
+    cover: '/images/projects-cover/simple-watch-shop-cover.jpg',
     translatorName: 'watch_shop',
     github: 'https://github.com/arvin-ramezani/MERN-simple-watch-shop',
     tools: [
@@ -43,7 +43,7 @@ export const PROJECT_LIST: IProject[] = [
   {
     name: 'MERN Animals House',
     video: '/videos/animals-house.mp4',
-    cover: '/images/projects-cover/animals-house.jpg',
+    cover: '/images/projects-cover/animals-house-cover.jpg',
     translatorName: 'animals_house',
     github: 'https://github.com/arvin-ramezani/MERN-animals-house',
     tools: [
