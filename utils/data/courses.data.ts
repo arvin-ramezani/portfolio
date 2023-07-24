@@ -3,7 +3,7 @@ import { ICourse, ICourseWithTranslate } from '../types/course.types';
 export const COURSES_LIST: ICourse[] = [
   {
     name: 'ChatGPT - The Complete Guide',
-    image: '/images/courses/chatgpt.jpg',
+    image: '/images/courses/chatgpt-course.jpg',
     learnedList: [
       'How Was ChatGPT Created, And How Does It Work?',
       'What is features and limitations are ?',
@@ -31,7 +31,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: 'Next.js & React - The Complete Guide',
-    image: '/images/courses/nextjs.jpg',
+    image: '/images/courses/nextjs-course.jpg',
     learnedList: [
       'Authentication and Authorization with next-auth',
       'SSG - SSR - ISR - CSR',
@@ -53,7 +53,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: 'Cypress End-to-End Testing - Getting Started',
-    image: '/images/courses/cypress.jpg',
+    image: '/images/courses/cypress-course.jpg',
     learnedList: [
       'Fundamentals and Basics',
       'Deep Dive: A Closer Look at Element Selection, Actions and Assertions',
@@ -76,7 +76,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: 'JavaScript Unit Testing - The Practical Guide',
-    image: '/images/courses/unit-testing.jpg',
+    image: '/images/courses/unit-testing-course.jpg',
     learnedList: [
       'Adjusting The Development Environment (Test Runner & Assertion Library)',
       'Unit Testing Functionals',
@@ -103,7 +103,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: 'React Native - The Practical Guide',
-    image: '/images/courses/react-native.jpg',
+    image: '/images/courses/react-native-course.jpg',
     learnedList: [
       'Debugging React Native Apps',
       'Diving Deeper into Components, Layouts & Styling - Building a Mini-Game App',
@@ -130,7 +130,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: 'SQL - The Complete Guide (MySQL, PostgreSQL & more)',
-    image: '/images/courses/sql.jpg',
+    image: '/images/courses/sql-course.jpg',
     learnedList: [
       'Core SQL Syntax & Rules',
       'Managing Tables & Working With Data Types',
@@ -157,7 +157,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: 'Clean Code',
-    image: '/images/courses/clean-code.jpg',
+    image: '/images/courses/clean-code-course.jpg',
     learnedList: [
       'Assigning Good Names for Variables, Functions, Classes',
       'Code Structure, Comments & Formatting',
@@ -181,7 +181,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: 'Git & GitHub - The Practical Guide',
-    image: '/images/courses/git-github.jpg',
+    image: '/images/courses/git-github-course.jpg',
     learnedList: [
       'How does Git work with GitHub - Repositories, Branches and Commits',
       'Manages and Combining Git Branches - Understanding Stash - Resolving Conflicts',
@@ -203,7 +203,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: 'Docker & Kubernetes: The Practical Guide',
-    image: '/images/courses/docker-kubernetes.jpg',
+    image: '/images/courses/docker-kubernetes-course.jpg',
     learnedList: [
       'Docker Images and Containers',
       'Understanding Different Kinds of Data - Volumes and Bind Mounts',
@@ -231,7 +231,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `MongoDB - The Complete Developer's Guide 2022`,
-    image: '/images/courses/mongodb.jpg',
+    image: '/images/courses/mongodb-course.jpg',
     learnedList: [
       'Understanding the Basics (CRUD Operations)',
       'Schemas Relations and How to Structure Documents',
@@ -261,7 +261,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `React, NodeJS, Express & MongoDB - The MERN Fullstack Guide`,
-    image: '/images/courses/mern.jpg',
+    image: '/images/courses/mern-course.jpg',
     learnedList: [
       'MERN Theory (How do React, NodeJS, Express & MongoDB Work Together - Different Approaches of Combining These Pieces',
       'Planning a MERN Project (What to Do When)',
@@ -284,7 +284,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `JavaScript Data Structures - The Fundamentals`,
-    image: '/images/courses/data-structures.jpg',
+    image: '/images/courses/data-structures-course.jpg',
     learnedList: [
       'What are Data Structures? - (Arrays vs Sets - Objects vs Maps - Weak Set & Weak Map - Work with Linked Lists)',
       'Work With Lists and Tables - Stack Data Structures - Queues - Hash Tables - Understanding Hash Collisions and Solving with Chaining & Open Addressing',
@@ -302,7 +302,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `JavaScript Algorithms - The Fundamentals`,
-    image: '/images/courses/algorithms.jpg',
+    image: '/images/courses/algorithms-course.jpg',
     learnedList: [
       'Math Algorithms - Big O Notation and The Right Way of Thinking About Problems',
       'Recursion in Algorithms and Dynamic Programming',
@@ -322,7 +322,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `Progressive Web Apps (PWA) - The Complete Guide`,
-    image: '/images/courses/typescript.jpg',
+    image: '/images/courses/typescript-course.jpg',
     learnedList: [
       'Understanding The App Manifest and The Service Workers',
       'Implementing Caching With Service Workers - (Static Caching, Dynamic Caching and Cache Versioning)',
@@ -349,7 +349,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `Microservices with Node JS and React`,
-    image: '/images/courses/microservices.jpg',
+    image: '/images/courses/microservices-course.jpg',
     learnedList: [
       'Fundamentals Around Microservices - Big Problems With Data In Microservices - Communication Strategies Between Services (Sync and Async)',
       'Running Services With Docker and Orchestrating Collections of Services with Kubernetes (Skaffold)',
@@ -373,7 +373,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `NestJS: The Complete Developer's Guide`,
-    image: '/images/courses/stephen-grider-nestjs.jpg',
+    image: '/images/courses/stephen-grider-nestjs-course.jpg',
     learnedList: [
       'Basics of Nest.js',
       'Validating Request Data With Pipes',
@@ -398,7 +398,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `The Nest JS Bootcamp - Complete Developer Guide`,
-    image: '/images/courses/laith-harb-nestjs.jpg',
+    image: '/images/courses/laith-harb-nestjs-course.jpg',
     learnedList: [
       'Controllersو Decorator Params and Services In Nest.js',
       'Adding Validations With Pipes and DTOs (Enum Validation Pipe, Validation The Body With DTOs and Whitelisting Undesired Properties)',
@@ -416,7 +416,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `Modern GraphQL with Node - Complete Developers Guide`,
-    image: '/images/courses/laith-harb-graphql-node.jpg',
+    image: '/images/courses/laith-harb-graphql-node-course.jpg',
     learnedList: [
       'What Is GraphQL? and What Problems It Solves? (Prevents Over-Fetching and Under-Fetching - How Data Is Organized)',
       'Queries and Schemas (Scalar, Array and Object Types - Relating Data - File Structure)',
@@ -437,7 +437,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `JavaScript`,
-    image: '/images/courses/javascript.jpg',
+    image: '/images/courses/javascript-course.jpg',
     learnedList: [
       'JavaScript - ES6, ES7 and ES8',
       'Project-Based JavaScript Course (Video Player, Playing Piano, Drag and Drop, Slider, Snake Game, Images Zoom, Scroll Top, Preload and more)',
@@ -452,7 +452,7 @@ export const COURSES_LIST: ICourse[] = [
   },
   {
     name: `HTML and CSS`,
-    image: '/images/courses/roocket-html-css.jpg',
+    image: '/images/courses/roocket-html-css-course.jpg',
     learnedList: ['HTML, CSS (Flexbox, CSS Grid)'],
     links: [
       {
@@ -467,7 +467,7 @@ export const COURSES_LIST: ICourse[] = [
 export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   {
     name: 'ChatGPT - The Complete Guide',
-    image: '/images/courses/chatgpt.jpg',
+    image: '/images/courses/chatgpt-course.jpg',
     learnedList: [
       'How Was ChatGPT Created, And How Does It Work?',
       'What is features and limitations are ?',
@@ -499,7 +499,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: 'Next.js & React - The Complete Guide',
-    image: '/images/courses/nextjs.jpg',
+    image: '/images/courses/nextjs-course.jpg',
     learnedList: [
       'Authentication and Authorization with next-auth',
       'SSG - SSR - ISR - CSR',
@@ -525,7 +525,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: 'Cypress End-to-End Testing - Getting Started',
-    image: '/images/courses/cypress.jpg',
+    image: '/images/courses/cypress-course.jpg',
     learnedList: [
       'Fundamentals and Basics',
       'Deep Dive: A Closer Look at Element Selection, Actions and Assertions',
@@ -552,7 +552,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: 'JavaScript Unit Testing - The Practical Guide',
-    image: '/images/courses/unit-testing.jpg',
+    image: '/images/courses/unit-testing-course.jpg',
     learnedList: [
       'Adjusting The Development Environment (Test Runner & Assertion Library)',
       'Unit Testing Functionals',
@@ -583,7 +583,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: 'React Native - The Practical Guide',
-    image: '/images/courses/react-native.jpg',
+    image: '/images/courses/react-native-course.jpg',
     learnedList: [
       'Debugging React Native Apps',
       'Diving Deeper into Components, Layouts & Styling - Building a Mini-Game App',
@@ -614,7 +614,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: 'SQL - The Complete Guide (MySQL, PostgreSQL & more)',
-    image: '/images/courses/sql.jpg',
+    image: '/images/courses/sql-course.jpg',
     learnedList: [
       'Core SQL Syntax & Rules',
       'Managing Tables & Working With Data Types',
@@ -645,7 +645,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: 'Clean Code',
-    image: '/images/courses/clean-code.jpg',
+    image: '/images/courses/clean-code-course.jpg',
     learnedList: [
       'Assigning Good Names for Variables, Functions, Classes',
       'Code Structure, Comments & Formatting',
@@ -673,7 +673,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: 'Git & GitHub - The Practical Guide',
-    image: '/images/courses/git-github.jpg',
+    image: '/images/courses/git-github-course.jpg',
     learnedList: [
       'How does Git work with GitHub - Repositories, Branches and Commits',
       'Manages and Combining Git Branches - Understanding Stash - Resolving Conflicts',
@@ -699,7 +699,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: 'Docker & Kubernetes: The Practical Guide',
-    image: '/images/courses/docker-kubernetes.jpg',
+    image: '/images/courses/docker-kubernetes-course.jpg',
     learnedList: [
       'Docker Images and Containers',
       'Understanding Different Kinds of Data - Volumes and Bind Mounts',
@@ -731,7 +731,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `MongoDB - The Complete Developer's Guide 2022`,
-    image: '/images/courses/mongodb.jpg',
+    image: '/images/courses/mongodb-course.jpg',
     learnedList: [
       'Understanding the Basics (CRUD Operations)',
       'Schemas Relations and How to Structure Documents',
@@ -765,7 +765,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `React, NodeJS, Express & MongoDB - The MERN Fullstack Guide`,
-    image: '/images/courses/mern.jpg',
+    image: '/images/courses/mern-course.jpg',
     learnedList: [
       'MERN Theory (How do React, NodeJS, Express & MongoDB Work Together - Different Approaches of Combining These Pieces',
       'Planning a MERN Project (What to Do When)',
@@ -792,7 +792,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `JavaScript Data Structures - The Fundamentals`,
-    image: '/images/courses/data-structures.jpg',
+    image: '/images/courses/data-structures-course.jpg',
     learnedList: [
       'What are Data Structures? - (Arrays vs Sets - Objects vs Maps - Weak Set & Weak Map - Work with Linked Lists)',
       'Work With Lists and Tables - Stack Data Structures - Queues - Hash Tables - Understanding Hash Collisions and Solving with Chaining & Open Addressing',
@@ -814,7 +814,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `JavaScript Algorithms - The Fundamentals`,
-    image: '/images/courses/algorithms.jpg',
+    image: '/images/courses/algorithms-course.jpg',
     learnedList: [
       'Math Algorithms - Big O Notation and The Right Way of Thinking About Problems',
       'Recursion in Algorithms and Dynamic Programming',
@@ -838,7 +838,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `Progressive Web Apps (PWA) - The Complete Guide`,
-    image: '/images/courses/typescript.jpg',
+    image: '/images/courses/typescript-course.jpg',
     learnedList: [
       'Understanding The App Manifest and The Service Workers',
       'Implementing Caching With Service Workers - (Static Caching, Dynamic Caching and Cache Versioning)',
@@ -869,7 +869,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `Microservices with Node JS and React`,
-    image: '/images/courses/microservices.jpg',
+    image: '/images/courses/microservices-course.jpg',
     learnedList: [
       'Fundamentals Around Microservices - Big Problems With Data In Microservices - Communication Strategies Between Services (Sync and Async)',
       'Running Services With Docker and Orchestrating Collections of Services with Kubernetes (Skaffold)',
@@ -897,7 +897,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `NestJS: The Complete Developer's Guide`,
-    image: '/images/courses/stephen-grider-nestjs.jpg',
+    image: '/images/courses/stephen-grider-nestjs-course.jpg',
     learnedList: [
       'Basics of Nest.js',
       'Validating Request Data With Pipes',
@@ -926,7 +926,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `The Nest JS Bootcamp - Complete Developer Guide`,
-    image: '/images/courses/laith-harb-nestjs.jpg',
+    image: '/images/courses/laith-harb-nestjs-course.jpg',
     learnedList: [
       'Controllersو Decorator Params and Services In Nest.js',
       'Adding Validations With Pipes and DTOs (Enum Validation Pipe, Validation The Body With DTOs and Whitelisting Undesired Properties)',
@@ -948,7 +948,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `Modern GraphQL with Node - Complete Developers Guide`,
-    image: '/images/courses/laith-harb-graphql-node.jpg',
+    image: '/images/courses/laith-harb-graphql-node-course.jpg',
     learnedList: [
       'What Is GraphQL? and What Problems It Solves? (Prevents Over-Fetching and Under-Fetching - How Data Is Organized)',
       'Queries and Schemas (Scalar, Array and Object Types - Relating Data - File Structure)',
@@ -973,7 +973,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `JavaScript`,
-    image: '/images/courses/javascript.jpg',
+    image: '/images/courses/javascript-course.jpg',
     learnedList: [
       'JavaScript - ES6, ES7 and ES8',
       'Project-Based JavaScript Course (Video Player, Playing Piano, Drag and Drop, Slider, Snake Game, Images Zoom, Scroll Top, Preload and more)',
@@ -992,7 +992,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
   },
   {
     name: `HTML and CSS`,
-    image: '/images/courses/roocket-html-css.jpg',
+    image: '/images/courses/roocket-html-css-course.jpg',
     learnedList: ['HTML, CSS (Flexbox, CSS Grid)'],
     learned: {
       translatorName: 'html_css_roocket',
