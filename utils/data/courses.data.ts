@@ -70,7 +70,7 @@ export const COURSES_LIST: ICourse[] = [
       {
         name: 'Udemy',
         logo: '/images/logo-udemy.svg',
-        url: 'udemy.com/course/cypress-end-to-end-testing-getting-started/',
+        url: 'https://www.udemy.com/course/cypress-end-to-end-testing-getting-started/',
       },
     ],
   },
@@ -546,7 +546,7 @@ export const COURSES_LIST_WITH_TRANSLATE: ICourseWithTranslate[] = [
       {
         name: 'Udemy',
         logo: '/images/logo-udemy.svg',
-        url: 'udemy.com/course/cypress-end-to-end-testing-getting-started/',
+        url: 'https://www.udemy.com/course/cypress-end-to-end-testing-getting-started/',
       },
     ],
   },
