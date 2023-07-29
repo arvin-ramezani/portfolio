@@ -1,3 +1,5 @@
+import Script from 'next/script';
+
 import Document, {
   DocumentContext,
   Head,
@@ -44,6 +46,20 @@ export default class MyDocument extends Document {
         style={{ scrollBehavior: 'smooth', direction: pageDir }}
       >
         <Head>
+          {/* Google Analitics */}
+          <Script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-T229S57SGP"
+          />
+
+          <Script>
+            {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-T229S57SGP');`}
+          </Script>
+
           <meta charSet="utf-8" />
 
           {/* <link
