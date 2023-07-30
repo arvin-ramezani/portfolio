@@ -52,7 +52,7 @@ export default class MyDocument extends Document {
             src="https://www.googletagmanager.com/gtag/js?id=G-T229S57SGP"
           />
 
-          <Script>
+          <Script id="google-analytics">
             {`window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
