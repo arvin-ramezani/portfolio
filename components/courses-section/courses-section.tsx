@@ -3,10 +3,10 @@ import { useTranslation } from 'next-i18next';
 
 import { StyledCoursesSection } from '@/styles/components/courses-section.styled';
 import CourseList from './course-list/course-list';
-import { IHomePageGetRespose } from '@/pages/api';
+import { IHomePageGetResponse } from '@/pages/api';
 
 interface CoursesSectionProps {
-  courses: IHomePageGetRespose['courses'];
+  courses: IHomePageGetResponse['courses'];
 }
 
 const CoursesSection: FC<CoursesSectionProps> = ({ courses }) => {

@@ -2,7 +2,7 @@ import React, { FC, useState, ChangeEventHandler } from 'react';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
-import { IHomePageGetRespose } from '@/pages/api';
+import { IHomePageGetResponse } from '@/pages/api';
 import {
   PaginationButtons,
   PaginationSelectBox,
@@ -11,7 +11,7 @@ import {
 import Button from '../button/button';
 
 interface PaginationProps {
-  pagination: IHomePageGetRespose['courses']['pagination'];
+  pagination: IHomePageGetResponse['courses']['pagination'];
   page: number;
   setPage: React.Dispatch<React.SetStateAction<number>>;
   onPaginationChange: () => void;

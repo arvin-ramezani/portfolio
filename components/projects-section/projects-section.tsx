@@ -14,10 +14,10 @@ import {
 import { Container } from '@/styles/global.styled';
 import ProjectCard from './project-card/project-card';
 import { IProject } from '@/utils/types/project.types';
-import { IHomePageGetRespose } from '@/pages/api';
+import { IHomePageGetResponse } from '@/pages/api';
 
 interface ProjectSectionProps {
-  projects: IHomePageGetRespose['projects'];
+  projects: IHomePageGetResponse['projects'];
 }
 
 const ProjectsSection: FC<ProjectSectionProps> = ({ projects }) => {
