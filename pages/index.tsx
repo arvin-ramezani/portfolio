@@ -10,20 +10,20 @@ import StarsCanvas from '@/components/stars-canvas/stars-canvas';
 import { PROJECT_LIST } from '@/utils/data/projects.data';
 import CoursesSection from '@/components/courses-section/courses-section';
 import { COURSES_LIST_WITH_TRANSLATE } from '@/utils/data/courses.data';
-import { IHomePageGetRespose } from './api';
+import { IHomePageGetResponse } from './api';
 
 interface HomePageProps {
-  projects: IHomePageGetRespose['projects'];
-  courses: IHomePageGetRespose['courses'];
+  projects: IHomePageGetResponse['projects'];
+  courses: IHomePageGetResponse['courses'];
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   try {
-    // const { data } = await axios.get<IHomePageGetRespose>(
+    // const { data } = await axios.get<IHomePageGetResponse>(
     //   'http://localhost:4000/api?courses=true&projects=true'
     // );
 
-    const data: IHomePageGetRespose = {
+    const data: IHomePageGetResponse = {
       projects: {
         projectList: PROJECT_LIST.slice(0, 6),
         pagination: {

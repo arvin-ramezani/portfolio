@@ -4,11 +4,11 @@ import {
 } from '@/utils/data/courses.data';
 import { PROJECT_LIST } from '@/utils/data/projects.data';
 import { IPagination } from '@/utils/types/common.types';
-import { ICourse, ICourseWithTranslate } from '@/utils/types/course.types';
+import { ICourseWithTranslate } from '@/utils/types/course.types';
 import { IProject } from '@/utils/types/project.types';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export interface IHomePageGetRespose {
+export interface IHomePageGetResponse {
   projects: {
     projectList?: IProject[];
     pagination: {
@@ -24,7 +24,7 @@ export interface IHomePageGetRespose {
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<IHomePageGetRespose>
+  res: NextApiResponse<IHomePageGetResponse>
 ) {
   if (req.method === 'GET') {
     const pagination = {
@@ -32,7 +32,7 @@ export default function handler(
       pageCount: 0,
     };
 
-    const resData: IHomePageGetRespose = {
+    const resData: IHomePageGetResponse = {
       projects: {
         projectList: [],
         pagination,
