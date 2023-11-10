@@ -9,6 +9,7 @@ export const CredentialType = {
 
 export const options: AuthOptions = {
   pages: {},
+  secret: process.env.NEXTAUTH_SECRET,
 
   providers: [
     GitHubProvider({
