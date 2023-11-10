@@ -7,17 +7,19 @@ import {
   useScroll,
   useTransform,
 } from 'framer-motion';
+import { useSession } from 'next-auth/react';
 
 import {
   Logo,
   MobileNavButton,
   StyledHeader,
+  StyledLink,
 } from '@/styles/components/header.styled';
 import { theme } from '@/styles/themes/theme.styled';
 import LangSelectBox from '../lang-select-box/lang-select-box';
 import { Container } from '@/styles/global.styled';
 import { HeaderItemsVariants } from './header.variants';
-import MobileNav from '../monile-nav/mobile-nav';
+import MobileNav from '../mobile-nav/mobile-nav';
 import Navbar from '../navbar/navbar';
 import usePageDir from '@/hooks/use-page-dir/use-page-dir';
 
@@ -35,6 +37,8 @@ const Header = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const router = useRouter();
   const pageDir = usePageDir();
+  const { status } = useSession();
+  const isSignedIn = status === 'authenticated';
 
   const { scrollY } = useScroll();
   const bgColor = useTransform(
@@ -92,6 +96,14 @@ const Header = () => {
         />
 
         <Navbar />
+
+        {isSignedIn ? (
+          <StyledLink href="/api/auth/signout?callbackUrl=/">
+            Signout
+          </StyledLink>
+        ) : (
+          <StyledLink href="/api/auth/signin?callbackUrl=/">Signin</StyledLink>
+        )}
 
         <LangSelectBox />
       </Container>

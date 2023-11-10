@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import styled from 'styled-components';
+
 import { theme } from '../themes/theme.styled';
 
 export const StyledHeader = styled(motion.header)`
@@ -13,7 +15,8 @@ export const StyledHeader = styled(motion.header)`
   & > div {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    gap: 1rem;
     padding: 1rem;
     width: 100%;
     position: relative;
@@ -66,11 +69,11 @@ export const Logo = styled(Image)<{ pagedir: 'rtl' | 'ltr' }>`
   cursor: pointer;
 
   width: fit-content;
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 
   @media (min-width: ${theme.breakpoints.md}) {
     position: static;
@@ -78,4 +81,14 @@ export const Logo = styled(Image)<{ pagedir: 'rtl' | 'ltr' }>`
     width: 50px;
     height: 50px;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  margin-left: auto;
+  text-decoration: none;
+  background: ${({ theme }) => theme.colors.textPrimary};
+  color: ${({ theme }) => theme.backgroundColors.primary};
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
 `;

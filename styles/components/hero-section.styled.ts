@@ -105,6 +105,23 @@ export const HeroTextContainer = styled(motion.div)`
   }
 `;
 
+export const StyledCurrentUser = styled.div`
+  & h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  & h1 span {
+    font-size: 1.2rem;
+
+    color: ${({ theme }) => theme.colors.blueLight};
+  }
+
+  & img {
+    border-radius: 50%;
+  }
+`;
+
 export const HeroImageContainer = styled(motion.div)<{
   pagedir: 'rtl' | 'ltr';
 }>`
