@@ -14,7 +14,7 @@ export const options: AuthOptions = {
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_ID!,
-      clientSecret: process.env.GITHUB_Secret!,
+      clientSecret: process.env.GITHUB_SECRET!,
       profile(profile) {
         // console.log('Profile GitHub: ', profile);
 
