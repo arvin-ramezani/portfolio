@@ -1,3 +1,8 @@
 {
-  "cSpell.words": ["googleusercontent"]
+  "cSpell.words": [
+    "googleusercontent"
+  ],
+  "i18n-ally.localesPaths": [
+    "public/locales"
+  ]
 }

@@ -38,7 +38,7 @@ const Header = () => {
   const router = useRouter();
   const pageDir = usePageDir();
   const { status } = useSession();
-  const isSignedIn = status === 'authenticated';
+  // const isSignedIn = status === 'authenticated';
 
   const { scrollY } = useScroll();
   const bgColor = useTransform(
@@ -97,13 +97,13 @@ const Header = () => {
 
         <Navbar />
 
-        {isSignedIn ? (
+        {/* {isSignedIn ? (
           <StyledLink href="/api/auth/signout?callbackUrl=/">
             Signout
           </StyledLink>
         ) : (
           <StyledLink href="/api/auth/signin?callbackUrl=/">Signin</StyledLink>
-        )}
+        )} */}
 
         <LangSelectBox />
       </Container>
