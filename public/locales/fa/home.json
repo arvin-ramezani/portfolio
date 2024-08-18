@@ -185,8 +185,8 @@
   "experiences_madaar_end_date": "مرداد ۱۴۰۳",
   "experiences_madaar_position": "توسعه دهنده فرانت اند",
   "experiences_madaar_address": "<address>دبی، امارات متحده عربی</address><span>-</span><span>دورکاری</span>",
-  "experiences_madaar_list_1": "توسعه فرانت اند سایت مدار با .<strong>TailwindCSS</strong> و <strong>Next.js</strong>، <strong>TypeScript<strong>، <strong>Framer Motion</strong>",
-  "experiences_madaar_list_2": "پیاده سازی استیت منیجمنت سایت با استفاده از <strong>Zustand</strong> و اعتبارسنجی فرم ها با .<strong>ZOD</strong> و <strong>react-hook-form</strong>",
+  "experiences_madaar_list_1": "توسعه فرانت اند سایت مدار با <strong>TailwindCSS</strong> و <strong>Next.js</strong>، <strong>TypeScript<strong>، <strong>Framer Motion</strong>.",
+  "experiences_madaar_list_2": "پیاده سازی استیت منیجمنت سایت با استفاده از <strong>Zustand</strong> و اعتبارسنجی فرم ها با <strong>ZOD</strong> و <strong>react-hook-form</strong>.",
   "experiences_madaar_list_3": "پیاده سازی ثبت نام و ورود کاربر با استفاده از <strong>NextAuth.js<strong>.",
-  "experiences_madaar_list_4": "مشارکت در بکاند پروژه که با <strong>PostgreSQL</strong> و <strong>Nest.js</strong> توسعه داده شده."
+  "experiences_madaar_list_4": "مشارکت در بک اند پروژه که با <strong>PostgreSQL</strong> و <strong>Nest.js</strong> توسعه داده شده."
 }
