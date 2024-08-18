@@ -17,7 +17,9 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = (_props) => {
   return (
     <section>
       <ExperienceContainer>
-        <StyledExperienceTitle>Experiences</StyledExperienceTitle>
+        <StyledExperienceTitle>
+          {translator('home:experiences_title')}
+        </StyledExperienceTitle>
         <div>
           <ExperienceItemCompany
             href="https://madaar.ae"
