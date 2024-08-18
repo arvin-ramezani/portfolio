@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
+
 import {
   ExperienceContainer,
   ExperienceItemAddress,
@@ -6,12 +9,11 @@ import {
   ExperienceItemTitle,
   StyledExperienceTitle,
 } from '@/styles/components/experience-section.styled';
-import { Container } from '@/styles/global.styled';
-import Image from 'next/image';
 
 export interface ExperienceSectionProps {}
 
 const ExperienceSection: React.FC<ExperienceSectionProps> = (_props) => {
+  const { t: translator } = useTranslation();
   return (
     <section>
       <ExperienceContainer>
@@ -35,17 +37,20 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = (_props) => {
             />
             <div>
               <ExperienceItemTitle>
-                <h3>Madaar al zaki</h3>
-                <time>Nov 2023</time> / <time>Aut 2024</time>
+                <h3>{translator('home:experiences_madaar_company')}</h3>
+                <time>
+                  {translator('home:experiences_madaar_start_date')}
+                </time>{' '}
+                / <time>{translator('home:experiences_madaar_end_date')}</time>
               </ExperienceItemTitle>
 
-              <p>Front End Developer</p>
+              <p>{translator('home:experiences_madaar_position')}</p>
 
-              <ExperienceItemAddress>
-                <address>Dubai, United Arab Emirates</address>
-                <span>-</span>
-                <span>Remote</span>
-              </ExperienceItemAddress>
+              <ExperienceItemAddress
+                dangerouslySetInnerHTML={{
+                  __html: `${translator('home:experiences_madaar_address')}`,
+                }}
+              ></ExperienceItemAddress>
             </div>
           </ExperienceItemCompany>
 
@@ -57,8 +62,12 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = (_props) => {
                 width={16}
                 height={16}
               />
-              Developed the front end of a site using TailwindCSS, Next.js,
-              TypeScript, and Framer Motion.
+
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: `${translator('home:experiences_madaar_list_1')}`,
+                }}
+              />
             </li>
 
             <li>
@@ -68,8 +77,12 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = (_props) => {
                 width={16}
                 height={16}
               />
-              Implemented state management using Zustand and form validation
-              with ZOD and react-hook-form.
+
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: `${translator('home:experiences_madaar_list_2')}`,
+                }}
+              />
             </li>
 
             <li>
@@ -79,7 +92,12 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = (_props) => {
                 width={16}
                 height={16}
               />
-              Integrated user registration and login with NextAuth.js.
+
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: `${translator('home:experiences_madaar_list_3')}`,
+                }}
+              />
             </li>
 
             <li>
@@ -89,8 +107,12 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = (_props) => {
                 width={16}
                 height={16}
               />
-              Contributed to the backend development of the project, which was
-              built with PostgreSQL and Nest.js.
+
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: `${translator('home:experiences_madaar_list_4')}`,
+                }}
+              />
             </li>
           </ExperienceItemBulletList>
         </div>

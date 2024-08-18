@@ -56,6 +56,10 @@ export const ExperienceItemTitle = styled.div`
     margin-inline-start: 0.5rem;
     margin-inline-end: 0.2rem;
   }
+
+  & time:last-of-type {
+    margin-inline-start: 0.2rem;
+  }
 `;
 
 export const ExperienceItemDate = styled.time`
