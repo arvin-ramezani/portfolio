@@ -11,6 +11,7 @@ import { PROJECT_LIST } from '@/utils/data/projects.data';
 import CoursesSection from '@/components/courses-section/courses-section';
 import { COURSES_LIST_WITH_TRANSLATE } from '@/utils/data/courses.data';
 import { IHomePageGetResponse } from './api';
+import ExperienceSection from '@/components/experience-section/experience-section';
 
 interface HomePageProps {
   projects: IHomePageGetResponse['projects'];
@@ -67,6 +68,8 @@ export default function Home({ projects, courses }: HomePageProps) {
         <HeroSection />
 
         <AboutSection />
+
+        <ExperienceSection />
 
         <ProjectsSection projects={projects} />
 

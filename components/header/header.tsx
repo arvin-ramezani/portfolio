@@ -7,7 +7,7 @@ import {
   useScroll,
   useTransform,
 } from 'framer-motion';
-import { useSession } from 'next-auth/react';
+// import { useSession } from 'next-auth/react';
 
 import {
   Logo,
@@ -37,7 +37,7 @@ const Header = () => {
   const [showMobileNav, setShowMobileNav] = useState(false);
   const router = useRouter();
   const pageDir = usePageDir();
-  const { status } = useSession();
+  // const { status } = useSession();
   // const isSignedIn = status === 'authenticated';
 
   const { scrollY } = useScroll();
